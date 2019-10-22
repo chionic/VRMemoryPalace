@@ -1,0 +1,56 @@
+Bookmarks...
+
+College related
+--------------------
+https://2020.moodle.maynoothuniversity.ie/login/index.php
+https://login.microsoftonline.com/?whr=mu.ie
+https://gitlab.cs.nuim.ie/barak/cs424-f2019
+
+4th Year Project
+--------------------
+Proof of concept
+Floor plan examples for different housing types:
+http://universaldesign.ie/Web-Content-/Section-5-Universal-Design-Home-Types-Floor-Plan-Examples.pdf
+
+Explanation of different word attributes in dictionary:
+http://websites.psychology.uwa.edu.au/school/MRCDatabase/MDWilsonMRC.pdf
+
+MRC Psycholingusitic database (online):
+http://websites.psychology.uwa.edu.au/school/MRCDatabase/uwa_mrc.htm
+
+3D model sites
+No sorting/tagging features:
+https://www.tinkercad.com/things 
+
+Great sorting system:
+https://free3d.com
+
+Lists poly + edge count:
+https://sketchfab.com
+
+Good library but no easy poly count (geared towards low poly):
+https://poly.google.com
+
+Large library, states poly/vertices count, low poly search:
+https://www.turbosquid.com
+
+No poly count, limited usefulness:
+https://grabcad.com/library
+
+No poly count, limited usefulness:
+https://3dsky.org
+
+limited library + usefulness:
+https://opengameart.org
+
+small library:
+https://www.remix3d.com
+
+
+Cool
+-------------------
+https://3d.si.edu/browser?page=1
+
+https://nasa3d.arc.nasa.gov/detail/jpl-cassini
+
+https://www.thingiverse.com/search?q=low+poly&dwh=355daedc5b8543c
