@@ -8,6 +8,24 @@ https://gitlab.cs.nuim.ie/barak/cs424-f2019
 
 4th Year Project
 --------------------
+The things you're supposed to reference all the time idiot:
+Building a memory palace in minutes: Equivalent memory performance using virtual versus conventional environments with the Method of Loci
+https://www.sciencedirect.com/science/article/pii/S000169181200145X?via%3Dihub
+
+The Virtual Memory Palace
+https://www.researchgate.net/publication/229059664_The_Virtual_Memory_Palace
+
+Yates, the Art of Memory
+https://monoskop.org/images/b/be/Yates_Frances_A_The_Art_of_Memory.pdf
+
+
+
+
+
+Blender tutorials
+UV mapping:
+https://www.youtube.com/watch?v=eiDrRa6JvQ0
+
 Proof of concept
 Floor plan examples for different housing types:
 http://universaldesign.ie/Web-Content-/Section-5-Universal-Design-Home-Types-Floor-Plan-Examples.pdf
@@ -33,6 +51,7 @@ https://poly.google.com
 
 Large library, states poly/vertices count, low poly search:
 https://www.turbosquid.com
+Username: takaj17956@netmail8.com
 
 No poly count, limited usefulness:
 https://grabcad.com/library
@@ -46,6 +65,44 @@ https://opengameart.org
 small library:
 https://www.remix3d.com
 
+Free images:
+https://all-free-download.com/free-photos/
+
+Places I got code from
+non-vr player and camera script:
+https://github.com/jiankaiwang/FirstPersonController
+
+Changing normals blender:
+https://www.katsbits.com/codex/flip-normals/
+
+Textures:
+https://commons.wikimedia.org/wiki/Category:Textile_textures
+
+
+VR Menu Navigation
+Fucking awesome music creation game + other novel menu ideas
+http://blog.leapmotion.com/meet-winners-3d-jam-2-0/
+
+Radial vs Linear 2D menus (Radial ++): 294A Comparative Study of Menus in Virtual Reality Environments 
+http://delivery.acm.org/10.1145/3140000/3132277/p294-santos.pdf?ip=149.157.243.58&id=3132277&acc=ACTIVE%20SERVICE&key=846C3111CE4A4710%2EAB4E84BDC4F162A6%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&__acm__=1574772859_e21060c858d09d6bffe44674205671ec
+
+Stacked > Concentric > Crossed: The Spin Menu: a Menu System for Virtual EnvironmentsD. Gerber∗D. Bechmann†
+https://www.researchgate.net/profile/Dominique_Bechmann/publication/4165391_The_spin_menu_A_menu_system_for_virtual_environments/links/56a6086b08aeca0fddcb0ca3.pdf
+
+Glove bsed TULIP, Floating, tablet: Design and evaluation of menu systems for immersive virtual environments   D.A. Bowman ; C.A. Wingrave 
+https://ieeexplore.ieee.org/abstract/document/913781
+
+Tricorder Idea: The Virtual Tricorder: A Uniform Interface for Virtual Reality 
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.49.6455&rep=rep1&type=pdf 
+
+List of current existing menu metaphors (taxonomy):Three-dimensional menus: A survey and taxonomy panel RaimundDachselt AnettHübner
+https://www.sciencedirect.com/science/article/pii/S0097849306001853
+Powerpoint summary thereof: https://mt.inf.tu-dresden.de/cnt/uploads/Dachselt_2006_Survey_Taxonomy_3D_Menu_Techniques_Slides.pdf
+
+ring menu: design and evaluation of ring menu in virtual environments D Gerber D Bechmann
+https://perso.liris.cnrs.fr/sylvain.brandel/old_old_site/en/research/VR/ipt_gb04_web.pdf
+
+
 
 Cool
 -------------------
@@ -54,3 +111,5 @@ https://3d.si.edu/browser?page=1
 https://nasa3d.arc.nasa.gov/detail/jpl-cassini
 
 https://www.thingiverse.com/search?q=low+poly&dwh=355daedc5b8543c
+
+Blog about VR news+developments: https://www.re-flekt.com
