@@ -36,7 +36,7 @@ public class Menu : MonoBehaviour
         {
             subMenus[0].SetActive(true);
             currentlyActive = subMenus[0];
-            currentlyActive.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y, controller.transform.position.z);
+            currentlyActive.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y - 0.2f, controller.transform.position.z);
             currentlyActive.transform.rotation = Quaternion.Euler(new Vector3(currentlyActive.transform.rotation.eulerAngles.x, controller.transform.rotation.eulerAngles.y, currentlyActive.transform.rotation.eulerAngles.z));
             currentState = 1;
             Debug.Log("set state 1");
