@@ -2,25 +2,56 @@
 using UnityEngine;
 using Valve.VR;
 
-public class Handy : MonoBehaviour
+public class Hand2 : MonoBehaviour
 {
- 
+
     private Socket socket = null;
     private SteamVR_Behaviour_Pose pose = null;
-
+    private GameObject spawnedObject = null;
     public List<Interactable> contactInteractables = new List<Interactable>();
+    private Hand2 myHandScript = null;
 
+    //Menu script for toggling the menu
+    public GameObject menu = null;
+    private Menu menuScript;
+    private Transform controller = null;
 
     public void Awake()
     {
         socket = GetComponent<Socket>();
         pose = GetComponent<SteamVR_Behaviour_Pose>();
-
+        myHandScript = this;
+        menuScript = menu.GetComponent<Menu>();
+        controller = gameObject.transform;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        AddInteractable(other.gameObject);
+        if (other.gameObject.CompareTag("menuItem"))
+        {
+            //Debug.Log("ran menuItem");
+            menuItem currentMenuItem = other.GetComponent<menuItem>();
+            if (currentMenuItem.isTopLayer)
+            {
+                //Debug.Log("Menu is top layer true ran");
+                spawnedObject = currentMenuItem.objectToSpawn;
+                menuScript.toggleMenu(spawnedObject, controller);
+            }
+            else
+            {
+                //Debug.Log("top layer false ran");
+                spawnedObject = currentMenuItem.objectToSpawn;
+                GameObject spawnedOb = Instantiate(spawnedObject, transform.position, Quaternion.identity);
+                Moveable moveScript = spawnedOb.gameObject.GetComponent<Moveable>();
+                PickUp(moveScript);
+                menuScript.toggleMenu(null, controller);
+            }
+
+        }
+        else
+        {
+            AddInteractable(other.gameObject);
+        }
     }
 
     private void AddInteractable(GameObject newObject)
@@ -54,7 +85,7 @@ public class Handy : MonoBehaviour
         contactInteractables.Remove(socket.GetStoredObject());
         Interactable nearestObject = Utility.GetNearestInteractable(transform.position, contactInteractables);
         if (nearestObject)
-            nearestObject.StartInteraction(this);
+            nearestObject.StartInteraction(myHandScript);
         return nearestObject;
     }
 
@@ -78,8 +109,9 @@ public class Handy : MonoBehaviour
         heldObject.EndInteraction(this);
     }
 
-    public void PickUp (Moveable moveable)
+    public void PickUp(Moveable moveable)
     {
+        //Debug.Log("The socket is: " + socket + " and the moveable is: " + moveable);
         moveable.AttachNewSocket(socket);
     }
 

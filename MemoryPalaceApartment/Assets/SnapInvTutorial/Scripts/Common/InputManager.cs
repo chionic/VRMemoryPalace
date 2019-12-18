@@ -15,6 +15,12 @@ public class InputManager : MonoBehaviour
     public UnityEvent OnTouchpadDown = new UnityEvent();
     public UnityEvent OnTouchpadUp = new UnityEvent();
 
+    [Header("Menu Button")]
+    public SteamVR_Action_Boolean MenuButtonAction = null;
+    public UnityEvent OnMenuButtonDown = new UnityEvent();
+    public UnityEvent OnMenuButtonUp = new UnityEvent();
+
+
     private SteamVR_Behaviour_Pose Pose = null;
 
     private void Awake()
@@ -35,6 +41,12 @@ public class InputManager : MonoBehaviour
 
         if (TouchpadAction.GetStateUp(Pose.inputSource))
             OnTouchpadUp.Invoke();
+
+        if (MenuButtonAction.GetStateDown(Pose.inputSource))
+            OnMenuButtonDown.Invoke();
+
+        if (MenuButtonAction.GetStateUp(Pose.inputSource))
+            OnMenuButtonUp.Invoke();
     }
 
 }

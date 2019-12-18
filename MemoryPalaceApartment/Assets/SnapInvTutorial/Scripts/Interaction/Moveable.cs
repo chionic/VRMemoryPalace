@@ -6,17 +6,17 @@ public class Moveable : Interactable
 {
     private Socket activeSocket = null;
 
-    public override void StartInteraction(Handy hand)
+    public override void StartInteraction(Hand2 hand)
     {
         hand.PickUp(this);
     }
 
-    public override void Interaction(Handy hand)
+    public override void Interaction(Hand2 hand)
     {
         GetComponent<ColorToggle>().ToggleColor();
     }
 
-    public override void EndInteraction(Handy hand)
+    public override void EndInteraction(Hand2 hand)
     {
         hand.Drop();
     }

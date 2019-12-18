@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.memorypalaceapartment.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "D:\\UnityProjects\\MemoryPalaceApartment\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "D:\\UnityProjects\\LKrueger\\memorypalacevr\\MemoryPalaceApartment\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "MemoryPalaceApartment [Testing]"

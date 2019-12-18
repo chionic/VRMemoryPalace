@@ -11,7 +11,7 @@ public class Slot : Interactable
         socket = GetComponent<Socket>();
     }
 
-    public override void StartInteraction(Handy hand)
+    public override void StartInteraction(Hand2 hand)
     {
         if (hand.HasHeldObject())
         {
@@ -24,7 +24,7 @@ public class Slot : Interactable
         }
     }
 
-    private void TryStore(Handy hand)
+    private void TryStore(Hand2 hand)
     {
         Debug.Log("try store called");
         if (socket.GetStoredObject())
@@ -38,7 +38,7 @@ public class Slot : Interactable
         Debug.Log(socket);
     }
 
-    private void TryRetrieve(Handy hand)
+    private void TryRetrieve(Hand2 hand)
     {
         if (!socket.GetStoredObject())
         {
