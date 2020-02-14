@@ -29,24 +29,8 @@ public class Hand2 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("menuItem"))
         {
-            //Debug.Log("ran menuItem");
-            menuItem currentMenuItem = other.GetComponent<menuItem>();
-            if (currentMenuItem.isTopLayer)
-            {
-                //Debug.Log("Menu is top layer true ran");
-                spawnedObject = currentMenuItem.objectToSpawn;
-                menuScript.toggleMenu(spawnedObject, controller);
-            }
-            else
-            {
-                //Debug.Log("top layer false ran");
-                spawnedObject = currentMenuItem.objectToSpawn;
-                GameObject spawnedOb = Instantiate(spawnedObject, transform.position, Quaternion.identity);
-                Moveable moveScript = spawnedOb.gameObject.GetComponent<Moveable>();
-                PickUp(moveScript);
-                menuScript.toggleMenu(null, controller);
-            }
-
+            AddInteractable(other.gameObject);
+            Debug.Log("added menuItem to interactable list");
         }
         else
         {
@@ -63,12 +47,14 @@ public class Hand2 : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         RemoveInteractable(other.gameObject);
+        Debug.Log("remove interactable started");
     }
 
     private void RemoveInteractable(GameObject newObject)
     {
         Interactable existingInteractable = newObject.GetComponent<Interactable>();
         contactInteractables.Remove(existingInteractable);
+        Debug.Log("removed interactable");
     }
 
     public void TryInteraction()
@@ -82,9 +68,16 @@ public class Hand2 : MonoBehaviour
 
     public bool NearestInteraction()
     {
+        Debug.Log("NearestInteraction ran");
         contactInteractables.Remove(socket.GetStoredObject());
         Interactable nearestObject = Utility.GetNearestInteractable(transform.position, contactInteractables);
         if (nearestObject)
+            if (nearestObject.gameObject.CompareTag("menuItem"))
+            {
+                createMenuItem(nearestObject.gameObject);
+                Debug.Log("createMenuItem started");
+                return nearestObject;
+            }
             nearestObject.StartInteraction(myHandScript);
         return nearestObject;
     }
@@ -111,6 +104,7 @@ public class Hand2 : MonoBehaviour
 
     public void PickUp(Moveable moveable)
     {
+
         //Debug.Log("The socket is: " + socket + " and the moveable is: " + moveable);
         moveable.AttachNewSocket(socket);
     }
@@ -132,5 +126,26 @@ public class Hand2 : MonoBehaviour
     public bool HasHeldObject()
     {
         return socket.GetStoredObject();
+    }
+
+    public void createMenuItem(GameObject other)
+    {
+        //Debug.Log("ran menuItem");
+        menuItem currentMenuItem = other.GetComponent<menuItem>();
+        if (currentMenuItem.isTopLayer)
+        {
+            //Debug.Log("Menu is top layer true ran");
+            spawnedObject = currentMenuItem.objectToSpawn;
+            menuScript.toggleMenu(spawnedObject, controller);
+        }
+        else
+        {
+            //Debug.Log("top layer false ran");
+            spawnedObject = currentMenuItem.objectToSpawn;
+            GameObject spawnedOb = Instantiate(spawnedObject, transform.position, Quaternion.identity);
+            Moveable moveScript = spawnedOb.gameObject.GetComponent<Moveable>();
+            PickUp(moveScript);
+            menuScript.toggleMenu(null, controller);
+        }
     }
 }
