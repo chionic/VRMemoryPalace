@@ -12,6 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63cd12f78f16a594ab6699eec1395e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4833490200303497700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7957255217105335412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0204da8a5009a4baeed57872e837ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5454200861110801890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22,7 +34,7 @@ PrefabInstance:
     - target: {fileID: 2728319069148963222, guid: 87d0cdd0b838ff64e9a3f99398a52b32,
         type: 3}
       propertyPath: m_Name
-      value: Capsule
+      value: Capsule Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4089642942246914115, guid: 87d0cdd0b838ff64e9a3f99398a52b32,
         type: 3}

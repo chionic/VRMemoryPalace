@@ -9,6 +9,7 @@ public class Slot : Interactable
     private void Awake()
     {
         socket = GetComponent<Socket>();
+        Debug.Log("Slot activated");
     }
 
     public override void StartInteraction(Hand2 hand)
@@ -40,6 +41,7 @@ public class Slot : Interactable
 
     private void TryRetrieve(Hand2 hand)
     {
+        Debug.Log("Try retrieve called");
         if (!socket.GetStoredObject())
         {
             return;
