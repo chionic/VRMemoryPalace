@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8395570810786606009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7957255217105335412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87bc6bdb8ac70340a04365b9389d856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PinkMaterial: {fileID: 2100000, guid: 5e64c8e301cdf9c488fde7115d7a7418, type: 2}
+  GreyMaterial: {fileID: 2100000, guid: 28cb18fd6915a6f4aa555cab7ba191b5, type: 2}
 --- !u!114 &2349396270514014306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,6 +49,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Capsule Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728319069148963222, guid: 87d0cdd0b838ff64e9a3f99398a52b32,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728319069148963222, guid: 87d0cdd0b838ff64e9a3f99398a52b32,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4089642942246914115, guid: 87d0cdd0b838ff64e9a3f99398a52b32,
         type: 3}
