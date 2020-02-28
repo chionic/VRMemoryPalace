@@ -10,6 +10,8 @@ public class Hand2 : MonoBehaviour
     private GameObject spawnedObject = null;
     public List<Interactable> contactInteractables = new List<Interactable>();
     private Hand2 myHandScript = null;
+    public GameObject UiText= null;
+    private TextChange textChange = null;
 
     //Menu script for toggling the menu
     public GameObject menu = null;
@@ -23,6 +25,7 @@ public class Hand2 : MonoBehaviour
         myHandScript = this;
         menuScript = menu.GetComponent<Menu>();
         controller = gameObject.transform;
+        textChange = UiText.GetComponent<TextChange>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -165,5 +168,10 @@ public class Hand2 : MonoBehaviour
             }
         }
         contactInteractables = list;
+    }
+
+    public void updateUIText()
+    {
+        textChange.updateUIText();
     }
 }

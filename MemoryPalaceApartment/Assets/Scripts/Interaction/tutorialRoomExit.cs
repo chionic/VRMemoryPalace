@@ -12,7 +12,7 @@ public class tutorialRoomExit : MonoBehaviour
 
     public void deactivateDoor()
     {
-        if (object1 == object2 == object3 == true)
+        if (object1 == true && object2 == true && object3 == true)
         {
             this.gameObject.SetActive(false);
         }

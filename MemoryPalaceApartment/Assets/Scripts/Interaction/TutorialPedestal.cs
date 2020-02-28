@@ -15,7 +15,7 @@ public class TutorialPedestal : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collider triggered");
+        //Debug.Log("Collider triggered");
         if (other.CompareTag(myTag))
         {
             Debug.Log("compare tag " + myTag + " ran");
