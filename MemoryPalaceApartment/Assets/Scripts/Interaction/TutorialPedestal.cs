@@ -18,7 +18,7 @@ public class TutorialPedestal : MonoBehaviour
         //Debug.Log("Collider triggered");
         if (other.CompareTag(myTag))
         {
-            Debug.Log("compare tag " + myTag + " ran");
+            //Debug.Log("compare tag " + myTag + " ran");
             if (booleanAssigned == 1)
                 exit.GetComponent<tutorialRoomExit>().object1 = true;
             else if (booleanAssigned == 2)
