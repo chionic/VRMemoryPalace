@@ -6,27 +6,18 @@ door: inter_net https://sketchfab.com/3d-models/door-cff75ad8be4a4974a7792a5ae71
 Hall:
 "0000_IM_8866" by WarOnTomato is licensed under CC BY 2.0 cc-icon : ceiling texture sitting room
 "Rough Wood Planks" by Filter Forge is licensed under CC BY 2.0 cc-icon: floor texture sitting room
-
-
 The tavern - stairs : François Espagnet -https://sketchfab.com/3d-models/the-tavern-stairs-436fd3b8c5c5432288de6b5dff6b9f66
-
 "Free textures: Wood" by Discover Textures: https://ccsearch.creativecommons.org/photos/af3e1f1f-e9d9-47c5-a431-70ee41b792d8
-
 
 Bathroom:
 Tub - Household Props Challenge - Day 30  : Pixel-bit - https://sketchfab.com/3d-models/tub-household-props-challenge-day-30-32bdf029c02f454397846763caa8037f
 Toilet - Household Props Challenge - Day 29: Pixel-bit
 
-
 Utility:
 Doulapi (Sink closet), shelf unit: watercat - https://sketchfab.com/3d-models/doulapi-c48b05ec22ac4b93afaac80c0be2732a
-
 Low Poly Washing Machine (Unturned): Ben - https://sketchfab.com/3d-models/low-poly-washing-machine-unturned-9df1de51fbdd44649569fed3eba08b0d
-
 Ikea Kallax 1x4: Psychokiller1888 - https://sketchfab.com/3d-models/ikea-kallax-1x4-f154c6b691034041aefa455cf8ecb8fe
-
 Sconce Light 3D Model: theernstobecerra - https://free3d.com/3d-model/sconce-light-95541.html
-
 
 Kitchen: 
 blenderfree - Table and Chairs - https://free3d.com/3d-model/table-and-chairs-674896.html
@@ -96,3 +87,7 @@ pointing hand - Enter Hamlet - https://poly.google.com/view/4Mzvny9XJWP
 teacher - poly by google - https://poly.google.com/view/5v5j_lqOHTO
 X Symbol - Mark Steelman - https://poly.google.com/view/bJkyufszb8Q - 18.19 5/3
 Chibi Prince - kevin ang - https://poly.google.com/view/eifWIAkyU2z - 18.41 5/3
+petblo dvr radioactivity - Petroleum Blownapart - https://poly.google.com/view/1Fb-8W-IaRI - 10.47 6/3
+The Great Wave off Kanagawa - tomonori - https://sketchfab.com/3d-models/the-great-wave-off-kanagawa-e8db4a321c7240b999ccc5f1c002b30a - 11.05 6/3
+Super Leaf (Super Mario Bros) - Anthony Yanez - https://sketchfab.com/3d-models/super-leaf-super-mario-bros-9afe8de77a78423db01ec6bef45ab543 - 12.13
+emojis - Solstice FWD - https://poly.google.com/view/66vUd5Ylqf- - 14.52 6/3
