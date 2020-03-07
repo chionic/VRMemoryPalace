@@ -7,11 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5131162953801618660, guid: 480a0e70935646b4fb54397448e71897,
-        type: 3}
-      propertyPath: m_Name
-      value: Ob_chineseFlag
-      objectReference: {fileID: 0}
     - target: {fileID: 6354128744737064377, guid: 480a0e70935646b4fb54397448e71897,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,6 +61,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131162953801618660, guid: 480a0e70935646b4fb54397448e71897,
+        type: 3}
+      propertyPath: m_Name
+      value: Ob_chineseFlag Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1446841294140545647, guid: 480a0e70935646b4fb54397448e71897,
         type: 3}
@@ -157,5 +157,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8342153661440409905, guid: a5fc91492036373438226cd680061f56,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 94065e2ec42ec3346b7a6d6cc93ff340, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5fc91492036373438226cd680061f56, type: 3}

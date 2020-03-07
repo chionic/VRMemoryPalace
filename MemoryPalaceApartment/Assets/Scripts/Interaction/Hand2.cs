@@ -12,6 +12,7 @@ public class Hand2 : MonoBehaviour
     private Hand2 myHandScript = null;
     public GameObject UiText= null;
     private TextChange textChange = null;
+    public GameObject spawnedObjects = null;
 
     //Menu script for toggling the menu
     public GameObject menu = null;
@@ -152,6 +153,7 @@ public class Hand2 : MonoBehaviour
             //Debug.Log("top layer false ran");
             spawnedObject = currentMenuItem.objectToSpawn;
             GameObject spawnedOb = Instantiate(spawnedObject, transform.position, Quaternion.identity);
+            spawnedOb.transform.SetParent(spawnedObjects.transform, true);
             Moveable moveScript = spawnedOb.gameObject.GetComponent<Moveable>();
             PickUp(moveScript);
             menuScript.toggleMenu(null, controller);

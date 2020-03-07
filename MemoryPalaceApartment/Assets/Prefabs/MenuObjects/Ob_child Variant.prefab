@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &3465932447698164521
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6740129443122412059}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0.05, z: -0.054}
 --- !u!136 &8131965068700794647
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14,19 +27,6 @@ CapsuleCollider:
   m_Height: 1.1
   m_Direction: 1
   m_Center: {x: -0.05, y: 0.55, z: 0}
---- !u!65 &3465932447698164521
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6740129443122412059}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1, z: 0.1}
-  m_Center: {x: 0, y: 0.05, z: -0.054}
 --- !u!1001 &1926499960082870015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34,11 +34,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5131162953801618660, guid: 480a0e70935646b4fb54397448e71897,
-        type: 3}
-      propertyPath: m_Name
-      value: Ob_child
-      objectReference: {fileID: 0}
     - target: {fileID: 6354128744737064377, guid: 480a0e70935646b4fb54397448e71897,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -93,6 +88,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6354128744737064377, guid: 480a0e70935646b4fb54397448e71897,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6354128744737064377, guid: 480a0e70935646b4fb54397448e71897,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6354128744737064377, guid: 480a0e70935646b4fb54397448e71897,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131162953801618660, guid: 480a0e70935646b4fb54397448e71897,
+        type: 3}
+      propertyPath: m_Name
+      value: Ob_child Variant
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1446841294140545647, guid: 480a0e70935646b4fb54397448e71897, type: 3}
