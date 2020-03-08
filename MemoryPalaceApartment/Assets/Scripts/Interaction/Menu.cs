@@ -68,4 +68,9 @@ public class Menu : MonoBehaviour
             //Debug.Log("set state 0");
         }
     }
+
+    public int getState()
+    {
+        return currentState;
+    }
 }

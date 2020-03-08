@@ -23,7 +23,12 @@ PrefabInstance:
     - target: {fileID: 5131162953801618660, guid: 480a0e70935646b4fb54397448e71897,
         type: 3}
       propertyPath: m_Name
-      value: Ob_tophat
+      value: Ob_tophat Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131162953801618660, guid: 480a0e70935646b4fb54397448e71897,
+        type: 3}
+      propertyPath: m_TagString
+      value: topHat
       objectReference: {fileID: 0}
     - target: {fileID: 6354128744737064377, guid: 480a0e70935646b4fb54397448e71897,
         type: 3}

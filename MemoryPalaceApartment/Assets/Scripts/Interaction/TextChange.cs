@@ -25,7 +25,7 @@ public class TextChange : MonoBehaviour
                                                    "Ruska \n for his fundamental work in electron optics, and for the design of the first electron microscope"};
 
     private string[] tutorialText = new string[] { "Press grab grip to change text",
-                                                   "Use the circle pad to teleport. \n Mov eyour thumb on the pad to pick where to teleport to. Press down on the pad to teleport.",
+                                                   "Use the circle pad to teleport. \n Move your thumb on the pad to pick where to teleport to. Press down on the pad to teleport.",
                                                    "Teleport points can be used to get to higher floors.",
                                                    "Press the menu button to bring up the menu, press it again to close the menu.",
                                                    "Hover over an object and press trigger to select it. The menu will bring up a submenu from which you can pick objects.",
@@ -37,7 +37,8 @@ public class TextChange : MonoBehaviour
                                                    "Place the top hat on the pink pedestal",
                                                    "Place the smiley face on the bright blue pedestal",
                                                    "A memory palace works by using objects to represent information in a space.",
-                                                   "Try to remember the names and achievements of the following Nobel Prize Winners by placing objects to represent them along a path through the apartment."};
+                                                   "Try to remember the names and achievements of the following Nobel Prize Winners,",
+                                                    "by placing objects to represent them along a path through the apartment."};
     // Start is called before the first frame update
     void Awake()
     {
@@ -64,12 +65,13 @@ public class TextChange : MonoBehaviour
     //Change text to next piece of text
     private void changeText(string[] sArray)
     {
-        if (arrayIndex > sArray.Length)
+        if (arrayIndex >= sArray.Length - 1)
         {
-            if (arrayName.Equals(tutorialText))
+            if (sArray.Equals(tutorialText))
             {
                 arrayName = "peacePrize";
                 sArray = peacePrize;
+                arrayIndex = 0;
             }
             arrayIndex = 0;
         }
