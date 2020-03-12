@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9213675974206954599}
   m_Layer: 8
   m_Name: Ob_radioactive
-  m_TagString: object
+  m_TagString: coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

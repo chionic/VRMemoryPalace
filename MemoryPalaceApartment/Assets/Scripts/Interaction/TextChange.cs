@@ -17,7 +17,7 @@ public class TextChange : MonoBehaviour
                                                  "Maathai \n for her contribution to sustainable development, democracy and peace"};
 
     private string[] physicsPrize = new string[] { "","de Broglie \n for his discovery of the wave nature of electrons",
-                                                   "Hess \n for his discovery of cosmic radiation",
+                                                   
                                                    "Chadwick \n for the discovery of the neutron",
                                                    "Anderson \n for his discovery of the positron",
                                                    "Wien \n for his discoveries regarding the laws governing the radiation of heat",
@@ -32,11 +32,12 @@ public class TextChange : MonoBehaviour
                                                    "Release trigger to drop an object",
                                                    "Hover over a dropped object and press trigger to pick up an interactable object again.",
                                                    "Hold an object over your shoulder to delete it",
-                                                   "Complete the tutorial by following the instructions:",
-                                                   "Place the gold coin on the green pedestal",
-                                                   "Place the top hat on the pink pedestal",
-                                                   "Place the smiley face on the bright blue pedestal",
-                                                   "A memory palace works by using objects to represent information in a space.",
+                                                   "A memory palace is a way to remember ideas and concepts by using objects to represent information in a space.",
+                                                   "Complete the tutorial by following the example of representing information with objects:",
+                                                   "We want to represent: \n \n Hess \n for his discovery of cosmic radiation",
+                                                   "The name Hess rhymes with mess, so lets make a mess by placing a bunch of objects on the green pedestal",
+                                                   "And he discovered cosmic radiation. We can use a sun to represent cosmic since it is in space. Lets put it high up in space on the pink pedestal.",
+                                                   "Radiation can be represented with the green radiation warning symbol. Lets place it on the bright blue pedestal.",
                                                    "Try to remember the names and achievements of the following Nobel Prize Winners,",
                                                     "by placing objects to represent them along a path through the apartment."};
     // Start is called before the first frame update

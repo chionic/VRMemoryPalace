@@ -9,6 +9,7 @@ TagManager:
   - smilingFace
   - coin
   - object
+  - sun
   layers:
   - Default
   - TransparentFX
