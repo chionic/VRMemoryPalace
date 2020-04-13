@@ -25,3 +25,7 @@ A version with limited functionality can be played on a desktop with a keyboard 
 6. Drag the blue arrow object into the game window and place it somewhere within the environment.
 7. Press the play button. The game window should allow you to navigate through the house using w/a/s/d/e/q and the right mouse button.
 
+This version of the project for a regular PC does not display the controllers or text tablet, the menu does not function and neither does teleporting or object deletion.
+Object interaction is not facilitated by default but can be added in by dragging an object with the 'Ob_' prefix from the 'menuModels' folder into the game window, 
+removing all the script components from the object and replacing them with the 'throwable' script (which also automatically adds the interactable script).
+This needs to be done for every object you want to interact with.
