@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TextChange : MonoBehaviour
 {
     public Text UiText = null;
-    public int arrayIndex = 0;
+    public int arrayIndex = 1;
     public string arrayName;
     private string[] peacePrize = new string[] { "", "Sirleaf \n for their non-violent struggle for the safety of women and for women's rights to full participation in peace-building work",
                                                  "Liu \n for his long and non-violent struggle for fundamental human rights in China",
@@ -45,6 +45,15 @@ public class TextChange : MonoBehaviour
     {
         UiText = this.GetComponent<Text>();
 
+    }
+
+    //helper function while no vr controls for testing purposes, changes text when space key is pressed
+    void Update()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            updateUIText();
+        }
     }
 
     public void updateUIText()
