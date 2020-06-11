@@ -1,0 +1,85 @@
+{
+	"isAllInOneFolder": "true",
+	"BaseFolder": "C:\\Users\\Linda\\Documents\\Summer2020\\ImportableModels",
+	"Menu": [{
+		"name": "animals",
+		"id": "0",
+		"isSubmenu": "true",
+		"topLevelMenuRep": "cat",
+		"Values": [
+			{
+				"objectName": "cat",
+				"objectPath": "Mesh_Cat.obj",
+				"defaultSize": "3",
+				"materialPath": "Mesh_Cat.mtl",
+				"materialName": "catPaint",
+				"colliderType": "box"
+			},
+			{
+				"objectName": "dog",
+				"objectPath": "Wolf_01.obj",
+				"defaultSize": "3",
+				"materialPath": "Wolf_01.mtl",
+				"materialName": "dogPaint",
+				"colliderType": "box"
+			},
+			{
+				"objectName": "mouse",
+				"objectPath": "CairoSpinyMouse.obj",
+				"defaultSize": "2",
+				"materialPath": "CairoSpinyMouse.mtl",
+				"materialName": "mousePaint",
+				"colliderType": "capsule"
+			},
+			{
+				"objectName": "elephant",
+				"objectPath": "Elephant_01.obj",
+				"defaultSize": "5",
+				"materialPath": "Elephant_01.mtl",
+				"materialName": "elephantPaint",
+				"colliderType": "box"
+			}
+		]
+		},
+{
+		"name": "food",
+		"id": "1",
+		"isSubmenu": "true",
+		"topLevelMenuRep": "bread",
+		"Values": [
+			{
+				"objectName": "bread",
+				"objectPath": "model.obj",
+				"defaultSize": "3",
+				"materialPath": "materials.mtl",
+				"materialName": "breadPaint",
+				"colliderType": "box"
+			},
+			{
+				"objectName": "strawberry",
+				"objectPath": "Strawberry_01.obj",
+				"defaultSize": "1",
+				"materialPath": "Strawberry_01.mtl",
+				"materialName": "strawberryPaint",
+				"colliderType": "sphere"
+			},
+			{
+				"objectName": "doughnut",
+				"objectPath": "Donut_01.obj",
+				"defaultSize": "2",
+				"materialPath": "Donut_01.mtl",
+				"materialName": "doughnutPaint",
+				"colliderType": "box"
+			},
+			{
+				"objectName": "tomato",
+				"objectPath": "Tomato_01.obj",
+				"defaultSize": "2",
+				"materialPath": "Tomato_01.mtl",
+				"materialName": "tomatoPaint",
+				"colliderType": "sphere"
+			}
+		]
+		}
+	]
+}
