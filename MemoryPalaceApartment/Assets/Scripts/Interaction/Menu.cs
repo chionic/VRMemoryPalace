@@ -12,14 +12,6 @@ public class Menu : MonoBehaviour
     public Hand2 right = null;
     public Hand2 left = null;
 
-    //this is how you should do this...
-    public enum currentState1
-    {
-        HIDDEN,
-        TOP_LAYER,
-        SECOND_LAYER
-    };
-
     //List of submenus
     public List<GameObject> subMenus = new List<GameObject>();
     Transform menuTransform = null;

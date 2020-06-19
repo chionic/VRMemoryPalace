@@ -7,6 +7,7 @@ public class menuItem : MonoBehaviour
     private GameObject parent = null;
     public bool isTopLayer = true;
     public GameObject objectToSpawn;
+    public string findObject;
     // Start is called before the first frame update
 
 

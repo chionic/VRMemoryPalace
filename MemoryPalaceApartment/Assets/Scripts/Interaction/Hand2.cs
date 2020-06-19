@@ -150,9 +150,8 @@ public class Hand2 : MonoBehaviour
         else
         {
             //removeMenuItems(contactInteractables);
-            //Debug.Log("top layer false ran");
-            spawnedObject = currentMenuItem.objectToSpawn;
-            GameObject spawnedOb = Instantiate(spawnedObject, transform.position, Quaternion.identity);
+            //spawnedObject = currentMenuItem.objectToSpawn;
+            GameObject spawnedOb = Instantiate(Resources.Load(currentMenuItem.findObject) as GameObject, transform.position, Quaternion.identity);
             //spawnedOb.transform.SetParent(spawnedObjects.transform, true);
             Moveable moveScript = spawnedOb.gameObject.GetComponent<Moveable>();
             PickUp(moveScript);

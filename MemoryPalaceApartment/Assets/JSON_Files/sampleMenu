@@ -1,6 +1,7 @@
 {
 	"isAllInOneFolder": "true",
 	"BaseFolder": "C:\\Users\\Linda\\Documents\\Summer2020\\ImportableModels",
+	"menuName":"one",
 	"Menu": [{
 		"name": "animals",
 		"id": "0",
@@ -9,15 +10,15 @@
 		"Values": [
 			{
 				"objectName": "cat",
-				"objectPath": "Mesh_Cat.obj",
+				"objectPath": "Animals/Mesh_Cat",
 				"defaultSize": "3",
 				"materialPath": "Mesh_Cat.mtl",
 				"materialName": "catPaint",
-				"colliderType": "box"
+				"colliderType": "capsule"
 			},
 			{
 				"objectName": "dog",
-				"objectPath": "Wolf_01.obj",
+				"objectPath": "Animals/Wolf_01",
 				"defaultSize": "3",
 				"materialPath": "Wolf_01.mtl",
 				"materialName": "dogPaint",
@@ -25,7 +26,7 @@
 			},
 			{
 				"objectName": "mouse",
-				"objectPath": "CairoSpinyMouse.obj",
+				"objectPath": "Animals/CairoSpinyMouse",
 				"defaultSize": "2",
 				"materialPath": "CairoSpinyMouse.mtl",
 				"materialName": "mousePaint",
@@ -33,7 +34,7 @@
 			},
 			{
 				"objectName": "elephant",
-				"objectPath": "Elephant_01.obj",
+				"objectPath": "Animals/Elephant_01",
 				"defaultSize": "5",
 				"materialPath": "Elephant_01.mtl",
 				"materialName": "elephantPaint",
@@ -49,7 +50,7 @@
 		"Values": [
 			{
 				"objectName": "bread",
-				"objectPath": "model.obj",
+				"objectPath": "Food/model",
 				"defaultSize": "3",
 				"materialPath": "materials.mtl",
 				"materialName": "breadPaint",
@@ -57,7 +58,7 @@
 			},
 			{
 				"objectName": "strawberry",
-				"objectPath": "Strawberry_01.obj",
+				"objectPath": "Food/Strawberry_01",
 				"defaultSize": "1",
 				"materialPath": "Strawberry_01.mtl",
 				"materialName": "strawberryPaint",
@@ -65,7 +66,7 @@
 			},
 			{
 				"objectName": "doughnut",
-				"objectPath": "Donut_01.obj",
+				"objectPath": "Food/Donut_01",
 				"defaultSize": "2",
 				"materialPath": "Donut_01.mtl",
 				"materialName": "doughnutPaint",
@@ -73,7 +74,7 @@
 			},
 			{
 				"objectName": "tomato",
-				"objectPath": "Tomato_01.obj",
+				"objectPath": "Food/Tomato_01",
 				"defaultSize": "2",
 				"materialPath": "Tomato_01.mtl",
 				"materialName": "tomatoPaint",
