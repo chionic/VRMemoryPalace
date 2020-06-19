@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//checks if all the tutorial conditions have been met & deactivates the grey box blocking the door if they have
 public class tutorialRoomExit : MonoBehaviour
 {
     public bool object1 = false;

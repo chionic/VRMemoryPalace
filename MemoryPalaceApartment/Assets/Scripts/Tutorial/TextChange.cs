@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Changes the text displayed on the tablet tied to the left controller
+//Updated in some of the git branches so that different text can be easily assigned through a json file (let me know if you want to see this version)
 public class TextChange : MonoBehaviour
 {
-    public Text UiText = null;
-    public int arrayIndex = 0;
-    public string arrayName;
+    public Text UiText = null; //the text element game object
+    public int arrayIndex = 0; //where in a set of text the function is
+    public string arrayName; //the name of the text array
+    //text arrays
     private string[] peacePrize = new string[] { "", "Sirleaf \n for their non-violent struggle for the safety of women and for women's rights to full participation in peace-building work",
                                                  "Liu \n for his long and non-violent struggle for fundamental human rights in China",
                                                  "Yunus \n for their efforts to create economic and social development from below",
@@ -40,13 +43,13 @@ public class TextChange : MonoBehaviour
                                                    "Radiation can be represented with the green radiation warning symbol. Lets place it on the bright blue pedestal.",
                                                    "Try to remember the names and achievements of the following Nobel Prize Winners,",
                                                     "by placing objects to represent them along a path through the apartment."};
-    // Start is called before the first frame update
+
     void Awake()
     {
         UiText = this.GetComponent<Text>();
-
     }
 
+    //calls the change text method depending on which of the three arrays is currently active
     public void updateUIText()
     {
         if (arrayName.Equals("peacePrize"))
@@ -66,17 +69,17 @@ public class TextChange : MonoBehaviour
     //Change text to next piece of text
     private void changeText(string[] sArray)
     {
-        if (arrayIndex >= sArray.Length - 1)
+        if (arrayIndex >= sArray.Length - 1) //if the end of the text array has been reached
         {
-            if (sArray.Equals(tutorialText))
+            if (sArray.Equals(tutorialText)) //if the current array is tutorialText, change array to peacePrize
             {
                 arrayName = "peacePrize";
                 sArray = peacePrize;
                 arrayIndex = 0;
             }
-            arrayIndex = 0;
+            arrayIndex = 0; //otherwise go back to the start of the text array and start again
         }
-        arrayIndex++;
-        UiText.text = sArray[arrayIndex];
+        arrayIndex++; 
+        UiText.text = sArray[arrayIndex]; //change to next piece of text
     }
 }
