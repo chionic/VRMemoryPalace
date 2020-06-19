@@ -26,6 +26,7 @@ public class Hand2 : MonoBehaviour
         myHandScript = this;
         menuScript = menu.GetComponent<Menu>();
         controller = gameObject.transform;
+        UiText = GameObject.Find("UIText");
         textChange = UiText.GetComponent<TextChange>();
     }
 
@@ -164,6 +165,10 @@ public class Hand2 : MonoBehaviour
     {
         foreach(var item in list.ToArray())
         {
+            if(item == null)
+            {
+                return;
+            }
             if (item.gameObject.CompareTag("menuItem"))
             {
                 list.Remove(item);
