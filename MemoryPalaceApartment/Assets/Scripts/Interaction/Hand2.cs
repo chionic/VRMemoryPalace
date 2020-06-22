@@ -2,24 +2,26 @@
 using UnityEngine;
 using Valve.VR;
 
+//keeps track of the controllers and methods related to user input
 public class Hand2 : MonoBehaviour
 {
-
-    private Socket socket = null;
-    private SteamVR_Behaviour_Pose pose = null;
-    private GameObject spawnedObject = null;
-    public List<Interactable> contactInteractables = new List<Interactable>();
-    private Hand2 myHandScript = null;
-    public GameObject UiText= null;
-    private TextChange textChange = null;
-    //public GameObject spawnedObjects = null;
+    //the hand/controller game object
+    private Socket socket = null; //the socket attached to the controller
+    private SteamVR_Behaviour_Pose pose = null; //what pose the controller/hand have in game space
+    private Hand2 myHandScript = null; //the hand script attached to the controller
+    private GameObject spawnedObject = null; 
+    public List<Interactable> contactInteractables = new List<Interactable>(); //a list of interactable gameobjects that could be picked up by the controller (based on proximity) 
 
     //Menu script for toggling the menu
     public GameObject menu = null;
     private Menu menuScript;
     private Transform controller = null;
 
-    public void Awake()
+    //UI text related
+    public GameObject UiText = null; //the text game object (represented by the tablet tied to the left hand controller in game)
+    private TextChange textChange = null; //script that changes UI text
+
+    public void Awake() //initialises the various variables listed above
     {
         socket = GetComponent<Socket>();
         pose = GetComponent<SteamVR_Behaviour_Pose>();
@@ -30,7 +32,8 @@ public class Hand2 : MonoBehaviour
         textChange = UiText.GetComponent<TextChange>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    //when another gameobject interacts with the controller collider, add it to the contact Interactables list
+    private void OnTriggerEnter(Collider other) 
     {
         if (other.gameObject.CompareTag("menuItem"))
         {
@@ -43,25 +46,27 @@ public class Hand2 : MonoBehaviour
         }
     }
 
-    private void AddInteractable(GameObject newObject)
+    //adds a game object's Interactable script to the list of gameobjects the controller can interact with
+    private void AddInteractable(GameObject newObject) 
     {
         Interactable newInteractable = newObject.GetComponent<Interactable>();
         contactInteractables.Add(newInteractable);
     }
 
-    private void OnTriggerExit(Collider other)
+    //when another gameobject's collider stops colliding with the controller, remove it from the contact interactables list
+    private void OnTriggerExit(Collider other) 
     {
         RemoveInteractable(other.gameObject);
-        //Debug.Log("remove interactable started");
     }
 
+    //removes a game object's interactable script from the list of game objects the controller can interact with
     private void RemoveInteractable(GameObject newObject)
     {
         Interactable existingInteractable = newObject.GetComponent<Interactable>();
         contactInteractables.Remove(existingInteractable);
-        //Debug.Log("removed interactable");
     }
 
+    //called when the trigger button on the controller is pressed, attempts to start an interaction with an object
     public void TryInteraction()
     {
         if (NearestInteraction())
@@ -71,87 +76,85 @@ public class Hand2 : MonoBehaviour
         HeldInteraction();
     }
 
+    //checks for the nearest game object and decides whether it is a menu interaction, a pick up interaction or no possible objects to interact with exist
     public bool NearestInteraction()
     {
-       // Debug.Log("NearestInteraction ran");
-        contactInteractables.Remove(socket.GetStoredObject());
-        Interactable nearestObject = Utility.GetNearestInteractable(transform.position, contactInteractables);
+        contactInteractables.Remove(socket.GetStoredObject()); //removes an object already in the hand from contact interactables list
+        Interactable nearestObject = Utility.GetNearestInteractable(transform.position, contactInteractables); //finds the nearest object to interact with (if any)
         if (nearestObject)
         {
-           // Debug.Log(nearestObject + "    " + nearestObject.gameObject.CompareTag("menuItem"));
-            if (nearestObject.gameObject.CompareTag("menuItem"))
+            if (nearestObject.gameObject.CompareTag("menuItem")) //if the nearest item is a menu item, run create menu item
             {
                 createMenuItem(nearestObject.gameObject);
-                //Debug.Log("createMenuItem started");
                 return nearestObject;
             }
-            nearestObject.StartInteraction(myHandScript);
+            nearestObject.StartInteraction(myHandScript); //calls the hand pick up function from the selected (closest) game object's interactable script
         }
-        
-        return nearestObject;
+        return nearestObject; //returns true if a nearest object exists
     }
 
+    //changes the colour of the game object in the controller's socket (if possible)
     private void HeldInteraction()
     {
-        if (!HasHeldObject())
+        if (!HasHeldObject()) //if the hand/controller is empty return
         {
             return;
         }
-        Moveable heldObject = socket.GetStoredObject();
-        heldObject.Interaction(this);
+        Moveable heldObject = socket.GetStoredObject(); //get the game object in the hand
+        heldObject.Interaction(this); //change the colour of the selected game object (from the game object's moveable script)
     }
 
+    //removes a game object from the socket of the controller
     public void StopInteraction()
     {
-        if (!HasHeldObject())
+        if (!HasHeldObject()) //if the controller socket is empty, return
         {
             return;
         }
         Moveable heldObject = socket.GetStoredObject();
-        heldObject.EndInteraction(this);
+        heldObject.EndInteraction(this); //otherwise drop the object from the game object's moveable script
     }
 
-    public void PickUp(Moveable moveable)
+    public void PickUp(Moveable moveable) //add the selected game object to the hand/controller's socket
     {
-
-        //Debug.Log("The socket is: " + socket + " and the moveable is: " + moveable);
         moveable.AttachNewSocket(socket);
     }
 
-    public Moveable Drop()
+    public Moveable Drop() //removes a game object from the controller's socket
     {
-        if (!HasHeldObject())
+        if (!HasHeldObject()) //if the controller's socket is empty, return
         {
             return null;
         }
-        Moveable detachedObject = socket.GetStoredObject();
-        detachedObject.ReleaseOldSocket();
-        Rigidbody rigidbody = detachedObject.gameObject.GetComponent<Rigidbody>();
+        Moveable detachedObject = socket.GetStoredObject(); 
+        detachedObject.ReleaseOldSocket(); //optherwise remove the object from the socket
+        //Rigidbody rigidbody = detachedObject.gameObject.GetComponent<Rigidbody>(); //sets the velocity of the detached game object (commented out so object floats gently to ground or hovers without gravity enabled)
         //rigidbody.velocity = pose.GetVelocity();
         //rigidbody.angularVelocity = pose.GetAngularVelocity();
-        return detachedObject;
+        return detachedObject; //return the freed game object
     }
 
-    public bool HasHeldObject()
+    public bool HasHeldObject() //check if the hand is already holding something
     {
         return socket.GetStoredObject();
     }
 
+
+
+
+    //spawns the relevant submenu/game object when an object in the menu is selected
     public void createMenuItem(GameObject other)
     {
-        //Debug.Log("ran menuItem");
         menuItem currentMenuItem = other.GetComponent<menuItem>();
-        if (currentMenuItem.isTopLayer)
+        if (currentMenuItem.isTopLayer) //if the item is a top level menu item, activate the relevant submenu (and remove the previous menu items from contact interactables)
         {
             removeMenuItems(contactInteractables);
-            //Debug.Log("Menu is top layer true ran");
             spawnedObject = currentMenuItem.objectToSpawn;
             menuScript.toggleMenu(spawnedObject, controller);
         }
-        else
+        else //if the item is a submenu level item, spawn the relevant game object into the controller socket
         {
             //removeMenuItems(contactInteractables);
-            //Debug.Log("top layer false ran");
             spawnedObject = currentMenuItem.objectToSpawn;
             GameObject spawnedOb = Instantiate(spawnedObject, transform.position, Quaternion.identity);
             //spawnedOb.transform.SetParent(spawnedObjects.transform, true);
@@ -161,6 +164,7 @@ public class Hand2 : MonoBehaviour
         }
     }
 
+    //when a submenu becomes hidden/the menu changes state, removes the game objects in the previous submenu from the list of contact interactables
     public void removeMenuItems(List<Interactable> list)
     {
         foreach(var item in list.ToArray())
@@ -177,6 +181,7 @@ public class Hand2 : MonoBehaviour
         contactInteractables = list;
     }
 
+    //changes the text on the in game tablet
     public void updateUIText()
     {
         textChange.updateUIText();
