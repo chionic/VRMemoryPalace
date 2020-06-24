@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//used for saving/retrieving objects from an inventory system such as the belt or shelf
 public class Slot : Interactable
 {
     private Socket socket = null;

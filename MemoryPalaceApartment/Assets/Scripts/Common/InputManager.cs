@@ -2,6 +2,7 @@
 using UnityEngine.Events;
 using Valve.VR;
 
+//This is used with steamVR to assign player actions when buttons are pressed on the controller.
 public class InputManager : MonoBehaviour
 {
 

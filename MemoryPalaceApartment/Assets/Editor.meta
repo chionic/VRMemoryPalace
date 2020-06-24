@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:MemoryPalaceApartment/Assets/Editor.meta
 guid: 50f7d0107748f604caefb74520321b71
+=======
+guid: 2f7b8b2696b16c942950ad7869e98b7a
+>>>>>>> master:MemoryPalaceApartment/Assets/PlayerPrefabs.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

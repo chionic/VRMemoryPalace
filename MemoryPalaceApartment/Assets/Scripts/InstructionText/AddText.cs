@@ -25,14 +25,14 @@ public class AddText : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+   /* void Update()
     {
         //helper function while VR headset and controllers not available -> press space to change text.
         if (Input.GetKeyDown("space"))
         {
             updateUIText();
         }
-    }
+    }*/
 
     public void updateUIText()
     {
@@ -69,7 +69,6 @@ public class AddText : MonoBehaviour
         //otherwise pick the next piece of text in the current text array
         else
         {
-            Debug.Log("change text, currentLoop: " + currentLoop.id + " arrayIndex: " + arrayIndex);
             UiText.text = currentLoop.Values[arrayIndex];
             arrayIndex++;
         }
