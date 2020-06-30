@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine.UI;
 using System.IO;
 using System;
+using UnityEditorInternal;
 
 //Creates an in game menu based on the specified json file and object folder
 [CustomEditor(typeof(CreateMenuObModel))]
@@ -16,6 +17,7 @@ public class CreateMenuObModel : EditorWindow
     public static List<GameObject> submenus; //a list of all the submenus the menu has
     static string jsonFilePath = ""; //the path to the json file
     static string jsonFileName = "menu_1"; //the name of the json file
+    static bool createObjects = true; //sets whether to create/update the menu and objects based on the imported objects
 
 
     [MenuItem("Window/MakeMenu")]
@@ -31,74 +33,59 @@ public class CreateMenuObModel : EditorWindow
         jsonFileName = EditorGUILayout.TextField("Name of JSON input file:", jsonFileName); //the name of the json file in question
         if (GUI.Button(new Rect(200, 90, 150, 30), "Select JSON input file")) //lets the user manually input where the json file is in the folder structure
             jsonFilePath = EditorUtility.OpenFolderPanel("Select base menu folder", UnityEngine.Application.dataPath, UnityEngine.Application.dataPath);
-        jsonFilePath= EditorGUILayout.TextField("Data path:", jsonFilePath); //the name of said file
+        jsonFilePath= EditorGUILayout.TextField("Path to json file:", jsonFilePath); //the name of said file
         GUILayout.Space(10);
+        createObjects = EditorGUILayout.Toggle("Create imported objects: ", createObjects);
         if (GUI.Button(new Rect(200, 130, 120, 30), "Create JSON file")) //button that when pressed executes the make menu script
+        {
             executeScript();
-
+        }
     }
 
-    void executeScript() //create the menu by first create the object prefabs, then menu prefabs and finally the menu
+    void executeScript() //create the menu by first creating the object prefabs, then menu prefabs and finally the menu
     {
         submenus = new List<GameObject>();
         menuJson jsonParameters = parseJsonFile();
+        if (jsonParameters == null) return;
+        if (!checkSize(jsonParameters)) return;
         basePath = jsonParameters.BaseFolder;
-        int i = 0;
-        GameObject top = createFinalMenu(jsonParameters.menuName);
-        foreach (submenuJson submenu in jsonParameters.Menu)
+        GameObject top = createFinalMenu(jsonParameters.menuName); //creates the top level menu game object wthat the other submenus are children of
+        foreach (submenuJson submenu in jsonParameters.Menu) //for every submenu mentionec in the json file
         {
-            foreach (objectJson objectJ in submenu.Values)
+            if (createObjects) //if game objects need to be generated
             {
-                string prefabName = obPrefab(objectJ.objectName, objectJ.objectPath, objectJ.colliderType);
-                menuPrefab(objectJ.objectName, objectJ.objectPath, prefabName);
+                foreach (objectJson objectJ in submenu.Values) //for each object mentioned in the menu json file
+                {
+                    string prefabName = obPrefab(objectJ.objectName, objectJ.objectPath, jsonParameters.assetPath, objectJ.colliderType); //create an object game object
+                    menuPrefab(objectJ.objectName, objectJ.objectPath, jsonParameters.assetPath, prefabName); //create a menu game object
+                }
             }
-            createSubmenu(submenu, top);
-            i++;
+            createSubmenu(submenu, top); //create a submenu game object under the top level menu
         }
-        createTopmenu(submenus, jsonParameters, top);
+        createTopmenu(submenus, jsonParameters, top); //create the first menu layer that the submenus can be accessed from
     }
 
-
-
-
-    [MenuItem("Examples/Execute menu items")]
-    static void EditorPlaying()
+    private static menuJson parseJsonFile() //Parse Json File
     {
-        submenus = new List<GameObject>();
-        menuJson jsonParameters = parseJsonFile();
-        Debug.Log(jsonParameters.BaseFolder + "  " + jsonParameters.isAllInOneFolder);
-        basePath = Application.dataPath + "/Resources/Imported_Models/";
-        int i = 0;
-        GameObject top = createFinalMenu(jsonParameters.menuName);
-        foreach (submenuJson submenu in jsonParameters.Menu)
+        menuJson menuObject;
+        if(File.Exists(jsonFilePath + "/" + jsonFileName + ".json"))
         {
-            foreach(objectJson objectJ in submenu.Values)
-            {
-                
-                string prefabName = obPrefab(objectJ.objectName, objectJ.objectPath, objectJ.colliderType);
-                menuPrefab(objectJ.objectName, objectJ.objectPath, prefabName);
-            }
-            createSubmenu(submenu, top);
-            Debug.Log(submenus[i]);
-            i++;
+            string jsonString = File.ReadAllText(jsonFilePath + "/" + jsonFileName + ".json");
+            menuObject = JsonUtility.FromJson<menuJson>(jsonString);
         }
-        createTopmenu(submenus, jsonParameters, top);
-        //createPrefab(top);   //creating new instance of prefab removes script references
-    }
-
-    //Parse Json File
-    private static menuJson parseJsonFile()
-    {
-        string jsonString = File.ReadAllText(jsonFilePath + "/" + jsonFileName + ".json");
-        menuJson menuObject = JsonUtility.FromJson<menuJson>(jsonString);
+        else
+        {
+            Debug.LogError("The specified json file " + jsonFileName + " was not found at the file path " + jsonFilePath);
+            return null;
+        }
         return menuObject;
     }
 
-    private static void menuPrefab(string meshName, string path, string object_prefab)
+    //creates a menu object based on an imported mesh object mentioned in the json
+    private static void menuPrefab(string meshName, string path, string assetPath, string object_prefab)
     {
         //1. navigate to mesh
-        GameObject meshToSpawn = Resources.Load("Imported_Models/" + path) as GameObject;
-        
+        GameObject meshToSpawn = (GameObject)AssetDatabase.LoadAssetAtPath(assetPath + "/" + path, typeof(GameObject));
         //2. Create object from mesh and add the relevant components
         GameObject clone = Instantiate(meshToSpawn, Vector3.zero, Quaternion.identity) as GameObject;
         clone.gameObject.tag = "menuItem";
@@ -113,22 +100,31 @@ public class CreateMenuObModel : EditorWindow
         box.center = childMesh.bounds.center;
         box.isTrigger = true;
         clone.name = "Menu_" + meshName;
+
         //3. save the created object as a menu prefab
         PrefabUtility.SaveAsPrefabAsset(clone, "Assets/Resources/Menu_prefabs/" + clone.name + ".prefab");
+
         //4. Destroy the instance of the new prefab
         DestroyImmediate(clone);
     }
 
-    private static string obPrefab(string meshName, string path, string colliderType)
+    private static string obPrefab(string meshName, string path, string assetPath, string colliderType)
     {
         //1. navigate to mesh
-        GameObject meshToSpawn = Resources.Load("Imported_Models/" + path) as GameObject;
+        GameObject meshToSpawn = (GameObject)AssetDatabase.LoadAssetAtPath(assetPath + "/" + path, typeof(GameObject));
 
         //2. Create object from mesh and add the relevant components
         GameObject clone = Instantiate(meshToSpawn, Vector3.zero, Quaternion.identity) as GameObject;
+
+        //2.5Check that the imported object mesh is of an acceptable scale (ie not bigger than a room in the house)
+        Renderer childMesh = clone.gameObject.transform.GetChild(0).GetComponent<Renderer>();
+        if(childMesh.bounds.extents.x > 0.1 || childMesh.bounds.extents.y > 0.1 || childMesh.bounds.extents.z > 0.1)
+        {
+            Debug.LogWarning("Warning: object bounds are too large to fit inside the menu for the mesh " + path + ". Rescale model to fit properly into menu.");
+        }
+        //2.
         clone.gameObject.tag = "object";
         clone.gameObject.layer = 8; //the interactable layer
-        //clone.AddComponent<Interactable>();
         clone.AddComponent<Moveable>();
         clone.AddComponent<ColorToggle>();
         Rigidbody rb = clone.AddComponent<Rigidbody>();
@@ -150,12 +146,12 @@ public class CreateMenuObModel : EditorWindow
         return temp;
     }
 
+    //creates/changes the collider around an object for best fit possible while still being autogenerated
     private static void colliderResizing(GameObject ob, string colliderType)
     {
         if(colliderType.Equals("mesh"))
         {
-            Debug.Log("mesh collider selected...");
-            //transfer to parent object, disable on child
+            //make the mesh collider convex so it can bump into other objects in unity
             MeshCollider coll = ob.gameObject.transform.GetChild(0).GetComponent<MeshCollider>();
             coll.convex = true;
         }
@@ -200,7 +196,7 @@ public class CreateMenuObModel : EditorWindow
         //name submenu
         submenuBase.name = "submenu_" + submenu.name;
         submenuBase.transform.SetParent(topMenu.transform);
-        //add menu_ prefabs to submenu
+        //add menu_ prefabs to submenu - in a circle around the submenu disk
         float radius = 0.24f;
         int i = 0;
         foreach (objectJson objectJ in submenu.Values)
@@ -216,12 +212,15 @@ public class CreateMenuObModel : EditorWindow
         submenuBase.SetActive(false);
     }
 
+    //create a new first level menu to access the submenus
     private static void createTopmenu(List<GameObject> submenus, menuJson menu, GameObject topMenu)
     {
+        //load the submenu prefab and give it a name
         GameObject sb = Resources.Load("submenu_prefab") as GameObject;
         GameObject submenuBase = Instantiate(sb, Vector3.zero, Quaternion.identity) as GameObject;
         submenuBase.name = "topLevelMenu";
         submenuBase.transform.SetParent(topMenu.transform);
+        //add menu objects to the first level menu in a circle
         int i = 0;
         int j = menu.Menu.Count;
         float radius = 0.24f;
@@ -232,6 +231,7 @@ public class CreateMenuObModel : EditorWindow
             GameObject submenuIdentifier = Resources.Load("Menu_prefabs/Menu_" + submenu.topLevelMenuRep) as GameObject;
             GameObject si = Instantiate(submenuIdentifier, pos, Quaternion.identity) as GameObject;
             si.transform.SetParent(submenuBase.transform);
+            //tie the submenu identifier to spawn the relevant submenu
             si.GetComponent<menuItem>().objectToSpawn = submenus[i];
             si.GetComponent<menuItem>().isTopLayer = true;
             i++;
@@ -239,20 +239,40 @@ public class CreateMenuObModel : EditorWindow
         submenuBase.SetActive(false);
     }
 
+    //creates the top level menu game object which the submenus are children of
     private static GameObject createFinalMenu(string name)
     {
         GameObject menu = Resources.Load("Menu_Final") as GameObject;
         GameObject menuContainer = Instantiate(menu, Vector3.zero, Quaternion.identity) as GameObject;
         menuContainer.name = "Menu_" + name;
         Menu script = menuContainer.GetComponent<Menu>();
-        Debug.Log(GameObject.Find("Controller (right)").GetComponent<Hand2>());
         script.right = GameObject.Find("Controller (right)").GetComponent<Hand2>();
         script.left = GameObject.Find("Controller (left)").GetComponent<Hand2>();
         return menuContainer;
     }
 
+    //create a prefab based on the specified gameobject in the resources folder
     private static void createPrefab(GameObject prefabToBe)
     {
         PrefabUtility.SaveAsPrefabAsset(prefabToBe, "Assets/Resources/" + prefabToBe.name + ".prefab");
+    }
+
+    //check there are less than 10 objects in any single menu layer
+    private static bool checkSize(menuJson jsonParameters)
+    {
+        if (jsonParameters.Menu.Count > 10)
+        {
+            Debug.LogError("The first level menu has more than ten objects in it. Remove excess submenu folders and regenerate the json file.");
+            return false;
+        }
+        foreach(submenuJson submenu in jsonParameters.Menu)
+        {
+            if (submenu.Values.Count > 10)
+            {
+                Debug.LogError("The submenu " + submenu.name + " has more than ten objects in it. Remove excess object model in the folder and regenerate the json file.");
+                return false;
+            }
+        }
+        return true;
     }
 }

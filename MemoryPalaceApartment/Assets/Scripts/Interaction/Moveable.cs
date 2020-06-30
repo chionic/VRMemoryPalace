@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -44,5 +45,11 @@ public class Moveable : Interactable
         activeSocket.Detach(); //remove the object from the socket
         activeSocket = null;
         isAvailable = true; //says the object is available to attach to a new socket
+    }
+
+    public Boolean hasSocket()
+    {
+        if (activeSocket == null) return false;
+        return true;
     }
 }

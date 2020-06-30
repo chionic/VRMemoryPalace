@@ -14,6 +14,7 @@ public class MenuPopup : MonoBehaviour
     {
         //initialize menu objects
         controller = gameObject.transform;
+        menu = GameObject.FindWithTag("Menu");
         menuScript = menu.GetComponent<Menu>();
     }
 

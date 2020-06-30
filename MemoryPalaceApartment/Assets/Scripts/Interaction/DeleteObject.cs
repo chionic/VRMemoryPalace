@@ -28,9 +28,13 @@ public class DeleteObject : MonoBehaviour
             else if (other.gameObject.CompareTag("object") || other.gameObject.CompareTag("coin") ||
             other.gameObject.CompareTag("smilingFace") || other.gameObject.CompareTag("topHat"))
             {
-                //destroy it all!!!
-                Destroy(other.gameObject);
-                Debug.Log("Destroy ran");
+                if (other.gameObject.GetComponent<Moveable>().hasSocket()) //only deletes objects if they are in the players hands (or attached to another socket)
+                {
+                    //destroy it all!!!
+                    Destroy(other.gameObject);
+                    Debug.Log("Destroy ran");
+                }
+                
             }
         }
 

@@ -23,6 +23,7 @@ public class Hand2 : MonoBehaviour
 
     public void Awake() //initialises the various variables listed above
     {
+        menu = GameObject.FindWithTag("Menu");
         socket = GetComponent<Socket>();
         pose = GetComponent<SteamVR_Behaviour_Pose>();
         myHandScript = this;

@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class menuJson
 {
-    public bool isAllInOneFolder;
+    public string assetPath;
     public string BaseFolder;
     public string menuName;
     public List<submenuJson> Menu;

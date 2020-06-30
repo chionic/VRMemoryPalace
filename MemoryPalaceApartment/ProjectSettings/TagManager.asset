@@ -10,6 +10,7 @@ TagManager:
   - coin
   - object
   - sun
+  - Menu
   layers:
   - Default
   - TransparentFX

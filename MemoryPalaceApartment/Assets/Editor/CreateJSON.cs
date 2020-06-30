@@ -18,10 +18,6 @@ public class CreateJSON : EditorWindow
 
     string outputFileName = "Menu_1";
     string bp = "";
-    string defaultCollider = "box";
-    bool groupEnabled;
-    bool myBool = true;
-    int myInt = 2;
     static colliderTypes ct;
     
 
@@ -40,55 +36,27 @@ public class CreateJSON : EditorWindow
         GUILayout.Space(10);
         if (GUI.Button(new Rect(200, 90, 120, 30), "Select Path"))
             bp = EditorUtility.OpenFolderPanel("Select base menu folder", UnityEngine.Application.dataPath, UnityEngine.Application.dataPath + "/Resources/Imported_Models/");
-        bp = EditorGUILayout.TextField("Data path:", bp);
+        bp = EditorGUILayout.TextField("Path to Imported Models: ", bp);
         GUILayout.Space(40);
-        groupEnabled = EditorGUILayout.BeginToggleGroup("Optional Settings", groupEnabled);
         GUILayout.Space(10);
-        myBool = EditorGUILayout.Toggle("Is all in one folder", myBool);
-        GUILayout.Space(10);
-        myInt = EditorGUILayout.IntSlider("Number of menu layers: ", myInt, 0, 5);
         ct = (colliderTypes)EditorGUILayout.EnumPopup("Default collider type: ", ct);
-        EditorGUILayout.EndToggleGroup();
         GUILayout.Space(10);
         if (GUI.Button(new Rect(200, 300, 120, 30), "Create JSON file"))
             executeScript();
-        
-
     }
     void executeScript()
     {
         countID = 0;
         menuJ = new menuJson(); //creates a new menuJson script
-        //basePath = UnityEngine.Application.dataPath + "/Resources/Imported_Models/";
-        Debug.Log(UnityEngine.Application.dataPath + "/Resources/Imported_Models/");
         Debug.Log(bp);
         basePath = bp + "/";
+        String assetPath = "";
+        if(bp.Contains("Assets/")) { assetPath = bp.Substring(bp.IndexOf("Assets/")); }
+        else { Debug.Log("Error, invalid filepath, path is not inside unity project folder"); return; }
+        menuJ.assetPath = assetPath;
         string[] files = Directory.GetFiles(basePath); //gets the files in the folder where the menu system is
-        menuJ.isAllInOneFolder = true; //sets default parameters for the menuJson
         menuJ.BaseFolder = basePath;
         menuJ.menuName = outputFileName;
-        menuJ.Menu = new List<submenuJson>();
-        foreach (string file in files)
-        {
-            String fileName = Path.GetFileName(file);
-            if (isMeta(fileName)) fileName = fileName.Replace(".meta", ""); ;
-            Debug.Log(fileName);
-            submenuJson submenu = makeSubmenu(fileName);
-            menuJ.Menu.Add(submenu);
-        }
-        WriteString(menuJ, menuJ.menuName); //turns the menuJson to a string and writes it to a file
-    }
-
-    [MenuItem("Examples/Create JSON")] //Runs the default script to create the json file
-    static void EditorPlaying()
-    {
-        countID = 0;
-        menuJ = new menuJson(); //creates a new menuJson script
-        basePath = UnityEngine.Application.dataPath + "/Resources/Imported_Models/";
-        string[] files = Directory.GetFiles(basePath); //gets the files in the folder where the menu system is
-        menuJ.isAllInOneFolder = true; //sets default parameters for the menuJson
-        menuJ.BaseFolder = basePath;
-        menuJ.menuName = "menu1";
         menuJ.Menu = new List<submenuJson>();
         foreach (string file in files)
         {
@@ -136,9 +104,9 @@ public class CreateJSON : EditorWindow
     static objectJson makeObject(String ob, String folderName)
     {
         objectJson obJ = new objectJson();
+        obJ.objectPath = folderName + "/" + ob;
         ob = removeFileEnding(ob);
         obJ.objectName = ob;
-        obJ.objectPath = folderName + "/" + ob;
         obJ.defaultSize = 1;
         obJ.colliderType = ct.ToString(); //default collider type box
         return obJ;
@@ -172,11 +140,11 @@ public class CreateJSON : EditorWindow
         return s;
     }
 
+    //writes the data structure to a json file to be used later
     static void WriteString(menuJson menu, string fileName)
     {
         string path = "Assets/JSON_Files/" + fileName + ".json";
         string jsonMenu = JsonUtility.ToJson(menuJ);
-        //Write some text to the test.txt file
         StreamWriter writer = new StreamWriter(path, true);
         writer.WriteLine(jsonMenu);
         writer.Close();
@@ -188,4 +156,4 @@ public class CreateJSON : EditorWindow
 
 }
 
-public enum colliderTypes{ mesh, box, sphere, capsule};
+public enum colliderTypes{ box, mesh, sphere, capsule};

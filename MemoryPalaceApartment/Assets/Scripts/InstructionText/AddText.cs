@@ -86,7 +86,7 @@ public class AddText : MonoBehaviour
                 currentLoop = textloop;
                 return; //and returns the function
             }
-            else if(textloop.id == temp) //if the next one in the set run order is never reached, pisks the next one based on a random number
+            else if(textloop.id == temp) //if the next one in the set run order is never reached, picks the next one based on a random number
             {
                 currentLoop = textloop;
             }
