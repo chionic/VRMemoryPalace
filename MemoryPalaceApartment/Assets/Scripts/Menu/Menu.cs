@@ -10,7 +10,7 @@ public class Menu : MonoBehaviour
 
     public Hand2 right = null;
     public Hand2 left = null;
-
+    GameObject topSubmenu;
     //List of submenus
     public List<GameObject> subMenus = new List<GameObject>(); //List of submenus
     Transform menuTransform = null; //where the menu object is in space (transform)
@@ -22,8 +22,10 @@ public class Menu : MonoBehaviour
         foreach (Transform child in menuTransform) //adds all the submenu gameobjects to a list
         {
             subMenus.Add(child.gameObject);
+            Debug.Log(child.gameObject.name);
+            
         }
-
+        topSubmenu = this.transform.Find("topLevelMenu").gameObject;
     }
 
     //Toggle menu layer - reads in the selected submenu and where the vontroller is in space
@@ -31,8 +33,8 @@ public class Menu : MonoBehaviour
     {
         if (currentState == 0) //0=hidden
         {
-            subMenus[0].SetActive(true); //sets the first submenu ("top menu") to active
-            currentlyActive = subMenus[0];
+            topSubmenu.SetActive(true); //sets the first submenu ("top menu") to active
+            currentlyActive = topSubmenu;
             //moves the active submenu to where the players controller is and rotates it to face the player
             currentlyActive.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y, controller.transform.position.z);
             currentlyActive.transform.rotation = Quaternion.Euler(new Vector3(currentlyActive.transform.rotation.eulerAngles.x, controller.transform.rotation.eulerAngles.y, currentlyActive.transform.rotation.eulerAngles.z));

@@ -154,11 +154,11 @@ public class Hand2 : MonoBehaviour
         }
         else //if the item is a submenu level item, spawn the relevant game object into the controller socket
         {
-            
+
             //removeMenuItems(contactInteractables);
             //spawnedObject = currentMenuItem.objectToSpawn;
-            //Resources.Load(currentMenuItem.findObject) as GameObject
-            GameObject spawnedOb = Instantiate(currentMenuItem.objectToSpawn, transform.position, Quaternion.identity);
+            GameObject object1 = Resources.Load("Object_prefabs/" + currentMenuItem.findObject) as GameObject;
+            GameObject spawnedOb = Instantiate(object1, transform.position, Quaternion.identity);
             //spawnedOb.transform.SetParent(this.transform, true);
             Moveable moveScript = spawnedOb.gameObject.GetComponent<Moveable>();
             PickUp(moveScript);

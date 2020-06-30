@@ -8,8 +8,6 @@ using UnityEditor.VersionControl;
 using System.Text.RegularExpressions;
 
 //creates a JSON file based on the folder structure given
-
-    //to do tomorrow: separate out into two scripts, get a button that runs the second script with the specified parameters
 [CustomEditor(typeof(CreateMenuObModel))]
 [CanEditMultipleObjects]
 public class CreateJSON : EditorWindow
@@ -20,9 +18,12 @@ public class CreateJSON : EditorWindow
 
     string outputFileName = "Menu_1";
     string bp = "";
+    string defaultCollider = "box";
     bool groupEnabled;
     bool myBool = true;
-    float myInt = 2;
+    int myInt = 2;
+    static colliderTypes ct;
+    
 
     [MenuItem("Window/CreateJSON")]
     public static void ShowWindow()
@@ -45,7 +46,8 @@ public class CreateJSON : EditorWindow
         GUILayout.Space(10);
         myBool = EditorGUILayout.Toggle("Is all in one folder", myBool);
         GUILayout.Space(10);
-        myInt = EditorGUILayout.Slider("Number of menu layers", myInt, 0, 5);
+        myInt = EditorGUILayout.IntSlider("Number of menu layers: ", myInt, 0, 5);
+        ct = (colliderTypes)EditorGUILayout.EnumPopup("Default collider type: ", ct);
         EditorGUILayout.EndToggleGroup();
         GUILayout.Space(10);
         if (GUI.Button(new Rect(200, 300, 120, 30), "Create JSON file"))
@@ -76,7 +78,8 @@ public class CreateJSON : EditorWindow
         }
         WriteString(menuJ, menuJ.menuName); //turns the menuJson to a string and writes it to a file
     }
-    [MenuItem("Examples/Create JSON")] //Runs the script to create the json file
+
+    [MenuItem("Examples/Create JSON")] //Runs the default script to create the json file
     static void EditorPlaying()
     {
         countID = 0;
@@ -108,7 +111,7 @@ public class CreateJSON : EditorWindow
         submenu.isSubmenu = true;
         submenu.Values = new List<objectJson>();
         string[] assets = Directory.GetFiles(basePath + folderName);
-        submenu.topLevelMenuRep = Path.GetFileName(assets[0]);
+        submenu.topLevelMenuRep = Path.GetFileName(removeFileEnding(assets[0]));
         foreach (String asset in assets) //creates a new objectJson object for every item in the folder that is not a meta file, material or png file
         {
             if (isMtl(Path.GetFileName(asset)))
@@ -137,7 +140,7 @@ public class CreateJSON : EditorWindow
         obJ.objectName = ob;
         obJ.objectPath = folderName + "/" + ob;
         obJ.defaultSize = 1;
-        obJ.colliderType = "box"; //default collider type box
+        obJ.colliderType = ct.ToString(); //default collider type box
         return obJ;
     }
 
@@ -184,3 +187,5 @@ public class CreateJSON : EditorWindow
     }
 
 }
+
+public enum colliderTypes{ mesh, box, sphere, capsule};

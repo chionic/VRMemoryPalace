@@ -6,27 +6,66 @@ using UnityEngine.UI;
 using System.IO;
 using System;
 
-//1. Navigate to folder with all the assets
-//2. For each asset in the folder, create a menu prefab object and save it to the menu folder
-//3. For each asset in the folder, create an object prefab and save it to the menu folder
-
-//Later: allow this to be done through a json file with the ability to specify certain features
-
+//Creates an in game menu based on the specified json file and object folder
 [CustomEditor(typeof(CreateMenuObModel))]
 [CanEditMultipleObjects]
-public class CreateMenuObModel : Editor
+public class CreateMenuObModel : EditorWindow
 {
-    public static string basePath;
-    public static GameObject prefab_menu;
-    public static List<GameObject> submenus;
+    public static string basePath; //the path to the top level menu folder
+    public static GameObject prefab_menu; //the prefab for the menu (a gameobject with a transform and menu script attached)
+    public static List<GameObject> submenus; //a list of all the submenus the menu has
+    static string jsonFilePath = ""; //the path to the json file
+    static string jsonFileName = "menu_1"; //the name of the json file
+
+
+    [MenuItem("Window/MakeMenu")]
+    public static void ShowWindow() //create a unity editor window that can be accessed from the windows tab
+    {
+        EditorWindow.GetWindow(typeof(CreateMenuObModel));
+    }
+
+    void OnGUI() //how the editor window looks
+    {
+        GUILayout.Label("Base Settings", EditorStyles.boldLabel); //defines the settings for running the script
+        GUILayout.Space(10);
+        jsonFileName = EditorGUILayout.TextField("Name of JSON input file:", jsonFileName); //the name of the json file in question
+        if (GUI.Button(new Rect(200, 90, 150, 30), "Select JSON input file")) //lets the user manually input where the json file is in the folder structure
+            jsonFilePath = EditorUtility.OpenFolderPanel("Select base menu folder", UnityEngine.Application.dataPath, UnityEngine.Application.dataPath);
+        jsonFilePath= EditorGUILayout.TextField("Data path:", jsonFilePath); //the name of said file
+        GUILayout.Space(10);
+        if (GUI.Button(new Rect(200, 130, 120, 30), "Create JSON file")) //button that when pressed executes the make menu script
+            executeScript();
+
+    }
+
+    void executeScript() //create the menu by first create the object prefabs, then menu prefabs and finally the menu
+    {
+        submenus = new List<GameObject>();
+        menuJson jsonParameters = parseJsonFile();
+        basePath = jsonParameters.BaseFolder;
+        int i = 0;
+        GameObject top = createFinalMenu(jsonParameters.menuName);
+        foreach (submenuJson submenu in jsonParameters.Menu)
+        {
+            foreach (objectJson objectJ in submenu.Values)
+            {
+                string prefabName = obPrefab(objectJ.objectName, objectJ.objectPath, objectJ.colliderType);
+                menuPrefab(objectJ.objectName, objectJ.objectPath, prefabName);
+            }
+            createSubmenu(submenu, top);
+            i++;
+        }
+        createTopmenu(submenus, jsonParameters, top);
+    }
+
+
+
 
     [MenuItem("Examples/Execute menu items")]
     static void EditorPlaying()
     {
         submenus = new List<GameObject>();
         menuJson jsonParameters = parseJsonFile();
-        //EditorApplication.ExecuteMenuItem("GameObject/3D Object/Cube");
-        //EditorApplication.ExecuteMenuItem("GameObject/Create Empty");
         Debug.Log(jsonParameters.BaseFolder + "  " + jsonParameters.isAllInOneFolder);
         basePath = Application.dataPath + "/Resources/Imported_Models/";
         int i = 0;
@@ -50,7 +89,7 @@ public class CreateMenuObModel : Editor
     //Parse Json File
     private static menuJson parseJsonFile()
     {
-        string jsonString = File.ReadAllText(Application.dataPath + "/JSON_Files/sampleMenu");
+        string jsonString = File.ReadAllText(jsonFilePath + "/" + jsonFileName + ".json");
         menuJson menuObject = JsonUtility.FromJson<menuJson>(jsonString);
         return menuObject;
     }
@@ -89,7 +128,7 @@ public class CreateMenuObModel : Editor
         GameObject clone = Instantiate(meshToSpawn, Vector3.zero, Quaternion.identity) as GameObject;
         clone.gameObject.tag = "object";
         clone.gameObject.layer = 8; //the interactable layer
-        clone.AddComponent<Interactable>();
+        //clone.AddComponent<Interactable>();
         clone.AddComponent<Moveable>();
         clone.AddComponent<ColorToggle>();
         Rigidbody rb = clone.AddComponent<Rigidbody>();
@@ -206,6 +245,7 @@ public class CreateMenuObModel : Editor
         GameObject menuContainer = Instantiate(menu, Vector3.zero, Quaternion.identity) as GameObject;
         menuContainer.name = "Menu_" + name;
         Menu script = menuContainer.GetComponent<Menu>();
+        Debug.Log(GameObject.Find("Controller (right)").GetComponent<Hand2>());
         script.right = GameObject.Find("Controller (right)").GetComponent<Hand2>();
         script.left = GameObject.Find("Controller (left)").GetComponent<Hand2>();
         return menuContainer;
