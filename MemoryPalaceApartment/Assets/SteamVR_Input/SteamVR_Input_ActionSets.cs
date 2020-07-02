@@ -17,7 +17,7 @@ namespace Valve.VR
     public partial class SteamVR_Actions
     {
         
-        private static SteamVR_Input_ActionSet_default p__default;
+        private static SteamVR_Input_ActionSet_Default p_Default;
         
         private static SteamVR_Input_ActionSet_platformer p_platformer;
         
@@ -25,11 +25,11 @@ namespace Valve.VR
         
         private static SteamVR_Input_ActionSet_mixedreality p_mixedreality;
         
-        public static SteamVR_Input_ActionSet_default _default
+        public static SteamVR_Input_ActionSet_Default Default
         {
             get
             {
-                return SteamVR_Actions.p__default.GetCopy<SteamVR_Input_ActionSet_default>();
+                return SteamVR_Actions.p_Default.GetCopy<SteamVR_Input_ActionSet_Default>();
             }
         }
         
@@ -59,12 +59,12 @@ namespace Valve.VR
         
         private static void StartPreInitActionSets()
         {
-            SteamVR_Actions.p__default = ((SteamVR_Input_ActionSet_default)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_default>("/actions/default")));
+            SteamVR_Actions.p_Default = ((SteamVR_Input_ActionSet_Default)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_Default>("/actions/Default")));
             SteamVR_Actions.p_platformer = ((SteamVR_Input_ActionSet_platformer)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_platformer>("/actions/platformer")));
             SteamVR_Actions.p_buggy = ((SteamVR_Input_ActionSet_buggy)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_buggy>("/actions/buggy")));
             SteamVR_Actions.p_mixedreality = ((SteamVR_Input_ActionSet_mixedreality)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_mixedreality>("/actions/mixedreality")));
             Valve.VR.SteamVR_Input.actionSets = new Valve.VR.SteamVR_ActionSet[] {
-                    SteamVR_Actions._default,
+                    SteamVR_Actions.Default,
                     SteamVR_Actions.platformer,
                     SteamVR_Actions.buggy,
                     SteamVR_Actions.mixedreality};

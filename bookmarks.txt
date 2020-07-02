@@ -8,7 +8,7 @@ https://gitlab.cs.nuim.ie/barak/cs424-f2019
 
 4th Year Project
 --------------------
-The things you're supposed to reference all the time idiot:
+The things you're supposed to reference:
 Building a memory palace in minutes: Equivalent memory performance using virtual versus conventional environments with the Method of Loci
 https://www.sciencedirect.com/science/article/pii/S000169181200145X?via%3Dihub
 

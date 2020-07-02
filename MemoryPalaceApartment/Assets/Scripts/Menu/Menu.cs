@@ -21,9 +21,7 @@ public class Menu : MonoBehaviour
         menuTransform = gameObject.transform; //lets the menu transform be the current gameobject
         foreach (Transform child in menuTransform) //adds all the submenu gameobjects to a list
         {
-            subMenus.Add(child.gameObject);
-            Debug.Log(child.gameObject.name);
-            
+            subMenus.Add(child.gameObject);            
         }
         topSubmenu = this.transform.Find("topLevelMenu").gameObject;
     }

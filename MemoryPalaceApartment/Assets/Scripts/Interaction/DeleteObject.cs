@@ -5,11 +5,12 @@ using UnityEngine;
 //Deletes a game object when it hits the collider of a gameobject this script is attached to.
 public class DeleteObject : MonoBehaviour
 {
-    public GameObject menu1 = null;
+    private GameObject menu1 = null;
     private Menu menuScript1 = null;
 
     void Awake()
     {
+        menu1 = GameObject.FindGameObjectWithTag("Menu");
         menuScript1 = menu1.GetComponent<Menu>();
         Debug.Log("The menu is: " + menu1 + " and the script is: " + menuScript1);
     }
@@ -17,7 +18,6 @@ public class DeleteObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("trigger ran");
         if(menuScript1.getState() == 0)
         {
             if(other.gameObject == null)
@@ -32,7 +32,6 @@ public class DeleteObject : MonoBehaviour
                 {
                     //destroy it all!!!
                     Destroy(other.gameObject);
-                    Debug.Log("Destroy ran");
                 }
                 
             }

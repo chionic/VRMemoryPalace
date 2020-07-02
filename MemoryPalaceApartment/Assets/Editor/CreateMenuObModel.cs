@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System.IO;
 using System;
 using UnityEditorInternal;
+using Valve.VR.InteractionSystem;
 
 //Creates an in game menu based on the specified json file and object folder
 [CustomEditor(typeof(CreateMenuObModel))]
@@ -127,6 +128,7 @@ public class CreateMenuObModel : EditorWindow
         clone.gameObject.layer = 8; //the interactable layer
         clone.AddComponent<Moveable>();
         clone.AddComponent<ColorToggle>();
+        clone.AddComponent<NoTeleportWhileObjectHeld>();
         Rigidbody rb = clone.AddComponent<Rigidbody>();
         rb.useGravity = false;
         rb.mass = 1;

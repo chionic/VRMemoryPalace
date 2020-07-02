@@ -14,7 +14,7 @@ namespace Valve.VR
     using UnityEngine;
     
     
-    public class SteamVR_Input_ActionSet_default : Valve.VR.SteamVR_ActionSet
+    public class SteamVR_Input_ActionSet_Default : Valve.VR.SteamVR_ActionSet
     {
         
         public virtual SteamVR_Action_Boolean InteractUI
@@ -110,6 +110,22 @@ namespace Valve.VR
             get
             {
                 return SteamVR_Actions.default_PressMenuButton;
+            }
+        }
+        
+        public virtual SteamVR_Action_Single TouchpadLeft
+        {
+            get
+            {
+                return SteamVR_Actions.default_TouchpadLeft;
+            }
+        }
+        
+        public virtual SteamVR_Action_Single TouchpadRight
+        {
+            get
+            {
+                return SteamVR_Actions.default_TouchpadRight;
             }
         }
         

@@ -189,4 +189,28 @@ public class Hand2 : MonoBehaviour
     {
         textChange.updateUIText();
     }
+
+    public void growSize()
+    {
+        if (socket.GetStoredObject())
+        {
+            resizeObject script = socket.GetStoredObject().gameObject.GetComponent<resizeObject>();
+            if (script != null)
+            {
+                script.grow();
+            }
+        }
+    }
+
+    public void shrinkSize()
+    {
+        if (socket.GetStoredObject())
+        {
+            resizeObject script = socket.GetStoredObject().gameObject.GetComponent<resizeObject>();
+            if (script != null)
+            {
+                script.shrink();
+            }
+        }
+    }
 }

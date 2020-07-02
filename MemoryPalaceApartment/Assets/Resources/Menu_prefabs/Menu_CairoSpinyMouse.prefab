@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1043761664348731604
+--- !u!1 &3530879056325595068
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1742389839172732343}
-  - component: {fileID: 3443727079146349885}
-  - component: {fileID: 1016787937439117044}
+  - component: {fileID: 5537330005549002963}
+  - component: {fileID: 6949845220624905845}
+  - component: {fileID: 826807134180248481}
   m_Layer: 0
   m_Name: CairoSpinyMouse_Mesh
   m_TagString: Untagged
@@ -18,35 +18,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1742389839172732343
+--- !u!4 &5537330005549002963
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043761664348731604}
+  m_GameObject: {fileID: 3530879056325595068}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6975936804420529658}
+  m_Father: {fileID: 3689337195997939809}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3443727079146349885
+--- !u!33 &6949845220624905845
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043761664348731604}
+  m_GameObject: {fileID: 3530879056325595068}
   m_Mesh: {fileID: -3140088557390518686, guid: 8a1dc761b6bbb7949b9e4ee96ece3da5, type: 3}
---- !u!23 &1016787937439117044
+--- !u!23 &826807134180248481
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043761664348731604}
+  m_GameObject: {fileID: 3530879056325595068}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &2849862314957372841
+--- !u!1 &8840325966646888329
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,10 +86,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6975936804420529658}
-  - component: {fileID: 122875788549262410}
-  - component: {fileID: 8297410780941045831}
-  - component: {fileID: 7834750435687856643}
+  - component: {fileID: 3689337195997939809}
+  - component: {fileID: 258517065975134738}
+  - component: {fileID: 8615015767720863074}
+  - component: {fileID: 8736309240827080104}
   m_Layer: 8
   m_Name: Menu_CairoSpinyMouse
   m_TagString: menuItem
@@ -97,40 +97,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6975936804420529658
+--- !u!4 &3689337195997939809
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2849862314957372841}
+  m_GameObject: {fileID: 8840325966646888329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1742389839172732343}
+  - {fileID: 5537330005549002963}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &122875788549262410
+--- !u!114 &258517065975134738
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2849862314957372841}
+  m_GameObject: {fileID: 8840325966646888329}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d0204da8a5009a4baeed57872e837ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8297410780941045831
+--- !u!114 &8615015767720863074
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2849862314957372841}
+  m_GameObject: {fileID: 8840325966646888329}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84842ac3adf51e44da8f05be313feb3c, type: 3}
@@ -139,13 +139,13 @@ MonoBehaviour:
   isTopLayer: 0
   objectToSpawn: {fileID: 0}
   findObject: Ob_CairoSpinyMouse
---- !u!65 &7834750435687856643
+--- !u!65 &8736309240827080104
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2849862314957372841}
+  m_GameObject: {fileID: 8840325966646888329}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
