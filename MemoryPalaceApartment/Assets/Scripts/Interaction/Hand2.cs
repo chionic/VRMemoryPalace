@@ -21,6 +21,9 @@ public class Hand2 : MonoBehaviour
     public GameObject UiText = null; //the text game object (represented by the tablet tied to the left hand controller in game)
     private AddText textChange = null; //script that changes UI text
 
+    protected static bool leftDown;
+    protected static bool rightDown;
+
     public void Awake() //initialises the various variables listed above
     {
         menu = GameObject.FindWithTag("Menu");
@@ -190,6 +193,12 @@ public class Hand2 : MonoBehaviour
         textChange.updateUIText();
     }
 
+    public void Update()
+    {
+        if (leftDown) { growSize(); }
+        if (rightDown) { shrinkSize(); }
+    }
+
     public void growSize()
     {
         if (socket.GetStoredObject())
@@ -204,13 +213,36 @@ public class Hand2 : MonoBehaviour
 
     public void shrinkSize()
     {
+
         if (socket.GetStoredObject())
         {
             resizeObject script = socket.GetStoredObject().gameObject.GetComponent<resizeObject>();
             if (script != null)
             {
                 script.shrink();
+
             }
         }
+    }
+
+    //changes booleans to true/false that will continously call the grow/shrink function when the button is pressed
+    public void leftDownTrue()
+    {
+        leftDown = true;
+    }
+
+    public void leftDownFalse()
+    {
+        leftDown = false;
+    }
+
+    public void rightDownTrue()
+    {
+        rightDown = true;
+    }
+
+    public void rightDownFalse()
+    {
+        rightDown = false;
     }
 }

@@ -1,0 +1,299 @@
+{
+  "assetPath": "Assets/Menu_2",
+  "BaseFolder": "C:/Users/Linda/Documents/Summer2020/memorypalacevr/MemoryPalaceApartment/Assets/Menu_2/",
+  "menuName": "WhenYouAreOld",
+  "Menu": [
+    {
+      "name": "Animals",
+      "id": 0,
+      "isSubmenu": true,
+      "topLevelMenuRep": "caterpiller",
+      "Values": [
+        {
+          "objectName": "caterpiller",
+          "objectPath": "Animals/caterpiller.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "NOVELO_SHEEP",
+          "objectPath": "Animals/NOVELO_SHEEP.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "NOVELO_TURTLE",
+          "objectPath": "Animals/NOVELO_TURTLE.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "PUSHILIN_butterfly",
+          "objectPath": "Animals/PUSHILIN_butterfly.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "sloth",
+          "objectPath": "Animals/sloth.fbx",
+          "defaultSize": 1,
+          "colliderType": "box"
+        }
+      ]
+    },
+    {
+      "name": "Manmade",
+      "id": 1,
+      "isSubmenu": true,
+      "topLevelMenuRep": "1913211148",
+      "Values": [
+        {
+          "objectName": "1913211148",
+          "objectPath": "Manmade/1913211148.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "515 Mirror",
+          "objectPath": "Manmade/515 Mirror.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "Analog_Clock_01",
+          "objectPath": "Manmade/Analog_Clock_01.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "CHAHIN_ARROW",
+          "objectPath": "Manmade/CHAHIN_ARROW.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "CHAHIN_NOTEBOOK",
+          "objectPath": "Manmade/CHAHIN_NOTEBOOK.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "chocolate",
+          "objectPath": "Manmade/chocolate.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "Magnifying glass",
+          "objectPath": "Manmade/Magnifying glass.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "Martini_01",
+          "objectPath": "Manmade/Martini_01.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "pillow",
+          "objectPath": "Manmade/pillow.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "soap",
+          "objectPath": "Manmade/soap.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        }
+      ]
+    },
+    {
+      "name": "Nature",
+      "id": 3,
+      "isSubmenu": true,
+      "topLevelMenuRep": "bent_tree",
+      "Values": [
+        {
+          "objectName": "bent_tree",
+          "objectPath": "Nature/bent_tree.fbx",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "cloud_02",
+          "objectPath": "Nature/cloud_02.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "Mountain_01",
+          "objectPath": "Nature/Mountain_01.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "PUSHILIN_campfire",
+          "objectPath": "Nature/PUSHILIN_campfire.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "rock_02",
+          "objectPath": "Nature/rock_02.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "star",
+          "objectPath": "Nature/star.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "tree",
+          "objectPath": "Nature/tree.fbx",
+          "defaultSize": 1,
+          "colliderType": "box"
+        }
+      ]
+    },
+    {
+      "name": "Person",
+      "id": 4,
+      "isSubmenu": true,
+      "topLevelMenuRep": "11554_pilgrim_female_V2_L2",
+      "Values": [
+        {
+          "objectName": "11554_pilgrim_female_V2_L2",
+          "objectPath": "Person/11554_pilgrim_female_V2_L2.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "12148_angel_horn_v1_L2",
+          "objectPath": "Person/12148_angel_horn_v1_L2.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "Assassin",
+          "objectPath": "Person/Assassin.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "beardFace",
+          "objectPath": "Person/beardFace.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "Beard_01",
+          "objectPath": "Person/Beard_01.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "NOVELO_CATEYE",
+          "objectPath": "Person/NOVELO_CATEYE.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "pope3",
+          "objectPath": "Person/pope3.fbx",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "Sneakers",
+          "objectPath": "Person/Sneakers.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "Sunglasses",
+          "objectPath": "Person/Sunglasses.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "Walking_Stick",
+          "objectPath": "Person/Walking_Stick.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        }
+      ]
+    },
+    {
+      "name": "Symbol",
+      "id": 5,
+      "isSubmenu": true,
+      "topLevelMenuRep": "arrow",
+      "Values": [
+        {
+          "objectName": "arrow",
+          "objectPath": "Symbol/arrow.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "bubble",
+          "objectPath": "Symbol/bubble.fbx",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "Gold",
+          "objectPath": "Symbol/Gold.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "Halo_01(1)",
+          "objectPath": "Symbol/Halo_01(1).obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "Heart",
+          "objectPath": "Symbol/Heart.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "heartbroken2",
+          "objectPath": "Symbol/heartbroken2.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "thoughtBubble",
+          "objectPath": "Symbol/thoughtBubble.fbx",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "tinker",
+          "objectPath": "Symbol/tinker.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "X",
+          "objectPath": "Symbol/X.obj",
+          "defaultSize": 1,
+          "colliderType": "box"
+        },
+        {
+          "objectName": "z",
+          "objectPath": "Symbol/z.fbx",
+          "defaultSize": 1,
+          "colliderType": "box"
+        }
+      ]
+    }
+  ]
+}

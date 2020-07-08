@@ -97,9 +97,16 @@ public class CreateMenuObModel : EditorWindow
         clone.GetComponent<menuItem>().isTopLayer = false;
         BoxCollider box = clone.AddComponent<BoxCollider>();
         box.size = new Vector3(0.075f, 0.075f, 0.2f);
-        Renderer childMesh = clone.gameObject.transform.GetChild(0).GetComponent<Renderer>();
-        box.center = childMesh.bounds.center;
-        box.isTrigger = true;
+        if(clone.gameObject.transform.childCount > 0)
+        {
+            Renderer childMesh = clone.gameObject.transform.GetChild(0).GetComponent<Renderer>();
+            if (childMesh != null)
+            {
+                box.center = childMesh.bounds.center;
+            }
+            else { Debug.LogWarning("The menu object " + clone.name + " has no mesh renderer, manually center the collider for the object."); }
+            box.isTrigger = true;
+        }
         clone.name = "Menu_" + meshName;
 
         //3. save the created object as a menu prefab
@@ -118,11 +125,21 @@ public class CreateMenuObModel : EditorWindow
         GameObject clone = Instantiate(meshToSpawn, Vector3.zero, Quaternion.identity) as GameObject;
 
         //2.5Check that the imported object mesh is of an acceptable scale (ie not bigger than a room in the house)
-        Renderer childMesh = clone.gameObject.transform.GetChild(0).GetComponent<Renderer>();
-        if(childMesh.bounds.extents.x > 0.1 || childMesh.bounds.extents.y > 0.1 || childMesh.bounds.extents.z > 0.1)
+        if(clone.gameObject.transform.childCount > 0)
         {
-            Debug.LogWarning("Warning: object bounds are too large to fit inside the menu for the mesh " + path + ". Rescale model to fit properly into menu.");
+            Renderer childMesh = clone.gameObject.transform.GetChild(0).GetComponent<Renderer>();
+            if (childMesh != null)
+            {
+                if (childMesh.bounds.extents.x > 0.1 || childMesh.bounds.extents.y > 0.1 || childMesh.bounds.extents.z > 0.1)
+                {
+                    Debug.LogWarning("Warning: object bounds are too large to fit inside the menu for the mesh " + path + ". Rescale model to fit properly into menu.");
+                }
+                //3. Resize the object and the collider
+                colliderResizing(clone, colliderType);
+            }
+            else { Debug.LogWarning("The game object " + clone.name + " does not have a renderer attached to it, manually add a collider to the object."); }
         }
+        
         //2.
         clone.gameObject.tag = "object";
         clone.gameObject.layer = 8; //the interactable layer
@@ -130,13 +147,11 @@ public class CreateMenuObModel : EditorWindow
         clone.AddComponent<ColorToggle>();
         clone.AddComponent<NoTeleportWhileObjectHeld>();
         Rigidbody rb = clone.AddComponent<Rigidbody>();
+        clone.AddComponent<resizeObject>();
         rb.useGravity = false;
         rb.mass = 1;
         rb.drag = 10;
         rb.angularDrag = 10;
-
-        //3. Resize the object and the collider
-        colliderResizing(clone, colliderType);
 
         //4. save the created object as a menu prefab
         clone.name = "Ob_" + meshName;
@@ -176,13 +191,13 @@ public class CreateMenuObModel : EditorWindow
             else if (colliderType.Equals("sphere"))
             {
                 SphereCollider sphere = ob.AddComponent<SphereCollider>();
-                sphere.radius = childMesh.bounds.extents.magnitude/2;
+                sphere.radius = childMesh.bounds.extents.magnitude/2 - (childMesh.bounds.extents.magnitude / 20);
                 sphere.center = childMesh.bounds.center;
             }
             else
             {
                 BoxCollider box = ob.AddComponent<BoxCollider>();
-                box.size = childMesh.bounds.extents * 2;
+                box.size = childMesh.bounds.extents * 1.8f;
                 box.center = childMesh.bounds.center;
             }
         }

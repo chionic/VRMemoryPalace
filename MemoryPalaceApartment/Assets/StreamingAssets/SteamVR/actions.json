@@ -55,11 +55,11 @@
     },
     {
       "name": "/actions/Default/in/TouchpadLeft",
-      "type": "vector1"
+      "type": "boolean"
     },
     {
       "name": "/actions/Default/in/TouchpadRight",
-      "type": "vector1"
+      "type": "boolean"
     },
     {
       "name": "/actions/Default/out/Haptic",

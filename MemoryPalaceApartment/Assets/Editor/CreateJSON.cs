@@ -84,7 +84,7 @@ public class CreateJSON : EditorWindow
         {
             if (isMtl(Path.GetFileName(asset)))
             {
-                Debug.Log("Error, the file " + Path.GetFileName(asset) + " in " + folderName + " is not a model object file");
+                //Debug.Log("Error, the file " + Path.GetFileName(asset) + " in " + folderName + " is not a model object file");
             }
             else if (isMeta(Path.GetFileName(asset)))
             {
@@ -127,6 +127,8 @@ public class CreateJSON : EditorWindow
 
         if (Regex.IsMatch(fileName, @"\.*\.mtl")) { return true; }
         if (Regex.IsMatch(fileName, @"\.*\.png")) { return true; }
+        if (Regex.IsMatch(fileName, @"\.*\.mat")) { return true; }
+        if (Regex.IsMatch(fileName, @"\.*\.jpg")) { return true; }
         return false;
 
     }
@@ -145,7 +147,7 @@ public class CreateJSON : EditorWindow
     {
         string path = "Assets/JSON_Files/" + fileName + ".json";
         string jsonMenu = JsonUtility.ToJson(menuJ);
-        StreamWriter writer = new StreamWriter(path, true);
+        StreamWriter writer = new StreamWriter(path, false);
         writer.WriteLine(jsonMenu);
         writer.Close();
 

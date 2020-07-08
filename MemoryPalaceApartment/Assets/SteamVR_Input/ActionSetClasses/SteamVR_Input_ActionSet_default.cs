@@ -113,7 +113,7 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Single TouchpadLeft
+        public virtual SteamVR_Action_Boolean TouchpadLeft
         {
             get
             {
@@ -121,7 +121,7 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Single TouchpadRight
+        public virtual SteamVR_Action_Boolean TouchpadRight
         {
             get
             {

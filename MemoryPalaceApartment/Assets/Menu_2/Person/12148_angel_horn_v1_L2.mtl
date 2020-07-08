@@ -1,0 +1,110 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 05.12.2011 14:07:25
+
+newmtl angel_dress
+	Ns 22.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 12148_angelwings_cloth_diffuse.jpg
+	map_Kd 12148_angelwings_cloth_diffuse.jpg
+
+newmtl 08___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0839 0.0875 0.0902
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 12148_angelwings_foot_diffuse.jpg
+	map_Kd 12148_angelwings_foot_diffuse.jpg
+
+newmtl angel_wings_
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 12148_angelwings_wings_diffuse.jpg
+	map_Kd 12148_angelwings_wings_diffuse.jpg
+
+newmtl 05___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 12148_angelwings_hairs_diffuse.jpg
+	map_Kd 12148_angelwings_hairs_diffuse.jpg
+
+newmtl 12148_angelhorn_face
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.4000 0.1882 0.0745
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Kd 12148_angelwings_face_diffuse.jpg
+
+newmtl 12148_angelhorn_eyes
+	Ns 50.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 12148_angelwings_eyes_diffuse.jpg
+	map_Kd 12148_angelwings_eyes_diffuse.jpg
+
+newmtl 12148_angelhorn_hands
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.4000 0.1882 0.0745
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Kd 12148_angelwings_hand_diffuse.jpg
+
+newmtl 13___Default
+	Ns 55.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 0.7765 0.1333
+	Kd 1.0000 0.7765 0.1333
+	Ks 0.4500 0.4500 0.4500
+	Ke 0.0000 0.0000 0.0000

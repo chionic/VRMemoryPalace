@@ -12,14 +12,14 @@ public class InputManager : MonoBehaviour
     public UnityEvent OnTriggerUp = new UnityEvent();
 
     [Header("Touchpad")]
-    public SteamVR_Action_Single TouchpadAction = null;
+    public SteamVR_Action_Boolean TouchpadAction = null;
     public UnityEvent OnTouchpadDown = new UnityEvent();
     public UnityEvent OnTouchpadUp = new UnityEvent();
 
-   /* [Header("Touchpad2")]
-    public SteamVR_Action_Single TouchpadAction2 = null;
-    public UnityEvent OnTouchpadDown2 = new UnityEvent();
-    public UnityEvent OnTouchpadUp2 = new UnityEvent();*/
+   [Header("Temp")]
+    public SteamVR_Action_Boolean Temp = null;
+    public UnityEvent OnTempDown = new UnityEvent();
+    public UnityEvent OnTempUp = new UnityEvent();
 
     [Header("Menu Button")]
     public SteamVR_Action_Boolean MenuButtonAction = null;
@@ -47,23 +47,45 @@ public class InputManager : MonoBehaviour
         if (TriggerAction.GetStateUp(Pose.inputSource))
             OnTriggerUp.Invoke();
 
-        if (TouchpadAction.GetAxis(Pose.inputSource) > 0)
+        if (TouchpadAction.GetStateDown(Pose.inputSource))
         {
             OnTouchpadDown.Invoke();
         }
-        if (TouchpadAction.GetAxis(Pose.inputSource) < 0)
+        if (TouchpadAction.GetStateUp(Pose.inputSource))
         {
             OnTouchpadUp.Invoke();
         }
 
-       /* if (TouchpadAction2.GetAxis(Pose.inputSource) > 0)
+        if (Temp.GetStateDown(Pose.inputSource))
         {
-            OnTouchpadDown2.Invoke();
+            OnTempDown.Invoke();
+            Debug.Log("Touch pad 2 called");
         }
-        if (TouchpadAction2.GetAxis(Pose.inputSource) < 0)
+        if (Temp.GetStateUp(Pose.inputSource))
         {
-            OnTouchpadUp2.Invoke();
-        }*/
+            OnTempUp.Invoke();
+        }
+
+        //if (TouchpadAction.GetAxis(Pose.inputSource) > 0)
+        //{
+        //    OnTempDown.Invoke();
+        //    Debug.Log("Touch pad 2 called");
+        //}
+        //if (TouchpadAction.GetAxis(Pose.inputSource) < 0)
+        //{
+        //    OnTempUp.Invoke();
+        //}
+
+
+        //if (Temp.GetAxis(Pose.inputSource) > 0)
+        //{
+        //    OnTempDown.Invoke();
+        //    Debug.Log("Touch pad 2 called");
+        //}
+        //if (Temp.GetAxis(Pose.inputSource) < 0)
+        //{
+        //    OnTempUp.Invoke();
+        //}
 
         if (MenuButtonAction.GetStateDown(Pose.inputSource))
             OnMenuButtonDown.Invoke();

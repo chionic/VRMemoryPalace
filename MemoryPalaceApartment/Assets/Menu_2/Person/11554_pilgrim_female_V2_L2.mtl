@@ -1,0 +1,223 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 14.11.2011 15:06:20
+
+newmtl 11554_pilgrim_female_dresstop
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 11554_pilgrim_female_dresstop_diffse.jpg
+	map_Kd 11554_pilgrim_female_dresstop_diffse.jpg
+
+newmtl 11554_pilgrim_female_headdress
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 11554_pilgrim_female_fabriclight_diffuse.jpg
+	map_Kd 11554_pilgrim_female_fabriclight_diffuse.jpg
+
+newmtl 11554_pilgrim_female_hairupdress
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 11554_pilgrim_female_updresshairs_diffuse.jpg
+	map_Kd 11554_pilgrim_female_updresshairs_diffuse.jpg
+
+newmtl 11554_pilgrim_female_skirt
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 11554_pilgrim_female_fabricdark_diffse.jpg
+	map_Kd 11554_pilgrim_female_fabricdark_diffse.jpg
+
+newmtl 11554_pilgrim_female_apron
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 11554_pilgrim_female_apron_diffuse.jpg
+	map_Kd 11554_pilgrim_female_apron_diffuse.jpg
+
+newmtl 11554_pilgrim_female_face
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Kd 11554_pilgrim_female_face_diffuse.jpg
+
+newmtl 11554_pilgrim_female_fabriclightx
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 11554_pilgrim_female_fabriclight_diffuse.jpg
+	map_Kd 11554_pilgrim_female_fabriclight_diffuse.jpg
+
+newmtl 11554_pilgrim_female_bootsL
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 11554_pilgrim_female_boots_diffuse.jpg
+	map_Kd 11554_pilgrim_female_boots_diffuse.jpg
+
+newmtl 11554_pilgrim_female_eyesL
+	Ns 57.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 11554_pilgrim_female_eyes_diffuse.jpg
+	map_Kd 11554_pilgrim_female_eyes_diffuse.jpg
+
+newmtl 11554_pilgrim_female_fabriclight
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 11554_pilgrim_female_fabriclight_diffuse.jpg
+	map_Kd 11554_pilgrim_female_fabriclight_diffuse.jpg
+
+newmtl 11554_pilgrim_female_fabricdark
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 11554_pilgrim_female_fabricdark_diffse.jpg
+	map_Kd 11554_pilgrim_female_fabricdark_diffse.jpg
+
+newmtl 11554_pilgrim_female_handsL
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Kd 11554_pilgrim_female_hands_diffuse.jpg
+
+newmtl 11554_pilgrim_female_bootsR
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 11554_pilgrim_female_boots_diffuse.jpg
+	map_Kd 11554_pilgrim_female_boots_diffuse.jpg
+
+newmtl 11554_pilgrim_female_book
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 11554_pilgrim_female_book_diffuse.jpg
+	map_Kd 11554_pilgrim_female_book_diffuse.jpg
+
+newmtl 11554_pilgrim_female_handsR
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Kd 11554_pilgrim_female_hands_diffuse.jpg
+
+newmtl 11554_pilgrim_female_eyesR
+	Ns 57.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0900 0.0900 0.0900
+	Ke 0.0000 0.0000 0.0000
+	map_Ka 11554_pilgrim_female_eyes_diffuse.jpg
+	map_Kd 11554_pilgrim_female_eyes_diffuse.jpg
