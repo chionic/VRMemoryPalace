@@ -17,6 +17,7 @@ public class AddText : MonoBehaviour
     private string pathToFile2 = "";
     private string fileName2 = "";
     private filePathText fp;
+    private MakeLog logger; //game object that has logging interface
 
     void Awake()
     {
@@ -32,8 +33,8 @@ public class AddText : MonoBehaviour
             Debug.LogError("The specified json file was not found at the file path ");
             return;
         }
-        Debug.Log(pathToFile2 + " + " + fileName2);
-        if(pathToFile2 != "" && fileName2 != "")
+        logger = GameObject.FindWithTag("logger").GetComponent<MakeLog>();
+        if (pathToFile2 != "" && fileName2 != "")
         {
             jsonString = File.ReadAllText(pathToFile2 + "/" + fileName2); //imports the json assets as plain text
         }
@@ -44,22 +45,12 @@ public class AddText : MonoBehaviour
         textLoops = JsonUtility.FromJson<textLoops>(jsonString); //turns the plaintext into a list of arrays with certain properties
         getNextLoop(runOrder); //picks which of the text arrays should be run first
         UiText = this.GetComponent<Text>();
-
     }
-
-    // Update is called once per frame
-   /* void Update()
-    {
-        //helper function while VR headset and controllers not available -> press space to change text.
-        if (Input.GetKeyDown("space"))
-        {
-            updateUIText();
-        }
-    }*/
 
     public void updateUIText()
     {
         changeText(currentLoop);
+        logger.makeLogEntry("changeText", this.gameObject);
     }
 
     //Change text to next piece of text

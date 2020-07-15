@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 453750127355496592}
+  - component: {fileID: 2008480003773768029}
   - component: {fileID: 4851261284828266004}
   - component: {fileID: 2034391868386218815}
   - component: {fileID: 8300338825614856643}
   - component: {fileID: 1204248884634235832}
-  - component: {fileID: 2008480003773768029}
   - component: {fileID: 5052750193709081870}
   m_Layer: 8
   m_Name: Ob_model
@@ -37,6 +37,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2008480003773768029
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877313963607765810}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.043026943, y: 0.040934157, z: 0.10713662}
+  m_Center: {x: -0.00016099494, y: 0.0062321657, z: -0.010316234}
 --- !u!114 &4851261284828266004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,8 +74,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87bc6bdb8ac70340a04365b9389d856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinkMaterial: {fileID: 0}
-  GreyMaterial: {fileID: 0}
 --- !u!114 &8300338825614856643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,19 +104,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &2008480003773768029
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877313963607765810}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.047807716, y: 0.045482397, z: 0.11904069}
-  m_Center: {x: -0.00016099494, y: 0.0062321657, z: -0.010316234}
 --- !u!114 &5052750193709081870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +127,7 @@ GameObject:
   - component: {fileID: 7356839545519278273}
   - component: {fileID: 1961006260729591302}
   - component: {fileID: 5104065182389645094}
+  - component: {fileID: 3812956407578606376}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -197,3 +196,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3812956407578606376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3004692887612941246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1a0499fc96fc645bc6bc3f36a7049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logger: {fileID: 0}
+  hasChildRenderer: 1

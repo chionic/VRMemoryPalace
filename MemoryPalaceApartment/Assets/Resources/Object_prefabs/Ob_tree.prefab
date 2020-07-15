@@ -325,12 +325,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9097222967862295615}
+  - component: {fileID: 934593259019660786}
   - component: {fileID: 3957210218802737236}
   - component: {fileID: 812841888904992825}
   - component: {fileID: 91988307156805529}
   - component: {fileID: 5384796099510481752}
   - component: {fileID: 1690690771352801968}
-  - component: {fileID: -8028396924659340206}
+  - component: {fileID: 1935801021019885303}
   m_Layer: 8
   m_Name: Ob_tree
   m_TagString: object
@@ -356,6 +357,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &934593259019660786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6999790086752529762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1a0499fc96fc645bc6bc3f36a7049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logger: {fileID: 0}
+  hasChildRenderer: 0
 --- !u!114 &3957210218802737236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,8 +395,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87bc6bdb8ac70340a04365b9389d856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinkMaterial: {fileID: 0}
-  GreyMaterial: {fileID: 0}
 --- !u!114 &91988307156805529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26eed8ac69111e5418feafbaf7ada519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &-8028396924659340206
+--- !u!65 &1935801021019885303
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -435,5 +448,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.18, y: 0.05, z: 0.03}
-  m_Center: {x: -0.033, y: 0.02, z: 0}
+  m_Size: {x: 0.17, y: 0.05, z: 0.02}
+  m_Center: {x: -0.035, y: 0.02, z: 0}

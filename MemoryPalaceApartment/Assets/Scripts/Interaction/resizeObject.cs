@@ -24,7 +24,7 @@ public class resizeObject : MonoBehaviour
 
     public void shrink()
     {
-        if(transform1.localScale.x > 0.002)
+        if(transform1.localScale.x > 0.1)
         {
             transform1.localScale = new Vector3(transform1.localScale.x - 0.1f, transform1.localScale.y - 0.1f, transform1.localScale.z - 0.1f);
         }

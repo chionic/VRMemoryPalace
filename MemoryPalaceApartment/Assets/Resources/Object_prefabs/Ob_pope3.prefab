@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6976555237772004917}
   - component: {fileID: 8590517375991874629}
   - component: {fileID: 6053607997354724458}
+  - component: {fileID: 607213458804383125}
   m_Layer: 8
   m_Name: Ob_pope3
   m_TagString: object
@@ -107,8 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87bc6bdb8ac70340a04365b9389d856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinkMaterial: {fileID: 0}
-  GreyMaterial: {fileID: 0}
 --- !u!114 &6976555237772004917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,3 +150,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26eed8ac69111e5418feafbaf7ada519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &607213458804383125
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8774166490370539000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.005322847, y: 0.00957918, z: 0.0046482547}
+  m_Center: {x: 0, y: 0.004343305, z: -0.00010195584}

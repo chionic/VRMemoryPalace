@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5803342678645650554}
   - component: {fileID: 9184476145844014094}
   - component: {fileID: 3849027931812341297}
+  - component: {fileID: 7803121444395638764}
   m_Layer: 0
   m_Name: Donut_Torus.001
   m_TagString: Untagged
@@ -80,6 +81,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &7803121444395638764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2381585171466331168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1a0499fc96fc645bc6bc3f36a7049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logger: {fileID: 0}
+  hasChildRenderer: 1
 --- !u!1 &9099099891722400536
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,11 +104,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4098636919160662374}
+  - component: {fileID: 2010040434005142853}
   - component: {fileID: 3471596529635918792}
   - component: {fileID: 3673255570156608794}
   - component: {fileID: 7506644710034983065}
   - component: {fileID: 7356708757057492599}
-  - component: {fileID: 2010040434005142853}
   - component: {fileID: -2456225754742982825}
   m_Layer: 8
   m_Name: Ob_Donut_01
@@ -117,6 +132,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2010040434005142853
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9099099891722400536}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0886452, y: 0.03825508, z: 0.090082444}
+  m_Center: {x: 0.0001366809, y: 0.021747915, z: -0.00014557317}
 --- !u!114 &3471596529635918792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,8 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87bc6bdb8ac70340a04365b9389d856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinkMaterial: {fileID: 0}
-  GreyMaterial: {fileID: 0}
 --- !u!114 &7506644710034983065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,19 +199,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &2010040434005142853
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9099099891722400536}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.098494664, y: 0.042505648, z: 0.10009161}
-  m_Center: {x: 0.0001366809, y: 0.021747915, z: -0.00014557317}
 --- !u!114 &-2456225754742982825
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -127,6 +127,7 @@ public class CreateMenuObModel : EditorWindow
         //2.5Check that the imported object mesh is of an acceptable scale (ie not bigger than a room in the house)
         if(clone.gameObject.transform.childCount > 0)
         {
+            clone.gameObject.transform.GetChild(0).gameObject.AddComponent<isVisible>();
             Renderer childMesh = clone.gameObject.transform.GetChild(0).GetComponent<Renderer>();
             if (childMesh != null)
             {
@@ -137,7 +138,10 @@ public class CreateMenuObModel : EditorWindow
                 //3. Resize the object and the collider
                 colliderResizing(clone, colliderType);
             }
-            else { Debug.LogWarning("The game object " + clone.name + " does not have a renderer attached to it, manually add a collider to the object."); }
+            else {
+                clone.AddComponent<isVisible>();
+                Debug.LogWarning("The game object " + clone.name + " does not have a renderer attached to it, manually add a collider to the object.");
+            }
         }
         
         //2.

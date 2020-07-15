@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8417395434342839158}
+  - component: {fileID: 4285237643983557313}
   - component: {fileID: 7372243082880323842}
   - component: {fileID: 6344859855190967391}
   - component: {fileID: 7483184159836102688}
   - component: {fileID: 3504255779050376679}
-  - component: {fileID: 4285237643983557313}
   - component: {fileID: -675768297489199036}
   m_Layer: 8
   m_Name: Ob_CairoSpinyMouse
@@ -37,6 +37,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4285237643983557313
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3661773206114930112}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03413016, y: 0.061637536, z: 0.18452777}
+  m_Center: {x: 0, y: 0.033480577, z: -0.03386477}
 --- !u!114 &7372243082880323842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,8 +74,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87bc6bdb8ac70340a04365b9389d856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinkMaterial: {fileID: 0}
-  GreyMaterial: {fileID: 0}
 --- !u!114 &7483184159836102688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,19 +104,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &4285237643983557313
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3661773206114930112}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0379224, y: 0.068486154, z: 0.20503086}
-  m_Center: {x: 0, y: 0.033480577, z: -0.03386477}
 --- !u!114 &-675768297489199036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +127,7 @@ GameObject:
   - component: {fileID: 5744440116342724981}
   - component: {fileID: 1810567720559934819}
   - component: {fileID: 5492282763974503888}
+  - component: {fileID: 1567396357842165508}
   m_Layer: 0
   m_Name: CairoSpinyMouse_Mesh
   m_TagString: Untagged
@@ -196,3 +195,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1567396357842165508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7469438472172710096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1a0499fc96fc645bc6bc3f36a7049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logger: {fileID: 0}
+  hasChildRenderer: 1

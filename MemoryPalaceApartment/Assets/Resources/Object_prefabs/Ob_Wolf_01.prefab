@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6533850879899369123}
   - component: {fileID: 2823392852125880905}
   - component: {fileID: 3562461570264409095}
+  - component: {fileID: 1287508070266154730}
   m_Layer: 0
   m_Name: Wolf_01_Cube.049
   m_TagString: Untagged
@@ -80,6 +81,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1287508070266154730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971290700462336139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1a0499fc96fc645bc6bc3f36a7049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logger: {fileID: 0}
+  hasChildRenderer: 1
 --- !u!1 &3674070307050127643
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,11 +104,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5138724500127881736}
+  - component: {fileID: 8874337755999554787}
   - component: {fileID: 4128283388755137973}
   - component: {fileID: 5955034243932397585}
   - component: {fileID: 1412230845240833859}
   - component: {fileID: 6448933156180784543}
-  - component: {fileID: 8874337755999554787}
   - component: {fileID: 1792881558581343883}
   m_Layer: 8
   m_Name: Ob_Wolf_01
@@ -117,6 +132,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8874337755999554787
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3674070307050127643}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.034166858, y: 0.093310185, z: 0.12250199}
+  m_Center: {x: 0, y: 0.051845923, z: 0.0050561577}
 --- !u!114 &4128283388755137973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,8 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87bc6bdb8ac70340a04365b9389d856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinkMaterial: {fileID: 0}
-  GreyMaterial: {fileID: 0}
 --- !u!114 &1412230845240833859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,19 +199,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &8874337755999554787
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3674070307050127643}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.037963178, y: 0.10367799, z: 0.13611333}
-  m_Center: {x: 0, y: 0.051845923, z: 0.0050561577}
 --- !u!114 &1792881558581343883
 MonoBehaviour:
   m_ObjectHideFlags: 0

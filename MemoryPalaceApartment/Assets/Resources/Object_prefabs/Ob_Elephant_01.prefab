@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6816312904218980506}
+  - component: {fileID: 4095685672017662956}
   - component: {fileID: 2279557400688566780}
   - component: {fileID: 4963469300540332014}
   - component: {fileID: 829087960267619286}
   - component: {fileID: 2679314943081716178}
-  - component: {fileID: 4095685672017662956}
   - component: {fileID: 4194414889001039213}
   m_Layer: 8
   m_Name: Ob_Elephant_01
@@ -37,6 +37,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4095685672017662956
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000113326552763524}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1190439, y: 0.08643905, z: 0.081595935}
+  m_Center: {x: -0.005179668, y: 0.048269138, z: -0.023167923}
 --- !u!114 &2279557400688566780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,8 +74,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87bc6bdb8ac70340a04365b9389d856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinkMaterial: {fileID: 0}
-  GreyMaterial: {fileID: 0}
 --- !u!114 &829087960267619286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,19 +104,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &4095685672017662956
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7000113326552763524}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.132271, y: 0.09604339, z: 0.09066215}
-  m_Center: {x: -0.005179668, y: 0.048269138, z: -0.023167923}
 --- !u!114 &4194414889001039213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +127,7 @@ GameObject:
   - component: {fileID: 1931789323263648481}
   - component: {fileID: 920349045818300481}
   - component: {fileID: 6607521097057768016}
+  - component: {fileID: 6911285093781371553}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -199,3 +198,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &6911285093781371553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7714008087148116806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1a0499fc96fc645bc6bc3f36a7049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logger: {fileID: 0}
+  hasChildRenderer: 1

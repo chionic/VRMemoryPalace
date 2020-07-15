@@ -12,6 +12,8 @@ TagManager:
   - sun
   - Menu
   - UIText
+  - logger
+  - submenu
   layers:
   - Default
   - TransparentFX

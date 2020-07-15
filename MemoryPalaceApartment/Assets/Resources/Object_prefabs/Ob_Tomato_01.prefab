@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8700521520151152097}
   - component: {fileID: 2062492531278346}
   - component: {fileID: 9054906346313175105}
+  - component: {fileID: 8568099726324012714}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -79,6 +80,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &8568099726324012714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2540406188213857684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1a0499fc96fc645bc6bc3f36a7049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logger: {fileID: 0}
+  hasChildRenderer: 1
 --- !u!1 &3172777087560224662
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,11 +103,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 75773886477721831}
+  - component: {fileID: 3699507094416122700}
   - component: {fileID: 5902722826788626615}
   - component: {fileID: 8838687744904839750}
   - component: {fileID: 3977224542755907631}
   - component: {fileID: 1074786280788406020}
-  - component: {fileID: 3699507094416122700}
   - component: {fileID: -1488519639310922922}
   m_Layer: 8
   m_Name: Ob_Tomato_01
@@ -116,6 +131,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3699507094416122700
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3172777087560224662}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0928438, y: 0.07107537, z: 0.0928438}
+  m_Center: {x: -0.0000000037252903, y: 0.039522007, z: -0.0000000037252903}
 --- !u!114 &5902722826788626615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,8 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87bc6bdb8ac70340a04365b9389d856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinkMaterial: {fileID: 0}
-  GreyMaterial: {fileID: 0}
 --- !u!114 &3977224542755907631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,19 +198,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &3699507094416122700
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3172777087560224662}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.103159785, y: 0.07897264, z: 0.103159785}
-  m_Center: {x: -0.0000000037252903, y: 0.039522007, z: -0.0000000037252903}
 --- !u!114 &-1488519639310922922
 MonoBehaviour:
   m_ObjectHideFlags: 0

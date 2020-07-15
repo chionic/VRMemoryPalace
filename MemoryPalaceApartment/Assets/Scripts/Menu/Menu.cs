@@ -14,10 +14,11 @@ public class Menu : MonoBehaviour
     //List of submenus
     public List<GameObject> subMenus = new List<GameObject>(); //List of submenus
     Transform menuTransform = null; //where the menu object is in space (transform)
-
+    private MakeLog logger;
 
     private void Awake()
     {
+        logger = GameObject.FindWithTag("logger").GetComponent<MakeLog>();
         menuTransform = gameObject.transform; //lets the menu transform be the current gameobject
         foreach (Transform child in menuTransform) //adds all the submenu gameobjects to a list
         {
@@ -61,6 +62,7 @@ public class Menu : MonoBehaviour
             currentState = 0;
             //Debug.Log("set state 0");
         }
+        logger.makeLogEntry("toggleMenu", currentlyActive);
     }
 
     public int getState()

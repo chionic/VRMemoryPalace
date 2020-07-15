@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2414466548977789441}
+  - component: {fileID: 5634857997467658079}
   - component: {fileID: 3471975193893028721}
   - component: {fileID: 728785786271562735}
   - component: {fileID: 8322666207026816027}
   - component: {fileID: 455744517025721503}
-  - component: {fileID: 5634857997467658079}
   - component: {fileID: 473034289806864935}
   m_Layer: 8
   m_Name: Ob_Mesh_Cat
@@ -37,6 +37,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5634857997467658079
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7646824057944981129}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.031478018, y: 0.12832196, z: 0.1516697}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3471975193893028721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,8 +74,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87bc6bdb8ac70340a04365b9389d856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinkMaterial: {fileID: 0}
-  GreyMaterial: {fileID: 0}
 --- !u!114 &8322666207026816027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,19 +104,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &5634857997467658079
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7646824057944981129}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.034975577, y: 0.14257996, z: 0.16852188}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &473034289806864935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +127,7 @@ GameObject:
   - component: {fileID: 3851506222835334062}
   - component: {fileID: 569866433642882352}
   - component: {fileID: 2669420351780107182}
+  - component: {fileID: 2633865338008525228}
   m_Layer: 0
   m_Name: Geo_Cat
   m_TagString: Untagged
@@ -196,3 +195,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &2633865338008525228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7859233068179902844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1a0499fc96fc645bc6bc3f36a7049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logger: {fileID: 0}
+  hasChildRenderer: 1

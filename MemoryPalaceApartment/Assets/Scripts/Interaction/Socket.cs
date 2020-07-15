@@ -6,11 +6,13 @@ public class Socket : MonoBehaviour
 {
     private Moveable storedObject = null; //what gameobject is currently stored in the socket
     private FixedJoint joint = null; //the joint the socket is attached to
+    private MakeLog logger;
 
 
     public void Awake()
     {
-        joint = GetComponent<FixedJoint>(); 
+        joint = GetComponent<FixedJoint>();
+        logger = GameObject.FindWithTag("logger").GetComponent<MakeLog>();
     }
 
     public void Attach(Moveable newObject)
@@ -22,11 +24,13 @@ public class Socket : MonoBehaviour
         storedObject.transform.rotation = Quaternion.identity;
         Rigidbody storedBody = storedObject.gameObject.GetComponent<Rigidbody>();
         joint.connectedBody = storedBody;
+        logger.makeLogEntry("AttachObject", newObject.gameObject);
     }
 
     public void Detach()
     {
         if (!storedObject) return; //if the socket is empty, return
+        logger.makeLogEntry("DetachObject", storedObject.gameObject);
         joint.connectedBody = null; //otherwise remove the stored object from the joint
         storedObject = null;
 

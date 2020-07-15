@@ -75,8 +75,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87bc6bdb8ac70340a04365b9389d856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinkMaterial: {fileID: 0}
-  GreyMaterial: {fileID: 0}
 --- !u!114 &2827133797308736074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +206,7 @@ GameObject:
   - component: {fileID: 8483582364304837914}
   - component: {fileID: 6451174619916785729}
   - component: {fileID: 4349780141732699954}
+  - component: {fileID: 1112718402625119217}
   m_Layer: 0
   m_Name: mesh876962703
   m_TagString: Untagged
@@ -275,3 +274,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1112718402625119217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8736968841532742465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1a0499fc96fc645bc6bc3f36a7049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logger: {fileID: 0}
+  hasChildRenderer: 1

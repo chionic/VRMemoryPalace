@@ -110,6 +110,7 @@ namespace Valve.VR.InteractionSystem
 		private Vector3 startingFeetOffset = Vector3.zero;
 		private bool movedFeetFarEnough = false;
 
+
 		SteamVR_Events.Action chaperoneInfoInitializedAction;
 
 		// Events
@@ -901,7 +902,7 @@ namespace Valve.VR.InteractionSystem
 			{
 				teleportingToMarker.TeleportPlayer( pointedAtPosition );
 			}
-
+			
 			Teleport.Player.Send( pointedAtTeleportMarker );
 		}
 
