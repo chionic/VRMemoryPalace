@@ -11,15 +11,6 @@ public class InputManager : MonoBehaviour
     public UnityEvent OnTriggerDown = new UnityEvent();
     public UnityEvent OnTriggerUp = new UnityEvent();
 
-    [Header("Touchpad")]
-    public SteamVR_Action_Boolean TouchpadAction = null;
-    public UnityEvent OnTouchpadDown = new UnityEvent();
-    public UnityEvent OnTouchpadUp = new UnityEvent();
-
-   [Header("Temp")]
-    public SteamVR_Action_Boolean Temp = null;
-    public UnityEvent OnTempDown = new UnityEvent();
-    public UnityEvent OnTempUp = new UnityEvent();
 
     [Header("Menu Button")]
     public SteamVR_Action_Boolean MenuButtonAction = null;
@@ -47,24 +38,6 @@ public class InputManager : MonoBehaviour
         if (TriggerAction.GetStateUp(Pose.inputSource))
             OnTriggerUp.Invoke();
 
-        if (TouchpadAction.GetStateDown(Pose.inputSource))
-        {
-            OnTouchpadDown.Invoke();
-        }
-        if (TouchpadAction.GetStateUp(Pose.inputSource))
-        {
-            OnTouchpadUp.Invoke();
-        }
-
-        if (Temp.GetStateDown(Pose.inputSource))
-        {
-            OnTempDown.Invoke();
-            Debug.Log("Touch pad 2 called");
-        }
-        if (Temp.GetStateUp(Pose.inputSource))
-        {
-            OnTempUp.Invoke();
-        }
 
         //if (TouchpadAction.GetAxis(Pose.inputSource) > 0)
         //{

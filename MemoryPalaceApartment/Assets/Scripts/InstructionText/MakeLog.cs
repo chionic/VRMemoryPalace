@@ -24,7 +24,9 @@ public class MakeLog : MonoBehaviour
         logsPlace = new List<logBase>();
 
         //logs (no place)
-        logBase logText = new logText("changeText", "I_Text", null);
+        logBase logSize = new logResize("resizeObject", "I_U_Obj", null);
+        logs.Add(logSize);
+        logBase logText = new logText("changeText", "I_Text", logSize);
         logs.Add(logText);
         logPlace logOpenMenu = new logPlace("toggleMenu", "I_Menu2D", logText);
         logs.Add(logOpenMenu);

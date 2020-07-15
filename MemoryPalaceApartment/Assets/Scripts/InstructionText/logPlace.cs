@@ -36,7 +36,7 @@ public class logPlace : logBase
     {
         if(ob != null)
         {
-            log1 = getTimestamp() + "; " + DIMLabel + "; " + scriptType + "; " + ob.name + "; " + ob.transform.position;
+            log1 = getTimestamp() + "; " + DIMLabel + "; " + scriptType + "; " + ob.name + "; place " + ob.transform.position;
         }
         else
         {

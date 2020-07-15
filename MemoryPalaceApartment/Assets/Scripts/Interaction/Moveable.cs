@@ -33,7 +33,7 @@ public class Moveable : Interactable
         ReleaseOldSocket(); //otherwise release the gameobject from it's previous socket
         activeSocket = newSocket;
         activeSocket.Attach(this); //attaches the game object to the specified new socket
-        isAvailable = false;
+        //isAvailable = false;
     }
 
     public void ReleaseOldSocket()

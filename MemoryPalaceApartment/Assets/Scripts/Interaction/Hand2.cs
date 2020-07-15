@@ -7,6 +7,7 @@ public class Hand2 : MonoBehaviour
 
     //the hand/controller game object
     private Socket socket = null; //the socket attached to the controller
+    private Socket otherSocket = null;
     private SteamVR_Behaviour_Pose pose = null; //what pose the controller/hand have in game space
     private Hand2 myHandScript = null; //the hand script attached to the controller
     private GameObject spawnedObject = null;
@@ -16,16 +17,21 @@ public class Hand2 : MonoBehaviour
     public GameObject menu = null;
     private Menu menuScript;
     private Transform controller = null;
+    public Transform otherController = null;
+    private float distance;
+    private Moveable nObject;
+    private resizeObject resizeScript;
+    private MakeLog logger; //game object that has logging interface
 
     //UI text related
     public GameObject UiText = null; //the text game object (represented by the tablet tied to the left hand controller in game)
     private AddText textChange = null; //script that changes UI text
 
-    protected static bool leftDown;
-    protected static bool rightDown;
+    protected bool leftDown;
 
     public void Awake() //initialises the various variables listed above
     {
+        logger = GameObject.FindWithTag("logger").GetComponent<MakeLog>();
         menu = GameObject.FindWithTag("Menu");
         socket = GetComponent<Socket>();
         pose = GetComponent<SteamVR_Behaviour_Pose>();
@@ -33,6 +39,7 @@ public class Hand2 : MonoBehaviour
         menuScript = menu.GetComponent<Menu>();
         controller = gameObject.transform;
         textChange = UiText.GetComponent<AddText>();
+        otherSocket = otherController.GetComponent<Socket>();
     }
 
     //when another gameobject interacts with the controller collider, add it to the contact Interactables list
@@ -93,6 +100,30 @@ public class Hand2 : MonoBehaviour
                 createMenuItem(nearestObject.gameObject);
                 return nearestObject;
             }
+            if (nearestObject.gameObject.CompareTag("object"))
+            {
+                try
+                {
+                    nObject = nearestObject.gameObject.GetComponent<Moveable>();
+                    resizeScript = nObject.gameObject.GetComponent<resizeObject>();
+                    if (nObject.hasSocket())
+                    {
+                        leftDown = true;
+                        Debug.Log("Nearest interactable is held in other hand");
+                        return nearestObject;
+                    }
+                    else
+                    {
+                        nearestObject.StartInteraction(myHandScript);  //calls the hand pick up function from the selected (closest) game object's interactable script
+                        return nearestObject;
+                    }
+
+                }
+                catch
+                {
+                    Debug.LogWarning("" + "casting error");
+                }
+            }
             nearestObject.StartInteraction(myHandScript);  //calls the hand pick up function from the selected (closest) game object's interactable script
         }
         return nearestObject; //returns true if a nearest object exists
@@ -112,6 +143,13 @@ public class Hand2 : MonoBehaviour
     //removes a game object from the socket of the controller
     public void StopInteraction()
     {
+        if (leftDown)
+        {
+            logger.makeLogEntry("resizeObject", nObject.gameObject);
+        }
+        leftDown = false;
+        nObject = null;
+        resizeScript = null;
         if (!HasHeldObject()) //if the controller socket is empty, return
         {
             return;
@@ -193,56 +231,48 @@ public class Hand2 : MonoBehaviour
         textChange.updateUIText();
     }
 
+    //placing these three lines at the top of the 'stopInteraction' method instead creates a more efficient script but it will only change size once, no inbetween
     public void Update()
     {
-        if (leftDown) { growSize(); }
-        if (rightDown) { shrinkSize(); }
-    }
-
-    public void growSize()
-    {
-        if (socket.GetStoredObject())
-        {
-            resizeObject script = socket.GetStoredObject().gameObject.GetComponent<resizeObject>();
-            if (script != null)
-            {
-                script.grow();
-            }
+        if (leftDown) {
+            distance = Vector3.Distance(otherController.position, transform.position);
+            growSize(distance, resizeScript);
         }
     }
 
-    public void shrinkSize()
+    public void growSize(float distance, resizeObject script)
     {
-
-        if (socket.GetStoredObject())
-        {
-            resizeObject script = socket.GetStoredObject().gameObject.GetComponent<resizeObject>();
+        //if (socket.GetStoredObject())
+       // {
             if (script != null)
             {
-                script.shrink();
-
+                script.grow(distance);
             }
-        }
+       // }
     }
 
-    //changes booleans to true/false that will continously call the grow/shrink function when the button is pressed
-    public void leftDownTrue()
-    {
-        leftDown = true;
-    }
+    //public void shrinkSize()
+    //{
 
-    public void leftDownFalse()
-    {
-        leftDown = false;
-    }
+    //    if (socket.GetStoredObject())
+    //    {
+    //        resizeObject script = socket.GetStoredObject().gameObject.GetComponent<resizeObject>();
+    //        if (script != null)
+    //        {
+    //            script.shrink();
 
-    public void rightDownTrue()
-    {
-        rightDown = true;
-    }
+    //        }
+    //    }
+    //}
 
-    public void rightDownFalse()
-    {
-        rightDown = false;
-    }
+    ////changes booleans to true/false that will continously call the grow/shrink function when the button is pressed
+    //public void leftDownTrue()
+    //{
+    //    leftDown = true;
+    //}
+
+    //public void leftDownFalse()
+    //{
+    //    leftDown = false;
+    //}
 }
