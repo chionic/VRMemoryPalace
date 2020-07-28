@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class logMenu2 : logBase
 {
@@ -17,17 +15,20 @@ public class logMenu2 : logBase
         nextLog = next;
     }
 
+    //additionally logs if the menu is currently open or closed
     protected override void log(GameObject ob, Vector3 playerPos)
     {
         if (ob == null)
         {
-            log1 = getId() + "; " + getTimestamp() + "; " + DIMLabel + "; " + playerPos.x + "; " + playerPos.y + "; " + playerPos.z + ";;;;; {\"action\": \"" + scriptType + "\", \"type\": \"menuClose\" }";
+            log1 = getId() + "; " + getTimestamp() + "; " + DIMLabel + "; " + playerPos.x + "; " + playerPos.y + "; " + playerPos.z + ";;;;; {\"action\": \"" 
+                + scriptType + "\", \"type\": \"menuClose\" }";
         }
         else
         {
-            log1 = getId() + "; " + getTimestamp() + "; " + DIMLabel + "; " + playerPos.x + "; " + playerPos.y + "; " + playerPos.z + "; " + ob.name + "; " + ob.transform.position.x + "; " + ob.transform.position.y + "; " + ob.transform.position.z + "; {\"action\": \"" + scriptType + "\", \"type\": \"menuOpen\" }";
+            log1 = getId() + "; " + getTimestamp() + "; " + DIMLabel + "; " + playerPos.x + "; " + playerPos.y + "; " + playerPos.z + "; " + ob.name + "; " 
+                + ob.transform.position.x + "; " + ob.transform.position.y + "; " + ob.transform.position.z + "; {\"action\": \"" + scriptType 
+                + "\", \"type\": \"menuOpen\" }";
         }
-
         writeLog.WriteString(log1);
     }
 }

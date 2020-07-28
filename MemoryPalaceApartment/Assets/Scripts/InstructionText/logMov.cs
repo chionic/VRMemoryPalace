@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Valve.VR.InteractionSystem;
+﻿using UnityEngine;
 
 public class logMov : logBase
 {
@@ -25,9 +22,11 @@ public class logMov : logBase
         else Debug.Log("logBase No correct log type found " + script + " " + x);
     }
 
+    //logs teleport actions
     public void log(string x, Vector3 playerPos)
     {
-        string log1 = getId() + "; " + getTimestamp() + "; " + DIMLabel + "; " + playerPos.x + "; " + playerPos.y + "; " + playerPos.z + ";;;;; {\"action\": \"" + scriptType + "\", \"type\": \"" + x + "\"}";
+        string log1 = getId() + "; " + getTimestamp() + "; " + DIMLabel + "; " + playerPos.x + "; " + playerPos.y + "; " + playerPos.z 
+            + ";;;;; {\"action\": \"" + scriptType + "\", \"type\": \"" + x + "\"}";
         writeLog.WriteString(log1);
     }
 }

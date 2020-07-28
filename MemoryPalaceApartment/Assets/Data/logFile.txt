@@ -1417,3 +1417,90 @@
 72; 52.784000;;;;;;;; {"action": "Stopped Game", "date": "12:59 27 July, 2020"}
 1; 0.000000;;;;;;;; {"action": "Started Game", "date": "13:32 27 July, 2020"}
 2; 0.956341;;;;;;;; {"action": "Stopped Game", "date": "13:32 27 July, 2020"}
+1; 0.000000;;;;;;;; {"action": "Started Game", "date": "15:12 28 July, 2020"}
+2; 3.059155; D_Obj; -6.139048; 1.013509; 0.9987036; DoorWay; -4.09; 1.02; 1.36; {"action": "isVisible"}
+3; 5.079189; D_Obj; -6.32759; 1.243111; 0.936453; DoorWay; -4.09; 1.02; 1.36; {"action": "isInvisible"}
+4; 5.292019; D_Obj; -6.382286; 1.310665; 0.9228101; DoorWay; -4.09; 1.02; 1.36; {"action": "isVisible"}
+5; 9.046193; D_Obj; -6.566119; 1.407936; 1.090006; DoorWay; -4.09; 1.02; 1.36; {"action": "isInvisible"}
+6; 16.922220; M_Tele; -10.13471; 1.359435; 0.3671921;;;;; {"action": "teleport", "type": "Plane "}
+7; 17.567390; I_Menu2D; -10.06723; 1.316973; 0.4392712; topLevelMenu; -9.99994; 0.7776492; 0.6787199; {"action": "toggleMenu", "type": "menuOpen" }
+8; 17.567390; D_Menu2D; -10.06744; 1.316898; 0.4390612; topLevelMenu; -9.99994; 0.7776492; 0.6787199; {"action": "isVisible"}
+9; 18.247540; D_Menu2D; -10.02444; 1.322632; 0.4221145; topLevelMenu; -9.99994; 0.7776492; 0.6787199; {"action": "isInvisible"}
+10; 18.247540; I_Menu2D; -10.02444; 1.322632; 0.4221145; submenu_Emotion; -9.780327; 0.7858434; 0.7085906; {"action": "toggleMenu", "type": "menuOpen" }
+11; 18.247540; D_Menu2D; -10.0245; 1.322622; 0.422098; submenu_Emotion; -9.780327; 0.7858434; 0.7085906; {"action": "isVisible"}
+12; 18.394450; D_Obj; -10.01605; 1.325219; 0.4188581; DoorWay; -4.09; 1.02; 1.36; {"action": "isVisible"}
+13; 18.963440; I_P_Obj; -10.01402; 1.359091; 0.391301; Ob_emojis_devil(Clone)0; -9.705875; 1.003199; 0.6757001; { "action": "createObject", "hand": "Controller_right"}
+14; 18.963440; D_Menu2D; -10.01402; 1.359091; 0.391301; submenu_Emotion; -9.780327; 0.7858434; 0.7085906; {"action": "isInvisible"}
+15; 18.963440; I_Menu2D; -10.01402; 1.359091; 0.391301;;;;; {"action": "toggleMenu", "type": "menuClose" }
+16; 19.408340; D_Obj; -10.04808; 1.339332; 0.4009292; DoorWay; -4.09; 1.02; 1.36; {"action": "isInvisible"}
+17; 22.894860; I_U_Obj; -10.06896; 1.320635; 0.4544446; Ob_emojis_devil(Clone)0; -10.05033; 0.811932; 0.6954768; {"action": "resizeObject", "size": "(340.1, 340.1, 340.1)"}
+18; 25.103880; I_P_Obj; -10.30174; 0.6832647; 0.796357; Ob_emojis_devil(Clone)0; -10.41868; 0.2176904; 1.022791; { "action": "releaseObject", "hand" : "Controller_right"}
+19; 25.856200; D_Obj; -10.08248; 1.272629; 0.678122; DoorWay; -4.09; 1.02; 1.36; {"action": "isVisible"}
+20; 26.722220; M_Tele; -8.316001; 1.809518; 1.94;;;;; {"action": "teleport", "type": "TeleportPoint "}
+21; 27.330590; I_Menu2D; -8.374724; 1.766239; 1.911612; topLevelMenu; -8.012663; 1.402964; 1.903999; {"action": "toggleMenu", "type": "menuOpen" }
+22; 27.330590; D_Menu2D; -8.374791; 1.766234; 1.911903; topLevelMenu; -8.012663; 1.402964; 1.903999; {"action": "isVisible"}
+23; 27.934090; D_Menu2D; -8.428447; 1.749091; 1.969907; topLevelMenu; -8.012663; 1.402964; 1.903999; {"action": "isInvisible"}
+24; 27.934090; I_Menu2D; -8.428447; 1.749091; 1.969907; submenu_Person; -8.073834; 1.269931; 1.965584; {"action": "toggleMenu", "type": "menuOpen" }
+25; 27.934090; D_Menu2D; -8.428281; 1.749022; 1.969754; submenu_Person; -8.073834; 1.269931; 1.965584; {"action": "isVisible"}
+26; 28.669680; I_P_Obj; -8.44997; 1.765554; 1.977263; Ob_Hardhat(Clone)1; -8.061544; 1.462239; 1.833538; { "action": "createObject", "hand": "Controller_right"}
+27; 28.669680; D_Menu2D; -8.44997; 1.765554; 1.977263; submenu_Person; -8.073834; 1.269931; 1.965584; {"action": "isInvisible"}
+28; 28.669680; I_Menu2D; -8.44997; 1.765554; 1.977263;;;;; {"action": "toggleMenu", "type": "menuClose" }
+29; 28.669680; D_Obj; -8.449856; 1.765692; 1.977251; Ob_Hardhat(Clone)1; -8.061544; 1.462239; 1.833538; {"action": "isVisible"}
+30; 30.300390; I_U_Obj; -8.473489; 1.770219; 1.991852; Ob_Hardhat(Clone)1; -8.083943; 1.346017; 2.008802; {"action": "resizeObject", "size": "(3.5, 3.5, 3.5)"}
+31; 30.568890; I_U_Obj; -8.474805; 1.77167; 1.993437; Ob_Hardhat(Clone)1; -8.089855; 1.344682; 1.997755; { "action": "colourChange", "colour" : "FFFFFFFF"}
+32; 31.004710; I_U_Obj; -8.479727; 1.767041; 2.00838; Ob_Hardhat(Clone)1; -8.074286; 1.33268; 1.97111; { "action": "colourChange", "colour" : "00FF00FF"}
+33; 31.506510; I_U_Obj; -8.522865; 1.828982; 2.016827; Ob_Hardhat(Clone)1; -8.104814; 1.627552; 2.071614; { "action": "colourChange", "colour" : "FF0000FF"}
+34; 35.002530; I_P_Obj; -8.107169; 1.860375; 1.941668; Ob_Hardhat(Clone)1; -7.440031; 1.831286; 2.083287; { "action": "releaseObject", "hand" : "Controller_right"}
+35; 36.211110; M_Tele; -6.123955; 1.376948; 0.8096021;;;;; {"action": "teleport", "type": "Plane "}
+36; 36.231930; D_Obj; -6.124002; 1.376829; 0.8096169; Ob_Hardhat(Clone)1; -7.440031; 1.831286; 2.083287; {"action": "isInvisible"}
+37; 37.157340; I_Menu2D; -6.262188; 1.340262; 0.9317914; topLevelMenu; -6.128001; 0.8647951; 1.201756; {"action": "toggleMenu", "type": "menuOpen" }
+38; 37.157340; D_Menu2D; -6.262228; 1.340311; 0.9315279; topLevelMenu; -6.128001; 0.8647951; 1.201756; {"action": "isVisible"}
+39; 38.487820; D_Menu2D; -6.324162; 1.381209; 0.8913903; topLevelMenu; -6.128001; 0.8647951; 1.201756; {"action": "isInvisible"}
+40; 38.487820; I_Menu2D; -6.324162; 1.381209; 0.8913903; submenu_Nature; -6.237727; 1.089216; 1.248205; {"action": "toggleMenu", "type": "menuOpen" }
+41; 38.487820; D_Menu2D; -6.324051; 1.381089; 0.8914278; submenu_Nature; -6.237727; 1.089216; 1.248205; {"action": "isVisible"}
+42; 39.369750; I_P_Obj; -6.306312; 1.353835; 0.9395874; Ob_waveEdited(Clone)2; -6.20375; 0.9015927; 1.212761; { "action": "createObject", "hand": "Controller_left"}
+43; 39.369750; D_Menu2D; -6.306312; 1.353835; 0.9395874; submenu_Nature; -6.237727; 1.089216; 1.248205; {"action": "isInvisible"}
+44; 39.369750; I_Menu2D; -6.306312; 1.353835; 0.9395874;;;;; {"action": "toggleMenu", "type": "menuClose" }
+45; 40.266670; I_U_Obj; -6.255975; 1.320123; 0.8790399; Ob_waveEdited(Clone)2; -6.356093; 1.499689; 0.8140209; {"action": "delete"}
+46; 42.118120; I_Menu2D; -6.294339; 1.346808; 0.9007616; topLevelMenu; -6.081299; 0.9173828; 1.133903; {"action": "toggleMenu", "type": "menuOpen" }
+47; 42.118120; D_Menu2D; -6.294328; 1.346819; 0.9008216; topLevelMenu; -6.081299; 0.9173828; 1.133903; {"action": "isVisible"}
+48; 43.157960; D_Menu2D; -6.359134; 1.377924; 0.9318317; topLevelMenu; -6.081299; 0.9173828; 1.133903; {"action": "isInvisible"}
+49; 43.157960; I_Menu2D; -6.359134; 1.377924; 0.9318317; submenu_Nature; -6.181863; 1.15663; 1.219752; {"action": "toggleMenu", "type": "menuOpen" }
+50; 43.157960; D_Menu2D; -6.359118; 1.378018; 0.9318634; submenu_Nature; -6.181863; 1.15663; 1.219752; {"action": "isVisible"}
+51; 44.061200; I_P_Obj; -6.385473; 1.396603; 0.9263552; Ob_Super Leaf(Clone)3; -6.335331; 1.182563; 1.299454; { "action": "createObject", "hand": "Controller_left"}
+52; 44.061200; D_Menu2D; -6.385473; 1.396603; 0.9263552; submenu_Nature; -6.181863; 1.15663; 1.219752; {"action": "isInvisible"}
+53; 44.061200; I_Menu2D; -6.385473; 1.396603; 0.9263552;;;;; {"action": "toggleMenu", "type": "menuClose" }
+54; 46.495280; I_U_Obj; -6.311122; 1.343783; 0.8448107; Ob_Super Leaf(Clone)3; -6.11698; 0.8949991; 0.8527443; {"action": "resizeObject", "size": "(5.2, 5.2, 5.2)"}
+55; 47.390480; D_Obj; -6.169801; 1.348536; 0.5443206; DoorWay; -4.09; 1.02; 1.36; {"action": "isInvisible"}
+56; 48.429570; I_P_Obj; -5.999027; 1.162032; 0.3854299; Ob_Super Leaf(Clone)3; -5.833392; 0.7005769; 0.1259379; { "action": "releaseObject", "hand" : "Controller_left"}
+57; 50.433330; M_Tele; -2.806092; 1.443145; 0.9701121;;;;; {"action": "teleport", "type": "Teleport_Area_2 "}
+58; 51.533330; M_Tele; 1.708; 4.115703; 0.916;;;;; {"action": "teleport", "type": "TeleportPoint "}
+59; 52.633340; M_Tele; 1.503761; 3.992976; 4.432009;;;;; {"action": "teleport", "type": "Teleport_Area_"}
+60; 53.824610; I_Menu2D; 1.576747; 4.022324; 4.508443; Text; 1.783598; 3.475221; 4.682969; { "action": "changeText", "text": "Press grab grip to change text"}
+61; 54.260210; I_Menu2D; 1.591835; 3.999721; 4.494865; Text; 1.692636; 3.450172; 4.691559; { "action": "changeText", "text": "Use the circle pad to teleport. 
+ Move your thumb on the pad to pick where to teleport to. Press down on the pad to teleport."}
+62; 54.727520; I_Menu2D; 1.567835; 3.981858; 4.440878; Text; 1.592039; 3.448286; 4.619398; { "action": "changeText", "text": "Teleport points can be used to get to higher floors."}
+63; 55.174240; I_Menu2D; 1.615196; 3.99442; 4.449494; Text; 1.736613; 3.429179; 4.596; { "action": "changeText", "text": "Press the menu button to bring up the menu, press it again to close the menu."}
+64; 55.924230; I_Menu2D; 1.664693; 3.970056; 4.539775; topLevelMenu; 1.817565; 3.369373; 4.329079; {"action": "toggleMenu", "type": "menuOpen" }
+65; 55.924230; D_Menu2D; 1.6646; 3.970344; 4.539572; topLevelMenu; 1.817565; 3.369373; 4.329079; {"action": "isVisible"}
+66; 56.717190; D_Menu2D; 1.646387; 3.983653; 4.504159; topLevelMenu; 1.817565; 3.369373; 4.329079; {"action": "isInvisible"}
+67; 56.717190; I_Menu2D; 1.646387; 3.983653; 4.504159; submenu_Nature; 1.853296; 3.60386; 4.425075; {"action": "toggleMenu", "type": "menuOpen" }
+68; 56.717190; D_Menu2D; 1.646265; 3.983649; 4.504253; submenu_Nature; 1.853296; 3.60386; 4.425075; {"action": "isVisible"}
+69; 58.481330; I_P_Obj; 1.543196; 4.030229; 4.372541; Ob_rainbow(Clone)4; 1.911444; 3.63944; 4.193587; { "action": "createObject", "hand": "Controller_right"}
+70; 58.481330; D_Menu2D; 1.543196; 4.030229; 4.372541; submenu_Nature; 1.853296; 3.60386; 4.425075; {"action": "isInvisible"}
+71; 58.481330; I_Menu2D; 1.543196; 4.030229; 4.372541;;;;; {"action": "toggleMenu", "type": "menuClose" }
+72; 59.532340; I_U_Obj; 1.538271; 4.017869; 4.365889; Ob_rainbow(Clone)4; 1.806909; 3.475997; 4.283192; {"action": "resizeObject", "size": "(476.2, 476.2, 476.2)"}
+73; 59.756020; I_U_Obj; 1.540629; 4.021285; 4.367904; Ob_rainbow(Clone)4; 1.839111; 3.492265; 4.284857; { "action": "colourChange", "colour" : "FFFFFFFF"}
+74; 60.269050; I_U_Obj; 1.544522; 4.026514; 4.36616; Ob_rainbow(Clone)4; 1.871243; 3.536667; 4.271014; { "action": "colourChange", "colour" : "FF00FFFF"}
+75; 60.795590; I_U_Obj; 1.541409; 4.058502; 4.369579; Ob_rainbow(Clone)4; 2.022211; 3.614128; 4.385305; { "action": "colourChange", "colour" : "00000000"}
+76; 61.283780; I_U_Obj; 1.501757; 4.103279; 4.372736; Ob_rainbow(Clone)4; 2.143782; 3.985274; 4.595152; { "action": "colourChange", "colour" : "0000FFFF"}
+77; 61.878170; I_U_Obj; 1.51914; 4.108141; 4.409737; Ob_rainbow(Clone)4; 2.142223; 4.108137; 4.726268; { "action": "colourChange", "colour" : "00FF00FF"}
+78; 62.099830; I_P_Obj; 1.517751; 4.10369; 4.422789; Ob_rainbow(Clone)4; 2.137961; 4.105745; 4.756341; { "action": "releaseObject", "hand" : "Controller_right"}
+79; 63.140770; I_P_Obj; 1.550255; 4.128829; 4.478091; Ob_rainbow(Clone)4; 2.170406; 4.146661; 4.614772; { "action": "attachObject", "hand" : "Controller_right"}
+80; 63.743810; I_U_Obj; 1.596159; 4.09727; 4.495093; Ob_rainbow(Clone)4; 2.149905; 3.731723; 4.535824; { "action": "colourChange", "colour" : "808080FF"}
+81; 64.100650; I_U_Obj; 1.621593; 4.08175; 4.494425; Ob_rainbow(Clone)4; 2.125466; 3.6785; 4.493741; { "action": "colourChange", "colour" : "00FFFFFF"}
+82; 64.245100; I_P_Obj; 1.625065; 4.078931; 4.491572; Ob_rainbow(Clone)4; 2.132512; 3.689242; 4.49336; { "action": "releaseObject", "hand" : "Controller_right"}
+83; 65.508380; I_P_Obj; 1.642587; 4.087132; 4.544564; Ob_rainbow(Clone)4; 2.177529; 3.910836; 4.530551; { "action": "attachObject", "hand" : "Controller_left"}
+84; 67.607170; I_U_Obj; 1.62348; 4.045275; 4.545308; Ob_rainbow(Clone)4; 1.94051; 3.510257; 4.615249; {"action": "resizeObject", "size": "(231.0, 231.0, 231.0)"}
+85; 67.673470; I_P_Obj; 1.622238; 4.044315; 4.546113; Ob_rainbow(Clone)4; 1.939692; 3.513082; 4.620074; { "action": "releaseObject", "hand" : "Controller_left"}
+86; 75.551280;;;;;;;; {"action": "Stopped Game", "date": "15:13 28 July, 2020"}

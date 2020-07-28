@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class logText : logBase
@@ -18,11 +16,14 @@ public class logText : logBase
         nextLog = next;
     }
 
+    //This version of log adds information about the text object - what the attached text is and if the object even has a text component attached
     protected override void log(GameObject ob, Vector3 playerPos)
     {
         if (ob.GetComponent<Text>() != null)
         {
-            log1 = getId() + "; " + getTimestamp() + "; " + DIMLabel + "; " + playerPos.x + "; " + playerPos.y + "; " + playerPos.z + "; " + ob.name + "; "  + ob.transform.position.x + "; " + ob.transform.position.y + "; " + ob.transform.position.z + "; { \"action\": \"" + scriptType + "\", \"text\": \"" + ob.GetComponent<Text>().text + "\"}";
+            log1 = getId() + "; " + getTimestamp() + "; " + DIMLabel + "; " + playerPos.x + "; " + playerPos.y + "; " + playerPos.z + "; " + ob.name + "; " 
+                + ob.transform.position.x + "; " + ob.transform.position.y + "; " + ob.transform.position.z + "; { \"action\": \"" + scriptType 
+                + "\", \"text\": \"" + ob.GetComponent<Text>().text + "\"}";
             writeLog.WriteString(log1);
         }
         else

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1847439402433335411}
   - component: {fileID: 3343105634113481341}
   - component: {fileID: 1527737865001098595}
+  - component: {fileID: 1606713614114243352}
   m_Layer: 8
   m_Name: Ob_tree01
   m_TagString: object
@@ -48,8 +49,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.07710241, y: 0.12727162, z: 0.080934405}
-  m_Center: {x: 0.015387569, y: 0.12727162, z: 0.0032484196}
+  m_Size: {x: 0.1, y: 0.14, z: 0.1}
+  m_Center: {x: 0.015387569, y: 0.16, z: 0.0032484196}
 --- !u!114 &8925589558697448108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +117,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26eed8ac69111e5418feafbaf7ada519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1606713614114243352
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3014137848130427160}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.1, z: 0.02}
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!1 &8604277098009016316
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +188,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6506324930824891458, guid: d8f4944f08e7c8d43a4bab5b11ad002e, type: 3}
+  - {fileID: 2100000, guid: b9d026d63a2622e4d9f3aaa633d99b22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

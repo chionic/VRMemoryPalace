@@ -3,22 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-//singletong class used to write to the log file
+//Writes the string fed into the class to a text file
 public static class writeLog
 {
-    static string path = Application.dataPath + "/Data/logFile.txt";
-    static StreamWriter writer = new StreamWriter(path, true);
-    
+    static string path = Application.dataPath + "/Data/"; //The path to the logFile
+    static StreamWriter writer; //A new streamwriter (allows the code to write to the file)
 
-    public static void WriteString(string logMessage)
+    public static void makeLogFile()
+    {
+        int  randomInt = Random.Range(1, 99999999);
+        File.CreateText("log_" + randomInt);
+        writer = new StreamWriter(path + "log_" + randomInt, true);
+        Debug.Log(path + "log_" + randomInt);
+    }
+
+    //writes a new log message to the log
+    public static void WriteString(string logMessage) 
     {        
         writer.WriteLine(logMessage);
     }
 
-    public static void closeLog(string logMessage)
+    //writes the final log message to the log and then closes the streamWriter so that the file can't be edited anymore
+    public static void closeLog(string logMessage) 
     {
-        Debug.Log(Application.persistentDataPath);
-        Debug.Log("close writer called");
+        //Debug.Log(Application.persistentDataPath);
         writer.WriteLine(logMessage);
         writer.Close();
     }

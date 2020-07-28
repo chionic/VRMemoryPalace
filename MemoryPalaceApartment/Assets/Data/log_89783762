@@ -1,0 +1,7 @@
+1; 0.000000;;;;;;;; {"action": "Started Game", "date": "15:44 28 July, 2020"}
+2; 6.926081; I_Menu2D; -6.091635; 0.7236025; 0.9220467; Text; -7.224; 0; 1.739; { "action": "changeText", "text": "Press grab grip to change text"}
+3; 7.998408; I_Menu2D; -6.091729; 0.7233716; 0.9219745; Text; -7.224; 0; 1.739; { "action": "changeText", "text": "Use the circle pad to teleport. 
+ Move your thumb on the pad to pick where to teleport to. Press down on the pad to teleport."}
+4; 8.556978; I_Menu2D; -6.091581; 0.7233878; 0.9219764; Text; -7.224; 0; 1.739; { "action": "changeText", "text": "Teleport points can be used to get to higher floors."}
+5; 9.081676; I_Menu2D; -6.091606; 0.7236006; 0.9219904; Text; -7.224; 0; 1.739; { "action": "changeText", "text": "Press the menu button to bring up the menu, press it again to close the menu."}
+6; 10.721760;;;;;;;; {"action": "Stopped Game", "date": "15:44 28 July, 2020"}

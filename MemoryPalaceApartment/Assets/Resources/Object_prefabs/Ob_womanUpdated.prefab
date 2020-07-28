@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 6917893097278586062}
   - component: {fileID: 8727640722378136462}
   - component: {fileID: 1307985877882807423}
+  - component: {fileID: 6409344913677131773}
   m_Layer: 8
   m_Name: Ob_womanUpdated
   m_TagString: object
@@ -231,6 +232,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26eed8ac69111e5418feafbaf7ada519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6409344913677131773
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606073437583133787}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08, y: 0.18, z: 0.05}
+  m_Center: {x: 0, y: 0.09, z: 0}
 --- !u!1 &1284186785620663003
 GameObject:
   m_ObjectHideFlags: 0

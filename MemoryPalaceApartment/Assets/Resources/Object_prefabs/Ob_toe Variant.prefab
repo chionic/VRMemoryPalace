@@ -10,10 +10,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.025
-  m_Height: 0.1
+  m_Radius: 0.02
+  m_Height: 0.075
   m_Direction: 1
-  m_Center: {x: -0.01, y: 0.04, z: -0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3033410467418643377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29,17 +29,17 @@ PrefabInstance:
     - target: {fileID: 2134037662525927038, guid: 359c0496d3b650644bdb3e93948a640a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.02
+      value: 0.015
       objectReference: {fileID: 0}
     - target: {fileID: 2134037662525927038, guid: 359c0496d3b650644bdb3e93948a640a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2134037662525927038, guid: 359c0496d3b650644bdb3e93948a640a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.02
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 2134037662525927038, guid: 359c0496d3b650644bdb3e93948a640a,
         type: 3}
@@ -81,6 +81,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2134037662525927038, guid: 359c0496d3b650644bdb3e93948a640a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134037662525927038, guid: 359c0496d3b650644bdb3e93948a640a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134037662525927038, guid: 359c0496d3b650644bdb3e93948a640a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 359c0496d3b650644bdb3e93948a640a, type: 3}
 --- !u!1001 &8498413753359120450
@@ -93,7 +108,7 @@ PrefabInstance:
     - target: {fileID: 5131162953801618660, guid: 480a0e70935646b4fb54397448e71897,
         type: 3}
       propertyPath: m_Name
-      value: Ob_toe
+      value: Ob_toe Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6354128744737064377, guid: 480a0e70935646b4fb54397448e71897,
         type: 3}
