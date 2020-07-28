@@ -1105,7 +1105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab1a0499fc96fc645bc6bc3f36a7049d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logger: {fileID: 0}
   hasChildRenderer: 1
 --- !u!1 &8495253163357074765
 GameObject:
@@ -1405,8 +1404,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0014669999, y: 0.0015280647, z: 0.0014050818}
-  m_Center: {x: -0.00155625, y: -0.003830675, z: 0.0814601}
+  m_Size: {x: 0.02, y: 0.02, z: 0.09}
+  m_Center: {x: 0, y: 0, z: 0.04}
 --- !u!114 &2350645654250658218
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -902,7 +902,6 @@ namespace Valve.VR.InteractionSystem
 			{
 				teleportingToMarker.TeleportPlayer( pointedAtPosition );
 			}
-			
 			Teleport.Player.Send( pointedAtTeleportMarker );
 		}
 

@@ -24,13 +24,13 @@ public class Socket : MonoBehaviour
         storedObject.transform.rotation = Quaternion.identity;
         Rigidbody storedBody = storedObject.gameObject.GetComponent<Rigidbody>();
         joint.connectedBody = storedBody;
-        logger.makeLogEntry("AttachObject", newObject.gameObject);
+        //logger.makeLogEntry("AttachObject", newObject.gameObject, this.gameObject);
     }
 
     public void Detach()
     {
         if (!storedObject) return; //if the socket is empty, return
-        logger.makeLogEntry("DetachObject", storedObject.gameObject);
+        logger.makeLogEntry("releaseObject", storedObject.gameObject, this.gameObject.name.ToString());
         joint.connectedBody = null; //otherwise remove the stored object from the joint
         storedObject = null;
 

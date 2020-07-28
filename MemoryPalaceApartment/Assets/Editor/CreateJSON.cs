@@ -145,14 +145,14 @@ public class CreateJSON : EditorWindow
     //writes the data structure to a json file to be used later
     static void WriteString(menuJson menu, string fileName)
     {
-        string path = "Assets/JSON_Files/" + fileName + ".json";
+        string path = Application.dataPath + "/Data/" + fileName + ".json";
         string jsonMenu = JsonUtility.ToJson(menuJ);
         StreamWriter writer = new StreamWriter(path, false);
         writer.WriteLine(jsonMenu);
         writer.Close();
 
         //Re-import the file to update the reference in the editor
-        AssetDatabase.ImportAsset(path);
+        AssetDatabase.ImportAsset(Application.dataPath + "/Data/" + fileName + ".json");
         Debug.Log(jsonMenu);
     }
 

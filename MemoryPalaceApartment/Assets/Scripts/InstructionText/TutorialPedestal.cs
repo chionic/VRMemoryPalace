@@ -9,16 +9,20 @@ public class TutorialPedestal : MonoBehaviour
     public GameObject exit = null; //the grey box bloxking the exit to the tutorial room
     public string myTag = null; //the tag assigned to the object that must be placed on the box to complete the tutorial section
     public int booleanAssigned = 0; //which box it is
+    private AudioSource source;
 
     private void Awake()
     {
         //object1 = exit.GetComponent<tutorialRoomExit>().object1;
+        source = this.GetComponent<AudioSource>();
+
     }
     private void OnTriggerEnter(Collider other)
     {
         //if the object with the right tag is placed on top of the box...
         if (other.CompareTag(myTag))
         {
+            source.Play();
             //set the corresponding boolean to true
             if (booleanAssigned == 1)
                 exit.GetComponent<tutorialRoomExit>().object1 = true;

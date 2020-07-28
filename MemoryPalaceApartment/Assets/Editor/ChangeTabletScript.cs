@@ -40,7 +40,7 @@ public class ChangeTabletScript : EditorWindow
         filePathText fp = new filePathText(); //creates a new filePathText script
         fp.fileName = fileName;
         fp.pathToFile = pathToFile;
-        string path = "Assets/JSON_Files/tabletText.json";
+        string path = Application.dataPath + "/Data/tabletText.json";
         string jsonString = JsonUtility.ToJson(fp);
         StreamWriter writer = new StreamWriter(path, false);
         writer.WriteLine(jsonString);

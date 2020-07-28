@@ -21,16 +21,16 @@ public class AddText : MonoBehaviour
 
     void Awake()
     {
-        if (File.Exists("Assets/JSON_Files/tabletText.json"))
+        if (File.Exists(Application.dataPath + "/Data/tabletText"))
         {
-            string jsonString = File.ReadAllText("Assets/JSON_Files/tabletText.json");
+            jsonString = File.ReadAllText(Application.dataPath + "/Data/tabletText");
             fp = JsonUtility.FromJson<filePathText>(jsonString);
             fileName2 = fp.fileName;
-            pathToFile2 = fp.pathToFile;
+            pathToFile2 = Application.dataPath + "/Data/";
         }
         else
         {
-            Debug.LogError("The specified json file was not found at the file path ");
+            Debug.LogError("The specified json file was not found at the file path " + Application.dataPath + "/Data/" + fileName2);
             return;
         }
         logger = GameObject.FindWithTag("logger").GetComponent<MakeLog>();
@@ -40,7 +40,7 @@ public class AddText : MonoBehaviour
         }
         else
         {
-            jsonString = File.ReadAllText(Application.dataPath + "/JSON_Files/sampleText"); //imports the json assets as plain text
+            jsonString = File.ReadAllText(Application.dataPath + "/Data/sampleText"); //imports the json assets as plain text
         }
         textLoops = JsonUtility.FromJson<textLoops>(jsonString); //turns the plaintext into a list of arrays with certain properties
         getNextLoop(runOrder); //picks which of the text arrays should be run first
@@ -72,6 +72,10 @@ public class AddText : MonoBehaviour
                 else
                 {
                     getNextLoop(minRandomValue);
+                }
+                if (GameObject.Find(currentLoop.menu) != null)
+                {
+                    //set the menu active and deactivate the previous menu
                 }
             }
             else

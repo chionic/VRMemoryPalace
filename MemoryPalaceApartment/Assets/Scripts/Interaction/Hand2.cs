@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
+using Valve.VR.InteractionSystem.Sample;
 
 public class Hand2 : MonoBehaviour
 {
@@ -109,7 +111,6 @@ public class Hand2 : MonoBehaviour
                     if (nObject.hasSocket())
                     {
                         leftDown = true;
-                        Debug.Log("Nearest interactable is held in other hand");
                         return nearestObject;
                     }
                     else
@@ -201,6 +202,9 @@ public class Hand2 : MonoBehaviour
             //spawnedObject = currentMenuItem.objectToSpawn;
             GameObject object1 = Resources.Load("Object_prefabs/" + currentMenuItem.findObject) as GameObject;
             GameObject spawnedOb = Instantiate(object1, transform.position, Quaternion.identity);
+            spawnedOb.name = spawnedOb.name + uniqueIdGenerator.getID();
+            uniqueIdGenerator.setID();
+            logger.makeLogEntry("createObject", spawnedOb.gameObject, this.gameObject.name.ToString());
             //spawnedOb.transform.SetParent(this.transform, true);
             Moveable moveScript = spawnedOb.gameObject.GetComponent<Moveable>();
             PickUp(moveScript);
@@ -229,6 +233,7 @@ public class Hand2 : MonoBehaviour
     public void updateUIText()
     {
         textChange.updateUIText();
+        ControllerHintsExample x = this.gameObject.GetComponent<ControllerHintsExample>();
     }
 
     //placing these three lines at the top of the 'stopInteraction' method instead creates a more efficient script but it will only change size once, no inbetween

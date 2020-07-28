@@ -6,10 +6,16 @@ using UnityEngine;
 public class Moveable : Interactable
 {
     private Socket activeSocket = null; //the socket the gameobject is attached to (if any)
+    private MakeLog logger;
 
+    private void Start()
+    {
+        logger = GameObject.FindWithTag("logger").GetComponent<MakeLog>();
+    }
     public override void StartInteraction(Hand2 hand)
     {
         hand.PickUp(this);
+        logger.makeLogEntry("attachObject", this.gameObject, hand.gameObject.name.ToString());
     }
 
     public override void Interaction(Hand2 hand)

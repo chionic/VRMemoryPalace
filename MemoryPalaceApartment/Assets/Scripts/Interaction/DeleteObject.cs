@@ -14,7 +14,7 @@ public class DeleteObject : MonoBehaviour
         logger = GameObject.FindWithTag("logger").GetComponent<MakeLog>();
         menu1 = GameObject.FindGameObjectWithTag("Menu");
         menuScript1 = menu1.GetComponent<Menu>();
-        Debug.Log("The menu is: " + menu1 + " and the script is: " + menuScript1);
+        //Debug.Log("The menu is: " + menu1 + " and the script is: " + menuScript1);
     }
 
 
@@ -33,7 +33,7 @@ public class DeleteObject : MonoBehaviour
                 if (other.gameObject.GetComponent<Moveable>().hasSocket()) //only deletes objects if they are in the players hands (or attached to another socket)
                 {
                     //destroy it all!!!
-                    logger.makeLogEntry("Delete", other.gameObject);
+                    logger.makeLogEntry("delete", other.gameObject);
                     Destroy(other.gameObject);
                 }
                 

@@ -8,6 +8,7 @@ public class textLoop
     public int id;
     public int runOrder;
     public bool loop = false;
+    public string menu;
     public string[] Values;
 
     public static textLoop CreateFromJSON(string jsonString)

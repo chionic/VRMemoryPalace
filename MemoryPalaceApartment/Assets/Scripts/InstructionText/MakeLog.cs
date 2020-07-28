@@ -1,36 +1,47 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class MakeLog : MonoBehaviour
 {
     private List<logBase> logs;
-    private List<logBase> logsPlace;
+    private List<logMov> logsMov;
+    private Transform player;
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("MainCamera").transform;
         logMaker();
-        makeLogEntry("start", null);
-        foreach (logBase logger in logs)
-        {
-            Debug.Log(logger);
-        }
-        Debug.Log(logs.Last());
+        makeLogEntry("start", gameObject);
+
     }
 
     private void logMaker()
     {
         logs = new List<logBase>();
-        logsPlace = new List<logBase>();
+        logsMov = new List<logMov>();
 
         //logs (no place)
-        logBase logSize = new logResize("resizeObject", "I_U_Obj", null);
+        logBase log1 = new logStart(null);
+        logs.Add(log1);
+        logBase logColour = new logBase("colourChange", "I_U_Obj", log1, "\"colour\" : \"");
+        logs.Add(logColour);
+        logBase logSize = new logResize("resizeObject", "I_U_Obj", logColour);
         logs.Add(logSize);
-        logBase logText = new logText("changeText", "I_Text", logSize);
+        logBase logText = new logText("changeText", "I_Menu2D", logSize);
         logs.Add(logText);
-        logPlace logOpenMenu = new logPlace("toggleMenu", "I_Menu2D", logText);
+        logBase logCreate = new logBase("createObject", "I_P_Obj", logText);
+        logs.Add(logCreate);
+        logBase logDelete = new logBase("delete", "I_U_Obj", logCreate);
+        logs.Add(logDelete);
+        logBase logOpenMenu = new logMenu2("toggleMenu", "I_Menu2D", logDelete);
         logs.Add(logOpenMenu);
-        logBase logVisible0 = new logBase("isVisible", "D_Obj", logOpenMenu);
+        logBase logAttach = new logBase("attachObject", "I_P_Obj", logOpenMenu, "\"hand\" : \"");
+        logs.Add(logAttach);
+        logBase logDetach = new logBase("releaseObject", "I_P_Obj", logAttach, "\"hand\" : \"");
+        logs.Add(logDetach);
+        logBase logVisible0 = new logBase("isVisible", "D_Obj", logDetach);
         logs.Add(logVisible0);
         logBase logVisible1 = new logBase("isInvisible", "D_Obj", logVisible0);
         logs.Add(logVisible1);
@@ -38,25 +49,30 @@ public class MakeLog : MonoBehaviour
         logs.Add(logVisibleMenu);
         logBase logVisibleMenu1 = new logMenu("isInvisible", "D_Menu2D", logVisibleMenu);
         logs.Add(logVisibleMenu1);
-        logBase log1 = new logStart(logVisibleMenu1);
-        logs.Add(log1);
-        logBase logAttach = new logPlace("AttachObject", "I_P_Obj", log1);
-        logs.Add(logAttach);
-        logBase logDetach = new logPlace("DetachObject", "I_P_Obj", logAttach);
-        logs.Add(logDetach);
-        logBase logDelete = new logBase("Delete", "I_U_Obj", logDetach);
-        logs.Add(logDelete);
         //add new logging sub classes here
+
+        logMov logTeleport = new logMov("teleport", "M_Tele", null);
+        logsMov.Add(logTeleport);
     }
 
     public void makeLogEntry(string scriptType, GameObject ob)
     {
 
-            logs.Last().check(scriptType, ob);
+            logs.Last().check(scriptType, ob, player.position);
     }
 
+    public void makeLogEntry(string scriptType, TeleportMarkerBase x)
+    {
+        string y = x.ToString().Substring(0, x.ToString().IndexOf("("));
+       logsMov.Last().check(scriptType, y, player.position);
+    }
+
+    public void makeLogEntry(string scriptType, GameObject ob, string hand)
+    {
+        logs.Last().check(scriptType, ob, hand, player.position);
+    }
     void OnApplicationQuit()
     {
-        makeLogEntry("stop", null);
+        makeLogEntry("stop", gameObject);
     }
 }

@@ -1,12 +1,12 @@
 fileFormatVersion: 2
 guid: ea1001a6626353541ab4d4b39f4c3569
-timeCreated: 1544851960
-licenseType: Store
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - controllerMaterial: {fileID: 2100000, guid: 11b050e661ec0cf48a289a7266451e91,
+  - controllerMaterial: {fileID: 2100000, guid: 70c66109a93f33a4ead799f58a6b9ef5,
       type: 2}
+  - textHintPrefab: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

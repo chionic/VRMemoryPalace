@@ -61,6 +61,11 @@ objectPath: the path to the object from the top level menu folder
 defaultSize: how big the object is when it is spawned from the menu (default 1)
 colliderType: the shape of the collider around the object - box, sphere, capsule or mesh
 
+####Custom Errors when creating the Menu and how to resolve them
+"""Warning: object bounds are too large to fit inside the menu for the mesh "meshName". Rescale model to fit properly into menu.""" -> the mesh you are trying to create an object from is not scaled correctly. Find the mesh in the hierarchy and rescale it.
+"""The game object model 2(Clone) does not have a renderer attached to it, manually add a collider to the object.""" ->
+
+
 # How to add Custom Text to the User Tablet
 1. Open the unity project (see steps above)
 2. Navigate to Assets/JSON_Files and open sampleText

@@ -24,10 +24,11 @@ public class logMenu : logBase
     }
 
     //Check if it should go to next method
-    public override void check(string script, GameObject ob)
+    public override void check(string script, GameObject ob, Vector3 playerPos)
     {
-        if (string.Equals(script, scriptType) && ob.CompareTag("submenu")) log(ob);
-        else if (nextLog != null) nextLog.check(script, ob);
+        if (string.Equals(script, scriptType) && ob.CompareTag("submenu")) log(ob, playerPos);
+        else if (nextLog != null) nextLog.check(script, ob, playerPos);
         else Debug.Log("logBase No correct log type found " + script + " " + ob);
     }
+
 }

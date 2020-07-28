@@ -11,7 +11,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
+  m_Radius: 0.0016
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3974867739551674006
 PrefabInstance:
@@ -23,7 +23,7 @@ PrefabInstance:
     - target: {fileID: 5131162953801618660, guid: 480a0e70935646b4fb54397448e71897,
         type: 3}
       propertyPath: m_Name
-      value: Ob_angryEmoji
+      value: Ob_angryEmoji Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6354128744737064377, guid: 480a0e70935646b4fb54397448e71897,
         type: 3}

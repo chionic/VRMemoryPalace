@@ -6,11 +6,13 @@ public class resizeObject : MonoBehaviour
 {
     float result = Mathf.Lerp(3f, 5f, 0.5f);
     Transform transform1;
+    float defaultScale;
 
     // Start is called before the first frame update
     void Start()
     {
         transform1 = this.transform;
+        defaultScale = transform1.localScale.x;
     }
 
     public void grow(float change)
@@ -18,17 +20,13 @@ public class resizeObject : MonoBehaviour
         if (change < 0.01f) change = 0.01f;
         if((transform1.localScale.x < 10 || change < 10f) && (transform1.localScale.x > 0.02f || change > 0.01f))
         {
-            transform1.localScale = new Vector3(change *10, change *10, change*10);
+            transform1.localScale = new Vector3(change *10 * defaultScale, change *10 * defaultScale, change*10 * defaultScale);
         }
         
     }
 
-    public void shrink()
+    public void baseScale()
     {
-        if(transform1.localScale.x > 0.1)
-        {
-            transform1.localScale = new Vector3(transform1.localScale.x - 0.1f, transform1.localScale.y - 0.1f, transform1.localScale.z - 0.1f);
-        }
-
+        defaultScale = transform1.localScale.x;
     }
 }

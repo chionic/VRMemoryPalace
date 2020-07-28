@@ -17,17 +17,9 @@ public class logResize : logBase
         nextLog = next;
     }
 
-    //Check if it should go to next method
-    public override void check(string script, GameObject ob)
+    protected override void log(GameObject ob, Vector3 playerPos)
     {
-        if (string.Equals(script, scriptType)) log(ob);
-        else if (nextLog != null) nextLog.check(script, ob);
-        else Debug.Log("logBase No correct log type found " + script + " " + ob);
-    }
-
-    protected override void log(GameObject ob)
-    {
-            log1 = getTimestamp() + "; " + DIMLabel + "; " + scriptType + "; " + ob.name + "; place " + ob.transform.position + "; Local size " + ob.transform.localScale;
-            writeLog.WriteString(log1);
+        log1 = getId() + "; " + getTimestamp() + "; " + DIMLabel + "; " + playerPos.x + "; " + playerPos.y + "; " + playerPos.z + "; " + ob.name + "; " + ob.transform.position.x + "; " + ob.transform.position.y + "; " + ob.transform.position.z + "; {\"action\": \"" + scriptType + "\", \"size\": \"" + ob.transform.localScale + "\"}";
+        writeLog.WriteString(log1);
     }
 }

@@ -18,24 +18,16 @@ public class logText : logBase
         nextLog = next;
     }
 
-    //Check if it should go to next method
-    public override void check(string script, GameObject ob)
-    {
-        if (string.Equals(script, scriptType)) log(ob);
-        else if (nextLog != null) nextLog.check(script, ob);
-        else Debug.Log("logBase No correct log type found " + script + " " + ob);
-    }
-
-    protected override void log(GameObject ob)
+    protected override void log(GameObject ob, Vector3 playerPos)
     {
         if (ob.GetComponent<Text>() != null)
         {
-            log1 = getTimestamp() + "; " + DIMLabel + "; " + scriptType + "; " + ob.name + "; " + ob.GetComponent<Text>().text;
+            log1 = getId() + "; " + getTimestamp() + "; " + DIMLabel + "; " + playerPos.x + "; " + playerPos.y + "; " + playerPos.z + "; " + ob.name + "; "  + ob.transform.position.x + "; " + ob.transform.position.y + "; " + ob.transform.position.z + "; { \"action\": \"" + scriptType + "\", \"text\": \"" + ob.GetComponent<Text>().text + "\"}";
             writeLog.WriteString(log1);
         }
         else
         {
-            log1 = getTimestamp() + "; No text object assigned, but text called";
+            log1 = getId() + "; " + getTimestamp() + ";;;;;;;;;;{ \"error\": \"No text object assigned, but text called\"}";
             writeLog.WriteString(log1);
         }
 
