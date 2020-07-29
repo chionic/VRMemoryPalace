@@ -18,7 +18,6 @@ namespace Valve.VR.InteractionSystem
             //InvokeRepeating("makeLog", 1.0f, 1.0f);
         }
 
-        // Update is called once per frame
         void printIt(TeleportMarkerBase x)
         {
             logger.makeLogEntry("teleport", x);

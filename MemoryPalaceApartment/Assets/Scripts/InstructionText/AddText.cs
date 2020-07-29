@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 
@@ -34,9 +32,9 @@ public class AddText : MonoBehaviour
             return;
         }
         logger = GameObject.FindWithTag("logger").GetComponent<MakeLog>();
-        if (pathToFile2 != "" && fileName2 != "")
+        if (pathToFile2 != "" && fileName2 != "" && File.Exists(pathToFile2 + fileName2))
         {
-            jsonString = File.ReadAllText(pathToFile2 + "/" + fileName2); //imports the json assets as plain text
+            jsonString = File.ReadAllText(pathToFile2 + fileName2); //imports the json assets as plain text
         }
         else
         {

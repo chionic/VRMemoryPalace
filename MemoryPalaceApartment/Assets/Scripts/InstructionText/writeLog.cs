@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System.IO;
 
 //Writes the string fed into the class to a text file
@@ -12,7 +10,7 @@ public static class writeLog
     public static void makeLogFile()
     {
         int  randomInt = Random.Range(1, 99999999);
-        File.CreateText("log_" + randomInt);
+        //File.CreateText("log_" + randomInt);
         writer = new StreamWriter(path + "log_" + randomInt, true);
         Debug.Log(path + "log_" + randomInt);
     }

@@ -98,24 +98,23 @@ public class Hand2 : MonoBehaviour
         {
             if (nearestObject.gameObject.CompareTag("menuItem")) //if the nearest item is a menu item, run create menu item
             {
-                //Debug.Log("create menu item called " + nearestObject.gameObject);
                 createMenuItem(nearestObject.gameObject);
                 return nearestObject;
             }
-            if (nearestObject.gameObject.CompareTag("object"))
+            if (nearestObject.gameObject.CompareTag("object")) //checks if the nearest object is an interactable object
             {
                 try
                 {
-                    nObject = nearestObject.gameObject.GetComponent<Moveable>();
-                    resizeScript = nObject.gameObject.GetComponent<resizeObject>();
-                    if (nObject.hasSocket())
+                    nObject = nearestObject.gameObject.GetComponent<Moveable>(); //gets the moveable script attached to it
+                    resizeScript = nObject.gameObject.GetComponent<resizeObject>(); //gets resize script attached to it
+                    if (nObject.hasSocket()) //checks if the object is already attached to a controller
                     {
-                        leftDown = true;
+                        leftDown = true; //while leftDown is true the resize script is called
                         return nearestObject;
                     }
-                    else
+                    else //if the nearest object is not already attached to a socket
                     {
-                        nearestObject.StartInteraction(myHandScript);  //calls the hand pick up function from the selected (closest) game object's interactable script
+                        nearestObject.StartInteraction(myHandScript); //calls the hand pick up function from the selected (closest) game object's interactable script
                         return nearestObject;
                     }
 
@@ -144,12 +143,12 @@ public class Hand2 : MonoBehaviour
     //removes a game object from the socket of the controller
     public void StopInteraction()
     {
-        if (leftDown)
+        if (leftDown) //if an object has been resized
         {
-            logger.makeLogEntry("resizeObject", nObject.gameObject);
+            logger.makeLogEntry("resizeObject", nObject.gameObject); //logs the event
         }
-        leftDown = false;
-        nObject = null;
+        leftDown = false; //stops the resize script from being called
+        nObject = null; //sets the object being resized to null
         resizeScript = null;
         if (!HasHeldObject()) //if the controller socket is empty, return
         {
@@ -237,47 +236,22 @@ public class Hand2 : MonoBehaviour
     }
 
     //placing these three lines at the top of the 'stopInteraction' method instead creates a more efficient script but it will only change size once, no inbetween
-    public void Update()
+    public void Update() //called every frame
     {
         if (leftDown) {
+            //get distance between controllers
             distance = Vector3.Distance(otherController.position, transform.position);
-            growSize(distance, resizeScript);
+            growSize(distance, resizeScript); //ca;; growSize
         }
     }
 
     public void growSize(float distance, resizeObject script)
     {
-        //if (socket.GetStoredObject())
-       // {
             if (script != null)
             {
-                script.grow(distance);
+                script.grow(distance); //sends data to resizeObject script
             }
-       // }
+
     }
 
-    //public void shrinkSize()
-    //{
-
-    //    if (socket.GetStoredObject())
-    //    {
-    //        resizeObject script = socket.GetStoredObject().gameObject.GetComponent<resizeObject>();
-    //        if (script != null)
-    //        {
-    //            script.shrink();
-
-    //        }
-    //    }
-    //}
-
-    ////changes booleans to true/false that will continously call the grow/shrink function when the button is pressed
-    //public void leftDownTrue()
-    //{
-    //    leftDown = true;
-    //}
-
-    //public void leftDownFalse()
-    //{
-    //    leftDown = false;
-    //}
 }
