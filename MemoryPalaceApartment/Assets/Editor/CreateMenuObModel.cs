@@ -97,9 +97,9 @@ public class CreateMenuObModel : EditorWindow
         clone.GetComponent<menuItem>().findObject = object_prefab;
         clone.GetComponent<menuItem>().isTopLayer = false;
         BoxCollider box = clone.AddComponent<BoxCollider>();
-        if(clone.transform.localScale.x >= 100)
+        if(clone.transform.localScale.x > 1)
         {
-            box.size = new Vector3(0.00075f, 0.00075f, 0.002f);
+            box.size = new Vector3(0.075f/ clone.transform.localScale.x, 0.075f/ clone.transform.localScale.y, 0.2f/ clone.transform.localScale.z);
         }
         else box.size = new Vector3(0.075f, 0.075f, 0.2f);
         if (clone.gameObject.transform.childCount > 0)
@@ -203,9 +203,9 @@ public class CreateMenuObModel : EditorWindow
         else
         {
             Debug.Log(ob.transform.localScale.x + " " + ob.name);
-            if(ob.transform.localScale.x >= 100)
+            if(ob.transform.localScale.x > 1)
             {
-                rescale = 0.01f;
+                rescale = 1f/ob.transform.localScale.x;
                 Debug.Log(rescale);
             } else { rescale = 1; }
             //get the size of the mesh, and calculate best fit based on it's rough size
