@@ -232,7 +232,8 @@ public class Hand2 : MonoBehaviour
     public void updateUIText()
     {
         textChange.updateUIText();
-        ControllerHintsExample x = this.gameObject.GetComponent<ControllerHintsExample>();
+       // ControllerHintsExample x = this.gameObject.GetComponent<ControllerHintsExample>();
+       // x.ShowButtonHints(this.gameObject.GetComponent<Hand>());
     }
 
     //placing these three lines at the top of the 'stopInteraction' method instead creates a more efficient script but it will only change size once, no inbetween

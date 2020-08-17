@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using System;
+using Valve.VR;
 
 [System.Serializable]
 public class AddText : MonoBehaviour
@@ -16,6 +18,7 @@ public class AddText : MonoBehaviour
     private string fileName2 = "";
     private filePathText fp;
     private MakeLog logger; //game object that has logging interface
+    private Boolean isTutorial = true;
 
     void Awake()
     {
@@ -47,6 +50,11 @@ public class AddText : MonoBehaviour
 
     public void updateUIText()
     {
+        if (isTutorial)
+        {
+            tutorialText();
+            return;
+        }
         changeText(currentLoop);
         logger.makeLogEntry("changeText", this.gameObject);
     }
@@ -94,7 +102,7 @@ public class AddText : MonoBehaviour
     //Decides which text array to display next
     private void getNextLoop(int runOrder)
     {
-        int temp = Random.Range(runOrder, textLoops.textLooper.Count); //picks a random array somewhere between the start of the random ones and the size of the list
+        int temp = UnityEngine.Random.Range(runOrder, textLoops.textLooper.Count); //picks a random array somewhere between the start of the random ones and the size of the list
         foreach (textLoop textloop in textLoops.textLooper) //loops through all the possible text arrays
         {
             if (textloop.runOrder == runOrder) //picks the next one in the runOrder
@@ -112,5 +120,11 @@ public class AddText : MonoBehaviour
             minRandomValue = runOrder;
         }
         
+    }
+
+    private void tutorialText()
+    {
+        tutorialButtonPrompts prompts = this.GetComponent<tutorialButtonPrompts>();
+        prompts.UiText = UiText;
     }
 }

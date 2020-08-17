@@ -113,22 +113,6 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Boolean TouchpadLeft
-        {
-            get
-            {
-                return SteamVR_Actions.default_TouchpadLeft;
-            }
-        }
-        
-        public virtual SteamVR_Action_Boolean TouchpadRight
-        {
-            get
-            {
-                return SteamVR_Actions.default_TouchpadRight;
-            }
-        }
-        
         public virtual SteamVR_Action_Vibration Haptic
         {
             get

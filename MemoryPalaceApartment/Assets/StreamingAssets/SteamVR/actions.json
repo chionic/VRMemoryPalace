@@ -54,14 +54,6 @@
       "type": "boolean"
     },
     {
-      "name": "/actions/Default/in/TouchpadLeft",
-      "type": "boolean"
-    },
-    {
-      "name": "/actions/Default/in/TouchpadRight",
-      "type": "boolean"
-    },
-    {
       "name": "/actions/Default/out/Haptic",
       "type": "vibration"
     },

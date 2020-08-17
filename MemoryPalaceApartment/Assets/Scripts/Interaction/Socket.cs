@@ -12,7 +12,7 @@ public class Socket : MonoBehaviour
     public void Awake()
     {
         joint = GetComponent<FixedJoint>();
-        logger = GameObject.FindWithTag("logger").GetComponent<MakeLog>();
+        //logger = GameObject.FindWithTag("logger").GetComponent<MakeLog>();
     }
 
     public void Attach(Moveable newObject)
@@ -30,7 +30,7 @@ public class Socket : MonoBehaviour
     public void Detach()
     {
         if (!storedObject) return; //if the socket is empty, return
-        logger.makeLogEntry("releaseObject", storedObject.gameObject, this.gameObject.name.ToString());
+        //logger.makeLogEntry("releaseObject", storedObject.gameObject, this.gameObject.name.ToString());
         joint.connectedBody = null; //otherwise remove the stored object from the joint
         storedObject = null;
 

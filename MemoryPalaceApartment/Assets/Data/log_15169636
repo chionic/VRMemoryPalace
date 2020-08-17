@@ -1,0 +1,6 @@
+1; 0.000000;;;;;;;; {"action": "Started Game", "date": "15:55 17 August, 2020"}
+2; 0.353333; D_Obj; -6.286992; 0.9262437; 0.592942; DoorWay; -4.09; 1.02; 1.36; {"action": "isVisible"}
+3; 1.128588; D_Obj; -6.363474; 0.9766895; 0.5471597; DoorWay; -4.09; 1.02; 1.36; {"action": "isInvisible"}
+4; 1.273145; D_Obj; -6.388086; 1.004971; 0.5134935; DoorWay; -4.09; 1.02; 1.36; {"action": "isVisible"}
+5; 6.233334; M_Tele; -5.252169; 1.017692; 2.019746;;;;; {"action": "teleport", "type": "Plane "}
+6; 16.067000;;;;;;;; {"action": "Stopped Game", "date": "15:55 17 August, 2020"}

@@ -27,6 +27,10 @@ namespace Valve.VR.InteractionSystem.Sample
 			buttonHintCoroutine = StartCoroutine( TestButtonHints( hand ) );
 			Debug.Log("showButtonHints called");
 		}
+		private void Start()
+		{
+			ShowButtonHints(this.GetComponent<Hand>());
+		}
 
 
 		//-------------------------------------------------
