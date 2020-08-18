@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 //Deletes a game object when it hits the collider of a gameobject this script is attached to.
 public class DeleteObject : MonoBehaviour
@@ -30,11 +28,12 @@ public class DeleteObject : MonoBehaviour
             else if (other.gameObject.CompareTag("object") || other.gameObject.CompareTag("coin") ||
             other.gameObject.CompareTag("smilingFace") || other.gameObject.CompareTag("topHat"))
             {
-                if (other.gameObject.GetComponent<Moveable>().hasSocket()) //only deletes objects if they are in the players hands (or attached to another socket)
+                if (other.gameObject.GetComponent<Moveable>().hasSocket()) //only deletes objects if they are in the player's hands (or attached to another socket)
                 {
                     //destroy it all!!!
                     logger.makeLogEntry("delete", other.gameObject);
                     Destroy(other.gameObject);
+
                 }
                 
             }

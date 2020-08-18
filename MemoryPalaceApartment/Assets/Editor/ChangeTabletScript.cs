@@ -41,7 +41,7 @@ public class ChangeTabletScript : EditorWindow
         StreamWriter writer = new StreamWriter(path, false);
         writer.WriteLine(jsonString);
         writer.Close();
-        AssetDatabase.ImportAsset(path);
+        AssetDatabase.ImportAsset(Application.dataPath + "/Data/" + fileName);
         Debug.Log(jsonString);
     }
 

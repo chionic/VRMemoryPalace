@@ -481,11 +481,9 @@ namespace Valve.VR.InteractionSystem
 		private void HideAllButtonHints()
 		{
 			Clear();
-			Debug.Log("hide all button hints called");
             if (renderModel != null && renderModel.gameObject != null)
 			{
 				renderModel.gameObject.SetActive(false);
-				Debug.Log("renderModel set inactive");
 			}
 			    
 		}

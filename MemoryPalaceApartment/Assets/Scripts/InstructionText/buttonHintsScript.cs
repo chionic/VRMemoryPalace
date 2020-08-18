@@ -37,18 +37,15 @@ namespace Valve.VR.InteractionSystem.Sample
 			if (textHintCoroutine != null || !highlightButton)
 			{
 				StopCoroutine(textHintCoroutine);
-				Debug.Log("stop coroutine called");
 			}
 			textHintCoroutine = TestButtonHint(this.GetComponent<Hand>(), index);
 			StartCoroutine(textHintCoroutine);
-			Debug.Log("showButtonHints called");
 		}
 
 		public void HideButtonHint(int index)
 		{
 			StopAllCoroutines();
 			ControllerButtonHints.HideButtonHint(this.GetComponent<Hand>(), SteamVR_Input.actionsIn[index]);
-			Debug.Log("hide button hint called");
 		}
 
 		//-------------------------------------------------
@@ -87,13 +84,10 @@ namespace Valve.VR.InteractionSystem.Sample
 					if (action.GetActive(hand.handType))
 					{
 						ControllerButtonHints.ShowButtonHint(hand, action);
-						Debug.Log("ran controller button hint...." + actionIndex);
 						yield return new WaitForSeconds(1.0f);
 				}
 					yield return null;
 
-				ControllerButtonHints.HideAllButtonHints(hand);
-				yield return new WaitForSeconds(0.01f);
 			}
 		}
 

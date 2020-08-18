@@ -18,7 +18,7 @@ public class AddText : MonoBehaviour
     private string fileName2 = "";
     private filePathText fp;
     private MakeLog logger; //game object that has logging interface
-    private Boolean isTutorial = true;
+    public Boolean isTutorial = true;
 
     void Awake()
     {
@@ -52,9 +52,15 @@ public class AddText : MonoBehaviour
     {
         if (isTutorial)
         {
-            tutorialText();
             return;
         }
+        changeText(currentLoop);
+        logger.makeLogEntry("changeText", this.gameObject);
+    }
+
+    //used exclusively by tutorialButtonPrompt to change text as needed
+    public void updateTutorialText()
+    {
         changeText(currentLoop);
         logger.makeLogEntry("changeText", this.gameObject);
     }
@@ -122,9 +128,4 @@ public class AddText : MonoBehaviour
         
     }
 
-    private void tutorialText()
-    {
-        tutorialButtonPrompts prompts = this.GetComponent<tutorialButtonPrompts>();
-        prompts.UiText = UiText;
-    }
 }

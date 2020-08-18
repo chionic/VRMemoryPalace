@@ -1,0 +1,64 @@
+1; 0.000000;;;;;;;; {"action": "Started Game", "date": "15:35 18 August, 2020"}
+2; 0.353333; D_Obj; -6.328326; 0.9349619; 0.7036669; DoorWay; -4.09; 1.02; 1.36; {"action": "isVisible"}
+3; 1.123859; D_Obj; -6.441047; 0.9032761; 0.6505868; DoorWay; -4.09; 1.02; 1.36; {"action": "isInvisible"}
+4; 1.280349; D_Obj; -6.454385; 0.9243656; 0.6041186; DoorWay; -4.09; 1.02; 1.36; {"action": "isVisible"}
+5; 5.525529; D_Obj; -6.719522; 1.04348; 0.6482259; DoorWay; -4.09; 1.02; 1.36; {"action": "isInvisible"}
+6; 6.688234; I_Menu2D; -6.707044; 1.035507; 0.6213984; Text; -6.986927; 0.5534784; 0.6024263; { "action": "changeText", "text": "Press the menu button to open the menu."}
+7; 7.200000; M_Tele; -8.621213; 0.9434266; 0.4804209;;;;; {"action": "teleport", "type": "Plane "}
+8; 9.391000; I_Menu2D; -8.594597; 0.8838332; 0.535796; Text; -8.764718; 0.3576255; 0.6812828; { "action": "changeText", "text": "Reach out and grab an object in the menu by pressing trigger to select a submenu. Grab an object in a submenu to select it."}
+9; 9.391000; I_Menu2D; -8.594597; 0.8838332; 0.535796; topLevelMenu; -8.343008; 0.4152691; 0.7162262; {"action": "toggleMenu", "type": "menuOpen" }
+10; 9.391000; D_Menu2D; -8.594491; 0.88383; 0.5357043; topLevelMenu; -8.343008; 0.4152691; 0.7162262; {"action": "isVisible"}
+11; 10.052180; D_Obj; -8.570048; 0.8910476; 0.5258406; DoorWay; -4.09; 1.02; 1.36; {"action": "isVisible"}
+12; 10.934860; D_Menu2D; -8.539672; 0.8790816; 0.5362192; topLevelMenu; -8.343008; 0.4152691; 0.7162262; {"action": "isInvisible"}
+13; 10.934860; I_Menu2D; -8.539672; 0.8790816; 0.5362192; submenu_Person; -8.420274; 0.2634875; 0.7317407; {"action": "toggleMenu", "type": "menuOpen" }
+14; 10.934860; D_Menu2D; -8.539732; 0.879156; 0.5362108; submenu_Person; -8.420274; 0.2634875; 0.7317407; {"action": "isVisible"}
+15; 11.649550; I_Menu2D; -8.548374; 0.8900392; 0.5262929; Text; -8.853812; 0.4083935; 0.6769884; { "action": "changeText", "text": "Release trigger to place an object. Grab an object by pressing trigger to pick it up again."}
+16; 11.649550; I_P_Obj; -8.548374; 0.8900392; 0.5262929; Ob_Hardhat(Clone)0; -8.299985; 0.5004433; 0.7093754; { "action": "createObject", "hand": "Controller_right"}
+17; 11.649550; D_Menu2D; -8.548374; 0.8900392; 0.5262929; submenu_Person; -8.420274; 0.2634875; 0.7317407; {"action": "isInvisible"}
+18; 11.649550; I_Menu2D; -8.548374; 0.8900392; 0.5262929;;;;; {"action": "toggleMenu", "type": "menuClose" }
+19; 11.649550; D_Obj; -8.54837; 0.8900868; 0.5262862; Ob_Hardhat(Clone)0; -8.299985; 0.5004433; 0.7093754; {"action": "isVisible"}
+20; 12.330380; I_U_Obj; -8.578452; 0.8993791; 0.5157434; Ob_Hardhat(Clone)0; -8.37754; 0.454222; 0.7644824; { "action": "colourChange", "colour" : "00FF00FF"}
+21; 12.363980; D_Obj; -8.579112; 0.8988925; 0.5160651; DoorWay; -4.09; 1.02; 1.36; {"action": "isInvisible"}
+22; 12.837140; I_U_Obj; -8.583579; 0.8922944; 0.5227123; Ob_Hardhat(Clone)0; -8.38614; 0.4109906; 0.7552315; { "action": "colourChange", "colour" : "FF0000FF"}
+23; 13.634560; I_U_Obj; -8.57403; 0.8860124; 0.526419; Ob_Hardhat(Clone)0; -8.370193; 0.3830763; 0.7391895; {"action": "resizeObject", "size": "(2.4, 2.4, 2.4)"}
+24; 14.062900; D_Obj; -8.567143; 0.8888615; 0.5252706; DoorWay; -4.09; 1.02; 1.36; {"action": "isVisible"}
+25; 14.174320; I_Menu2D; -8.567095; 0.8915428; 0.5244533; Text; -8.798608; 0.4018943; 0.7469172; { "action": "changeText", "text": "Press the grab grip button to change the text on the tablet."}
+26; 14.407930; D_Obj; -8.573162; 0.8887305; 0.5257909; DoorWay; -4.09; 1.02; 1.36; {"action": "isInvisible"}
+27; 15.235410; I_Menu2D; -8.613785; 0.9046734; 0.5099736; Text; -8.814443; 0.4313952; 0.7006028; { "action": "changeText", "text": "Hold an object over your shoulder to delete it"}
+28; 16.318710; I_P_Obj; -8.60766; 0.9048159; 0.5118049; Ob_Hardhat(Clone)0; -8.364939; 0.5521852; 0.76798; { "action": "attachObject", "hand" : "Controller_right"}
+29; 16.944190; D_Obj; -8.600839; 0.8650471; 0.5172051; Ob_Hardhat(Clone)0; -8.428443; 1.096887; 0.5844586; {"action": "isInvisible"}
+30; 16.955560; I_U_Obj; -8.59916; 0.8609698; 0.5186647; Ob_Hardhat(Clone)0; -8.474508; 1.12603; 0.5455217; {"action": "delete"}
+31; 19.580410; I_Menu2D; -8.60548; 0.900903; 0.5256577; Text; -8.823639; 0.4076588; 0.6804317; { "action": "changeText", "text": "A memory palace is a way to remember ideas and concepts by using objects to represent information in a space."}
+32; 21.903820; I_Menu2D; -8.601819; 0.8959432; 0.5172365; Text; -8.823446; 0.4120696; 0.6692451; { "action": "changeText", "text": "Complete the tutorial by following the example of representing information with objects:"}
+33; 23.646130; I_Menu2D; -8.623519; 0.9047586; 0.5118214; Text; -8.824147; 0.4101796; 0.666225; { "action": "changeText", "text": "We want to represent: 
+ 
+ Hess 
+ for his discovery of cosmic radiation"}
+34; 25.310430; I_Menu2D; -8.627314; 0.8954278; 0.5143263; Text; -8.824172; 0.4085863; 0.6658623; { "action": "changeText", "text": "The name Hess rhymes with mess, so lets make a mess of COSMIC suns and RADIATION symbols on the green box"}
+35; 28.044450; M_Tele; -10.43691; 0.927305; 0.3403797;;;;; {"action": "teleport", "type": "Plane "}
+36; 29.946050; I_Menu2D; -10.54467; 0.8774664; 0.3708504; topLevelMenu; -10.40081; 0.4930241; 0.7547488; {"action": "toggleMenu", "type": "menuOpen" }
+37; 29.946050; D_Menu2D; -10.54434; 0.8776513; 0.370872; topLevelMenu; -10.40081; 0.4930241; 0.7547488; {"action": "isVisible"}
+38; 31.162780; D_Menu2D; -10.4516; 0.9411833; 0.3873929; topLevelMenu; -10.40081; 0.4930241; 0.7547488; {"action": "isInvisible"}
+39; 31.162780; I_Menu2D; -10.4516; 0.9411833; 0.3873929; submenu_Nature; -10.48677; 0.6974532; 0.7301685; {"action": "toggleMenu", "type": "menuOpen" }
+40; 31.162780; D_Menu2D; -10.45178; 0.9412961; 0.3872846; submenu_Nature; -10.48677; 0.6974532; 0.7301685; {"action": "isVisible"}
+41; 31.797610; I_P_Obj; -10.48385; 0.9805653; 0.3344913; Ob_sun(Clone)1; -10.41826; 0.9273658; 0.7508171; { "action": "createObject", "hand": "Controller_right"}
+42; 31.797610; D_Menu2D; -10.48385; 0.9805653; 0.3344913; submenu_Nature; -10.48677; 0.6974532; 0.7301685; {"action": "isInvisible"}
+43; 31.797610; I_Menu2D; -10.48385; 0.9805653; 0.3344913;;;;; {"action": "toggleMenu", "type": "menuClose" }
+44; 31.797610; D_Obj; -10.48386; 0.9805725; 0.3347259; Ob_sun(Clone)1; -10.41826; 0.9273658; 0.7508171; {"action": "isVisible"}
+45; 34.246960; I_Menu2D; -10.4674; 0.9384718; 0.3684011; topLevelMenu; -10.38247; 0.6467813; 0.7785605; {"action": "toggleMenu", "type": "menuOpen" }
+46; 34.246960; D_Menu2D; -10.46762; 0.9384396; 0.3682538; topLevelMenu; -10.38247; 0.6467813; 0.7785605; {"action": "isVisible"}
+47; 35.185540; D_Menu2D; -10.48038; 0.9701614; 0.3386688; topLevelMenu; -10.38247; 0.6467813; 0.7785605; {"action": "isInvisible"}
+48; 35.185540; I_Menu2D; -10.48038; 0.9701614; 0.3386688; submenu_Nature; -10.47158; 0.8827636; 0.7462041; {"action": "toggleMenu", "type": "menuOpen" }
+49; 35.185540; D_Menu2D; -10.48041; 0.9701943; 0.3386204; submenu_Nature; -10.47158; 0.8827636; 0.7462041; {"action": "isVisible"}
+50; 36.053000; I_P_Obj; -10.46873; 0.9846768; 0.3414184; Ob_rainbow(Clone)2; -10.2307; 0.9296029; 0.8155332; { "action": "createObject", "hand": "Controller_right"}
+51; 36.053000; D_Menu2D; -10.46873; 0.9846768; 0.3414184; submenu_Nature; -10.47158; 0.8827636; 0.7462041; {"action": "isInvisible"}
+52; 36.053000; I_Menu2D; -10.46873; 0.9846768; 0.3414184;;;;; {"action": "toggleMenu", "type": "menuClose" }
+53; 39.820340; I_Menu2D; -10.49184; 0.9045424; 0.356643; Text; -10.73538; 0.4242665; 0.4107497; { "action": "changeText", "text": "Complete the final two tutorial without button highlighting. Press the grab grip to change text"}
+54; 39.820340; I_Menu2D; -10.49184; 0.9045424; 0.356643; Text; -10.73538; 0.4242665; 0.4107497; { "action": "changeText", "text": "Radiation can be represented with the green radiation warning symbol. Lets place it on the bright blue pedestal."}
+55; 41.383810; I_Menu2D; -10.48972; 0.8985332; 0.3652096; Text; -10.73358; 0.4216045; 0.4126869; { "action": "changeText", "text": "Try to remember the following poem by William Butler Yeats,"}
+56; 42.098930; I_Menu2D; -10.48931; 0.8984785; 0.3669102; Text; -10.73298; 0.4210519; 0.4133867; { "action": "changeText", "text": "by placing objects to represent them along a path through the apartment."}
+57; 42.444950; I_Menu2D; -10.48605; 0.8967648; 0.3700948; Text; -10.73203; 0.4204552; 0.4140267; { "action": "changeText", "text": "Starting next set of instructions"}
+58; 44.243410; D_Obj; -10.3377; 0.9754732; 0.4847021; DoorWay; -4.09; 1.02; 1.36; {"action": "isVisible"}
+59; 44.265840; D_Obj; -10.33725; 0.9802866; 0.4844122; Ob_sun(Clone)1; -10.47767; 0.1788071; 0.8616121; {"action": "isInvisible"}
+60; 45.111010; D_Obj; -9.845881; 0.920954; 0.4958155; DoorWay; -4.09; 1.02; 1.36; {"action": "isInvisible"}
+61; 51.384430;;;;;;;; {"action": "Stopped Game", "date": "15:36 18 August, 2020"}
