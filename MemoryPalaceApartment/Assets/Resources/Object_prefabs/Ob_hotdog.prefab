@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8614598645202304875}
   - component: {fileID: 4830185649457328140}
   - component: {fileID: 4564453739647513344}
-  - component: {fileID: 2641878542352526752}
   - component: {fileID: 213125624662956909}
   - component: {fileID: 5994119690956929134}
   - component: {fileID: 136737800264199181}
+  - component: {fileID: 614184731769351177}
   m_Layer: 8
   m_Name: Ob_hotdog
   m_TagString: object
@@ -48,7 +48,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 10
   m_AngularDrag: 10
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -65,18 +65,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63cd12f78f16a594ab6699eec1395e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2641878542352526752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7536448775020326454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d0204da8a5009a4baeed57872e837ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &213125624662956909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,8 +77,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87bc6bdb8ac70340a04365b9389d856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinkMaterial: {fileID: 2100000, guid: 5e64c8e301cdf9c488fde7115d7a7418, type: 2}
-  GreyMaterial: {fileID: 2100000, guid: 28cb18fd6915a6f4aa555cab7ba191b5, type: 2}
 --- !u!65 &5994119690956929134
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -118,6 +104,18 @@ CapsuleCollider:
   m_Height: 0.2
   m_Direction: 1
   m_Center: {x: -0.3, y: 0.2, z: -0.14}
+--- !u!114 &614184731769351177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7536448775020326454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26eed8ac69111e5418feafbaf7ada519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7365063362975822828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -125,6 +123,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8614598645202304875}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: ac8c930f71de0984489bc078ea00e8da,
+        type: 3}
+      propertyPath: m_Name
+      value: model 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ac8c930f71de0984489bc078ea00e8da,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -179,11 +182,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: ac8c930f71de0984489bc078ea00e8da,
-        type: 3}
-      propertyPath: m_Name
-      value: model 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac8c930f71de0984489bc078ea00e8da, type: 3}

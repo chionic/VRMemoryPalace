@@ -1,13 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class Socket : MonoBehaviour
 {
-    private Moveable storedObject = null; //what gameobject is currently stored in the socket
+    public Moveable storedObject = null; //what gameobject is currently stored in the socket
     private FixedJoint joint = null; //the joint the socket is attached to
-    private MakeLog logger;
-
+    //private MakeLog logger;
+    private UnityEvent _attached = new UnityEvent();
+    public UnityEvent Attached {  get { return _attached; } }
 
     public void Awake()
     {
@@ -25,6 +25,8 @@ public class Socket : MonoBehaviour
         Rigidbody storedBody = storedObject.gameObject.GetComponent<Rigidbody>();
         joint.connectedBody = storedBody;
         //logger.makeLogEntry("AttachObject", newObject.gameObject, this.gameObject);
+        Debug.Log("attach called " + storedObject + getStoredobject());
+        Attached.Invoke();
     }
 
     public void Detach()
@@ -39,6 +41,12 @@ public class Socket : MonoBehaviour
     public Moveable GetStoredObject()
     {
         return storedObject;
+    }
+
+    public bool getStoredobject()
+    {
+        if (!storedObject) return false;
+        return true;
     }
 
 }

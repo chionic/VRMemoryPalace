@@ -15,7 +15,8 @@ public class tutorialButtonPrompts : MonoBehaviour
     private int currentState = 0; //0 - teleport, 1 - menu, 2-5 - trigger, 6 - text change, 7 - trigger (delete), 8-11 - text change
     private AddText textChanger;
     private MakeLog logger; //game object that has logging interface
-
+    GameObject[] hands;
+    bool currentController = false; //0= false, 1 = true
 
     // a reference to the hand
     public SteamVR_Input_Sources handType;
@@ -31,15 +32,20 @@ public class tutorialButtonPrompts : MonoBehaviour
         Teleport.AddOnStateDownListener(TeleportDown, handType);
         PressMenuButton.AddOnStateDownListener(MenuDown, handType);
         GrabGrip.AddOnStateDownListener(GripDown, handType);
-        GameObject[] hands = GameObject.FindGameObjectsWithTag("hand");
+        hands = GameObject.FindGameObjectsWithTag("hand");
         hintScripts = new buttonHintsScript[]{ hands[0].GetComponent<buttonHintsScript>(), hands[1].GetComponent<buttonHintsScript>()};
+        hands[0].gameObject.GetComponent<Socket>().Attached.AddListener(attachObjectL);
+        hands[1].gameObject.GetComponent<Socket>().Attached.AddListener(attachObjectR);
+        hands[0].gameObject.GetComponent<Hand2>().Grow.AddListener(growCalled);
+        hands[1].gameObject.GetComponent<Hand2>().Grow.AddListener(growCalled);
         textChanger = this.GetComponent<AddText>();
+        
         
     }
     public void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         Debug.Log("trigger up called, current state: " + currentState);
-        if(currentState == 3 || currentState == 14 || currentState == 17)
+        if(currentState == 3 || currentState == 18 || currentState == 21)
         {
             currentState++;
         }
@@ -50,12 +56,22 @@ public class tutorialButtonPrompts : MonoBehaviour
             logger.makeLogEntry("changeText", this.gameObject);
             currentState++;
         }
-        else if (currentState == 7 || currentState == 18)
+        else if(currentState == 8)
         {
+            updateHintHighlight(2);
+            currentState = 7;
+        }
+        if(currentState == 9)
+        {
+            updateHintHighlight(2);
+        }
+        else if (currentState == 11 || currentState == 22)
+        {
+            //from here on high jack the state
             updateHintHighlight(3);
             currentState++;
         }
-        else if (currentState == 15)
+        else if (currentState == 19)
         {
             updateHintHighlight(11);
             currentState++;
@@ -65,22 +81,15 @@ public class tutorialButtonPrompts : MonoBehaviour
     }
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        if(currentState == 2)
+        Debug.Log(currentState);
+        if (currentState == 2)
         {
             currentState++;
         }
-        if (currentState == 4)
-        {
-            GrabPinch.RemoveOnStateDownListener(TriggerDown, handType);
-            UiText.text = "Release trigger to place an object. Grab an object by pressing trigger to pick it up again.";
-            logger.makeLogEntry("changeText", this.gameObject);
-            currentState++;
-        }
-        //hintScript.HideButtonHint(2);
-        
+
     }
 
-    public void TeleportDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+        public void TeleportDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         if(currentState == 0)
         {
@@ -89,7 +98,7 @@ public class tutorialButtonPrompts : MonoBehaviour
             foreach (buttonHintsScript hintScript in hintScripts) hintScript.ShowButtonHint(11);
             currentState = 1;
         }
-        else if(currentState == 12)
+        else if(currentState == 16)
         {
             updateHintHighlight(11);
             currentState++;
@@ -105,7 +114,28 @@ public class tutorialButtonPrompts : MonoBehaviour
             updateHintHighlight(2);
             currentState++;
         }
-        else if(currentState == 13 || currentState == 16)
+        else if(currentState == 2 || currentState == 3 || currentState == 4)
+        {
+            updateHintHighlight(11);
+            currentState = 1;
+        }
+        else if(currentState == 8)
+        {
+            UiText.text = "Change the size of an object by holding onto the object with one hand and grabbing it with the other and then pulling.";
+            logger.makeLogEntry("changeText", this.gameObject);
+            if (currentController)
+            {
+                hintScripts[1].HideButtonHint(11);
+                hintScripts[0].ShowButtonHint(2);
+            }
+            else
+            {
+                hintScripts[0].HideButtonHint(11);
+                hintScripts[1].ShowButtonHint(2);
+            }
+            currentState++;
+        }
+        else if(currentState == 17 || currentState == 20)
         {
             updateHintHighlight(2);
             currentState++;
@@ -116,26 +146,26 @@ public class tutorialButtonPrompts : MonoBehaviour
     {
         if (currentState == 6)
         {
-            UiText.text = "Hold an object over your shoulder to delete it";
-            logger.makeLogEntry("changeText", this.gameObject);
             updateHintHighlight(2);
+            UiText.text = "Grab an object and press the menu button on the same controller to change the colour of an object.";
+            logger.makeLogEntry("changeText", this.gameObject);
             currentState++;
         }
-        else if (currentState == 8 || currentState == 9 || currentState == 10)
+        else if (currentState == 12 || currentState == 13 || currentState == 14)
         {
             textChanger.updateTutorialText();
             currentState++;
         }
-        else if (currentState == 11)
+        else if (currentState == 15)
         {
             textChanger.updateTutorialText();
             currentState++;
             updateHintHighlight(1);
         }
-        else if(currentState == 19)
+        else if(currentState == 23)
         {
             currentState++;
-            textChanger.updateTutorialText();
+            //textChanger.updateTutorialText();
             textChanger.isTutorial = false;
             foreach (buttonHintsScript hintScript in hintScripts)
             {
@@ -161,5 +191,79 @@ public class tutorialButtonPrompts : MonoBehaviour
         Teleport.RemoveOnStateDownListener(TeleportDown, handType);
         PressMenuButton.RemoveOnStateDownListener(MenuDown, handType);
         GrabGrip.RemoveOnStateDownListener(GripDown, handType);
+        hands[0].gameObject.GetComponent<Socket>().Attached.RemoveListener(attachObjectL);
+        hands[1].gameObject.GetComponent<Socket>().Attached.RemoveListener(attachObjectR);
+        hands[0].gameObject.GetComponent<Hand2>().Grow.RemoveListener(growCalled);
+        hands[1].gameObject.GetComponent<Hand2>().Grow.RemoveListener(growCalled);
+    }
+
+    private void attachObjectL()
+    {
+        Debug.Log("l");
+        if (currentState == 4)
+        {
+            UiText.text = "Release trigger to place an object. Grab an object by pressing trigger to pick it up again.";
+            logger.makeLogEntry("changeText", this.gameObject);
+            currentState++;
+        }
+        else if (currentState == 7)
+        {
+            hintScripts[0].HideButtonHint(2);
+            hintScripts[1].HideButtonHint(2);
+            hintScripts[0].ShowButtonHint(11);
+            currentState++;
+        }
+        else if (currentState == 9)
+        {
+            hintScripts[0].HideButtonHint(2);
+            hintScripts[1].ShowButtonHint(2);
+        }
+
+        currentController = false;
+    }
+
+    private void attachObjectR()
+    {
+        Debug.Log("r");
+        if (currentState == 4)
+        {
+            UiText.text = "Release trigger to place an object. Grab an object by pressing trigger to pick it up again.";
+            logger.makeLogEntry("changeText", this.gameObject);
+            currentState++;
+        }
+        else if (currentState == 7)
+        {
+            hintScripts[0].HideButtonHint(2);
+            hintScripts[1].HideButtonHint(2);
+            hintScripts[1].ShowButtonHint(11);
+            currentState++;
+        }
+        else if(currentState == 9)
+        {
+            hintScripts[1].HideButtonHint(2);
+            hintScripts[0].ShowButtonHint(2);
+        }
+        currentController = true;
+    }
+
+    private void growCalled()
+    {
+        if(currentState == 9)
+        {
+            UiText.text = "Hold an object over your shoulder to delete it";
+            logger.makeLogEntry("changeText", this.gameObject);
+            if (currentController)
+            {
+                hintScripts[0].HideButtonHint(2);
+                hintScripts[1].ShowButtonHint(2);
+            }
+            else
+            {
+                hintScripts[1].HideButtonHint(2);
+                hintScripts[0].ShowButtonHint(2);
+            }
+            currentState++;
+            currentState++;
+        }
     }
 }

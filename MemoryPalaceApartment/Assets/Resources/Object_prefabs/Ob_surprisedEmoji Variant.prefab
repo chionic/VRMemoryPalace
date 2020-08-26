@@ -11,8 +11,20 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.12
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1403683576179045801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3797803364978402774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26eed8ac69111e5418feafbaf7ada519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &363419359447310255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80,6 +92,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7160460813195391447, guid: 41493fe4b7c72d247b99c328e2263219,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160460813195391447, guid: 41493fe4b7c72d247b99c328e2263219,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160460813195391447, guid: 41493fe4b7c72d247b99c328e2263219,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41493fe4b7c72d247b99c328e2263219, type: 3}
 --- !u!1001 &8322950683710943538
@@ -92,7 +119,12 @@ PrefabInstance:
     - target: {fileID: 5131162953801618660, guid: 480a0e70935646b4fb54397448e71897,
         type: 3}
       propertyPath: m_Name
-      value: Ob_surprisedEmoji
+      value: Ob_surprisedEmoji Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7830372166811585246, guid: 480a0e70935646b4fb54397448e71897,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6354128744737064377, guid: 480a0e70935646b4fb54397448e71897,
         type: 3}
@@ -151,6 +183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1446841294140545647, guid: 480a0e70935646b4fb54397448e71897, type: 3}
+    - {fileID: 795592558147852146, guid: 480a0e70935646b4fb54397448e71897, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 480a0e70935646b4fb54397448e71897, type: 3}
 --- !u!1 &3797803364978402774 stripped
 GameObject:

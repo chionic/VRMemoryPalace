@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9213675974206954599}
   m_Layer: 8
   m_Name: Ob_radioactive
-  m_TagString: coin
+  m_TagString: sun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,8 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87bc6bdb8ac70340a04365b9389d856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinkMaterial: {fileID: 2100000, guid: 5e64c8e301cdf9c488fde7115d7a7418, type: 2}
-  GreyMaterial: {fileID: 2100000, guid: 28cb18fd6915a6f4aa555cab7ba191b5, type: 2}
 --- !u!1 &4140352303601404932
 GameObject:
   m_ObjectHideFlags: 0

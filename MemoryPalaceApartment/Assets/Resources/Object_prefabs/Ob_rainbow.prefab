@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 8292566125233227501}
   m_Layer: 8
   m_Name: Ob_rainbow
-  m_TagString: object
+  m_TagString: topHat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

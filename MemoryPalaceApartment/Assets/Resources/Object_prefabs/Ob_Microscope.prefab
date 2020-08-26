@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2817268847495391295}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 1961177176420015604}
   m_Father: {fileID: 0}
@@ -102,8 +102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87bc6bdb8ac70340a04365b9389d856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinkMaterial: {fileID: 2100000, guid: 5e64c8e301cdf9c488fde7115d7a7418, type: 2}
-  GreyMaterial: {fileID: 2100000, guid: 28cb18fd6915a6f4aa555cab7ba191b5, type: 2}
 --- !u!65 &5520279471837836323
 BoxCollider:
   m_ObjectHideFlags: 0

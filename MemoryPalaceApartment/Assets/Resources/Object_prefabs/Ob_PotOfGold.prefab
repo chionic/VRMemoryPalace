@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8695458170319268277, guid: a5096881ec199fa4cbf84256ae43ff20, type: 3}
+  - {fileID: 2100000, guid: 9c30003ee64fbb74787001b4c7056c44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90,7 +90,6 @@ GameObject:
   - component: {fileID: 1434813544084735455}
   - component: {fileID: 3843415061595266011}
   - component: {fileID: 5057050521887673423}
-  - component: {fileID: 102222123036209871}
   - component: {fileID: 7455924523263951404}
   m_Layer: 8
   m_Name: Ob_PotOfGold
@@ -155,18 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63cd12f78f16a594ab6699eec1395e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &102222123036209871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7174210945841843403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d0204da8a5009a4baeed57872e837ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7455924523263951404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,5 +166,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87bc6bdb8ac70340a04365b9389d856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinkMaterial: {fileID: 2100000, guid: 5e64c8e301cdf9c488fde7115d7a7418, type: 2}
-  GreyMaterial: {fileID: 2100000, guid: 28cb18fd6915a6f4aa555cab7ba191b5, type: 2}

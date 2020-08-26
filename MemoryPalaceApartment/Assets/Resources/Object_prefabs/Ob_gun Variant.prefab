@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 592565512584724352, guid: f7bb8bad6be6a534198658d62186436c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1c2401b64dfb76243a14b478921e2720, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7bb8bad6be6a534198658d62186436c, type: 3}
 --- !u!1001 &5516586346431018006
@@ -76,6 +81,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5131162953801618660, guid: 480a0e70935646b4fb54397448e71897,
+        type: 3}
+      propertyPath: m_Name
+      value: Ob_gun Variant
+      objectReference: {fileID: 0}
     - target: {fileID: 6354128744737064377, guid: 480a0e70935646b4fb54397448e71897,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -131,10 +141,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5131162953801618660, guid: 480a0e70935646b4fb54397448e71897,
+    - target: {fileID: 6354128744737064377, guid: 480a0e70935646b4fb54397448e71897,
         type: 3}
-      propertyPath: m_Name
-      value: Ob_gun
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6354128744737064377, guid: 480a0e70935646b4fb54397448e71897,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6354128744737064377, guid: 480a0e70935646b4fb54397448e71897,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1446841294140545647, guid: 480a0e70935646b4fb54397448e71897,
         type: 3}

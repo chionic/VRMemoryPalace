@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3140231238118378324}
   m_Layer: 8
   m_Name: Ob_sun
-  m_TagString: object
+  m_TagString: sun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.086856596, y: 0.086856596, z: 0.08}
+  m_Size: {x: 0.086856596, y: 0.086856596, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7920178152878946383
 MonoBehaviour:

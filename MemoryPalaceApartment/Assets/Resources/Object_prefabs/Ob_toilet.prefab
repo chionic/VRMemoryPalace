@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7015404281161052172}
   - component: {fileID: 7914562036901093194}
   - component: {fileID: 7600551298355790076}
+  - component: {fileID: 8016848346137496279}
   m_Layer: 8
   m_Name: Ob_toilet
   m_TagString: object
@@ -32,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 808481470888396119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 2110708730830342958}
   m_Father: {fileID: 0}
@@ -62,7 +63,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 10
   m_AngularDrag: 10
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -103,8 +104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87bc6bdb8ac70340a04365b9389d856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinkMaterial: {fileID: 2100000, guid: 5e64c8e301cdf9c488fde7115d7a7418, type: 2}
-  GreyMaterial: {fileID: 2100000, guid: 28cb18fd6915a6f4aa555cab7ba191b5, type: 2}
 --- !u!65 &7914562036901093194
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -131,6 +130,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.56, y: 0.5, z: 0.18}
   m_Center: {x: 0, y: 0.3, z: -0.18}
+--- !u!114 &8016848346137496279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808481470888396119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26eed8ac69111e5418feafbaf7ada519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2796732195493448598
 GameObject:
   m_ObjectHideFlags: 0

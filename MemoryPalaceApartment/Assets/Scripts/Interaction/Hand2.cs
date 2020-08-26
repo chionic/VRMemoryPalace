@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
-using Valve.VR.InteractionSystem;
-using Valve.VR.InteractionSystem.Sample;
+using UnityEngine.Events;
 
 public class Hand2 : MonoBehaviour
 {
@@ -21,7 +20,7 @@ public class Hand2 : MonoBehaviour
     private Transform controller = null;
     public Transform otherController = null;
     private float distance;
-    private Moveable nObject;
+    public Moveable nObject;
     private resizeObject resizeScript;
     private MakeLog logger; //game object that has logging interface
 
@@ -30,6 +29,8 @@ public class Hand2 : MonoBehaviour
     private AddText textChange = null; //script that changes UI text
 
     protected bool leftDown;
+    private UnityEvent _grow = new UnityEvent();
+    public UnityEvent Grow { get { return _grow; } }
 
     public void Awake() //initialises the various variables listed above
     {
@@ -101,7 +102,8 @@ public class Hand2 : MonoBehaviour
                 createMenuItem(nearestObject.gameObject);
                 return nearestObject;
             }
-            if (nearestObject.gameObject.CompareTag("object")) //checks if the nearest object is an interactable object
+            if (nearestObject.gameObject.CompareTag("object") || nearestObject.gameObject.CompareTag("sun") 
+                || nearestObject.gameObject.CompareTag("topHat") || nearestObject.gameObject.CompareTag("coin")) //checks if the nearest object is an interactable object
             {
                 try
                 {
@@ -145,6 +147,7 @@ public class Hand2 : MonoBehaviour
     {
         if (leftDown) //if an object has been resized
         {
+            Grow.Invoke();
             logger.makeLogEntry("resizeObject", nObject.gameObject); //logs the event
         }
         leftDown = false; //stops the resize script from being called

@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 
+
 public class resizeObject : MonoBehaviour
 {
     Transform transform1; //the transform attached to the gameObject this script is also attached to
     float defaultScale; //the scale of the object initially
+
 
     void Start()
     {
@@ -20,6 +22,5 @@ public class resizeObject : MonoBehaviour
             //rescales the object
             transform1.localScale = new Vector3(change *10 * defaultScale, change *10 * defaultScale, change*10 * defaultScale);
         }
-        
     }
 }
