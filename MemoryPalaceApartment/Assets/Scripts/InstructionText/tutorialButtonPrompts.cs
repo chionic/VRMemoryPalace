@@ -1,5 +1,4 @@
-﻿using System.Data.SqlClient;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using Valve.VR;
 using Valve.VR.InteractionSystem.Sample;

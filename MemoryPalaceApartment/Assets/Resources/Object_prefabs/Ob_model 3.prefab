@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 1906008005954124328}
   m_Layer: 8
   m_Name: Ob_model 3
-  m_TagString: object
+  m_TagString: topHat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

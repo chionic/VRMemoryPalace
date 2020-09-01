@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 447241468799843315}
   m_Layer: 8
   m_Name: Ob_Super Leaf
-  m_TagString: object
+  m_TagString: sun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

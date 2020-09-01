@@ -3,14 +3,15 @@
 			"id": "0",
 			"runOrder": "0",
 			"loop": "false",
-			"Values": [
-                                                   "A memory palace is a way to remember ideas and concepts by using objects to represent information in a space.",
-                                                   "Complete the tutorial by following the example of representing information with objects:",
-                                                   "We want to represent: \n \n Hess \n for his discovery of cosmic radiation",
-                                                   "The name Hess rhymes with mess, so lets make a mess of COSMIC suns and RADIATION symbols on the green box",
-                                                   "Complete the final two tutorial without button highlighting. Press the grab grip to change text",
-                                                   "Radiation can be represented with the green radiation warning symbol. Lets place it on the bright blue pedestal.",
-                                                   "Try to remember the following poem by William Butler Yeats,",
+			"Values": ["A memory palace is a way to remember ideas and concepts by using objects to represent information in a space.",
+                                                   "Complete the tutorial by following the examples of representing information with objects: \n -->",
+                                                   "We want to represent: \n 'Though leaves are many, the root is one;' \n -->",
+                                                   "We can use a tree to represent a root and leaves and add leaves for many leaves. Place a tree and leaves object on the green box.",
+                                                   "Complete the final two tutorial steps without button highlighting. Press the grab grip to change text \n -->",
+												   "'Through all the lying days of my youth' \n -->",
+												   "Place an X on the pink box to represent lies, alongside a clock for days and a figure for youth.",
+												   "Create your own image on the blue box for: \n \n 'I swayed my leaves and flowers in the sun;'",
+                                                   "Try to remember the lines of the following poem written by William Butler Yeats, \n -->",
                                                     "by placing objects to represent them along a path through the apartment."]
 		},
 		{

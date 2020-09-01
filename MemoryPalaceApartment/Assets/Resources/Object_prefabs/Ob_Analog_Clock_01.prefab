@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5445142542438660385}
   m_Layer: 8
   m_Name: Ob_Analog_Clock_01
-  m_TagString: object
+  m_TagString: topHat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,5 +209,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab1a0499fc96fc645bc6bc3f36a7049d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logger: {fileID: 0}
   hasChildRenderer: 1

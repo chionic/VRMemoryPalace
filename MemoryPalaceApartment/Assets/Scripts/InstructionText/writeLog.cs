@@ -4,14 +4,14 @@ using System.IO;
 //Writes the string fed into the class to a text file
 public static class writeLog
 {
-    static string path = Application.dataPath + "/Data/"; //The path to the logFile
+    static string path = Application.persistentDataPath; //The path to the logFile
     static StreamWriter writer; //A new streamwriter (allows the code to write to the file)
 
     public static void makeLogFile()
     {
         int  randomInt = Random.Range(1, 99999999);
         //File.CreateText("log_" + randomInt);
-        writer = new StreamWriter(path + "log_" + randomInt, true);
+        writer = new StreamWriter(path + "/log_" + randomInt, true);
         Debug.Log(path + "log_" + randomInt);
     }
 

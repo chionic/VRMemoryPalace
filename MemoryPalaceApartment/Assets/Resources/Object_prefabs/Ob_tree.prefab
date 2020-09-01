@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 1935801021019885303}
   m_Layer: 8
   m_Name: Ob_tree
-  m_TagString: object
+  m_TagString: sun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -369,7 +369,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab1a0499fc96fc645bc6bc3f36a7049d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logger: {fileID: 0}
   hasChildRenderer: 0
 --- !u!114 &3957210218802737236
 MonoBehaviour:
