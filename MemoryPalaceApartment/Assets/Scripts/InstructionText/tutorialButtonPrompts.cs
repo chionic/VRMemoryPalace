@@ -43,7 +43,6 @@ public class tutorialButtonPrompts : MonoBehaviour
     }
     public void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        Debug.Log("trigger up called, current state: " + currentState);
         if(currentState == 3 || currentState == 18 || currentState == 21)
         {
             currentState++;
@@ -80,7 +79,6 @@ public class tutorialButtonPrompts : MonoBehaviour
     }
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        Debug.Log(currentState);
         if (currentState == 2)
         {
             currentState++;
@@ -198,7 +196,6 @@ public class tutorialButtonPrompts : MonoBehaviour
 
     private void attachObjectL()
     {
-        Debug.Log("l");
         if (currentState == 4)
         {
             UiText.text = "Release trigger to place an object. Grab an object by pressing trigger to pick it up again.";
@@ -223,7 +220,6 @@ public class tutorialButtonPrompts : MonoBehaviour
 
     private void attachObjectR()
     {
-        Debug.Log("r");
         if (currentState == 4)
         {
             UiText.text = "Release trigger to place an object. Grab an object by pressing trigger to pick it up again.";
